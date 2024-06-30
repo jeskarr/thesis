@@ -1,0 +1,352 @@
+\chapter{Infografiche}
+\label{cap:studio_infografiche}
+\intro{In questo capitolo verranno esaminate le caratteristiche funzionali e di design delle infografiche e 
+presentate le loro applicazioni. Verrà inoltre fornita una classificazione delle infografiche basata sul 
+loro obiettivo e output visivo.}\\
+
+%(anche diff con data viz)
+%Infographics Explained: What are infographics and how do they differ from other forms of data visualization?
+%Design Principles: Key principles for designing effective infographics (e.g., clarity, accuracy, aesthetics).
+%Web Technologies for Data Visualization: Overview of technologies used for web-based data visualization.
+%Cosa cambia da quello scritto sopra, importanza dell'interattività etc.
+
+
+\section{Definizione e applicazioni}
+%cap 5: “Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
+Infografiche più antiche scoperta della natura discreta del linguaggio e invenzione originaria dell'alfabeto
+Elenchi, liste, tabelle e formule inaugurano decontestualizzazione (sorta di discontinuità) e oggettivazione scientifica 
+Infografica moderna legata allo sviluppo del mathesis universalis del 600 (distribuzione ordinata della quantificazione aritmetiche all'interno dello spazio cognitivo della rappresentazione) e statistica 800 (studi di teoria della probabilità e applicazione)
+
+Allo stesso modo, le infografiche trasformano i dati in idee accessibili, accompagnandoli 
+con una narrazione che rende la comunicazione più immediata ed efficace.
+
+
+%cap1: Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
+Questo è obiettivo infografica.  In altre parole l'obiettivo base è trasformare dei dati in un'idea e raccontarla in maniera semplice e comprensibile
+
+Infografica è dunque prodotto di intelligenza che interpreta dati in modo da inquadrare un fenomeno, situazione, evento o processo per assumere dele decisioni più ponderate.
+Infografica è un prodotto di comunicazione, no imparziale e completa (in quel caso guardi i dati e basta), forma di racconto, di lettura che per forza di cose esclude delle connessioni presenti nel dataset, devo rintracciare le parti/leggi che risultano più interessanti per destinatario.
+
+Fonte infografica è set di dati, solitamente disomogenei (x formato, tipo di contenuto, origine), bisogna formalizzare la comunicazione integrando elementi grafici con testuali per dare una lettura più semplice possibile del significato implicito del dataset.
+The visual display of quantitative information, Edward Tufte [2001], Introduction, p.10 “un'infografica mostra visivamente grandezze misurate mediante l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore” definizione da estendere con quanto detto sopra di comunicazione a destinatario (no solo focus su oggetto). 
+
+%Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
+Usi dell'infografica:
+-	Analysis, capire meglio I dati per poi agire in base a quanto capito 
+    o	Nello specifico più utile per “exploratory data analysis”, dove non so cosa sto cercando, non ho una domanda a priori e sto cercando di capire cosa è interessante
+-	Presentation, comunicare e informare altri in maniera efficace
+    o	Raccontare una storia
+Vantaggi della visualizzazione:
+-	Facilitare la conoscenza 
+-	Contribuire a generare nuove domande e a rispondere ad altre
+-	Generare insight
+-	Raccontare una storia e fare il punto della situazione
+Questi vantaggi però sono difficili da misurare, la valutazione è ancora una delle sfide principali. 
+
+% (da vedere su utils) Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
+
+% tabella differenze su file infografiche
+
+%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+Infografica racconta storie delineate da comunicatore mentre la visualizazione aiuta a scoprirle per conto proprio.
+Presentazione ed esplorazione, più una rappresentazione grafica si avvicina alla presentazione (quindi esplorazione limitata) si ha un'infografica e viceversa. Tuttavia, ogni visualizzazione ha una certa parte di presentazione e una di esplorazione (in diversi gradi) e dunque possiamo dire che infografica e viz esistono in continuum.
+
+
+\section{Classificare le infografiche}
+% file criteri_scelta_infografica_v0.1.0
+
+\section{Design delle infografiche}
+% fattori che influenzano la presentazione dei dati:
+% per caratteri e colori guarda qaunto ho scritto su data viz.docs
+% per titolo, boh (https://www.copypress.com/kb/infographics/11-tips-creating-infographics/)
+% per effetti speciali (infografiche interattive), boh
+% per scala, visual thinking (per layout) e visual doing
+% per feed dati (praticamente da dove prendo i dati), boh (anche cap 9 libro infografiche)
+
+%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
+%CAP 13: Estetica delle informazioni
+Data viz è lo studio delle rappresentazioni grafiche dei dati, ovvero di come declinare le informazioni numeriche in modo tale da ottenere un'astrazione riassumendole in forma più schematica. 
+Importante non troppo testo, usare infografica SOLO se abbastanza info da raccontare storia ma non troppe (che creano rumore).
+%CAP 15: Gestalt (parte di design) 
+Oltre a comunicazione visiva nel design è importante anche la gestalt che offre una serie di leggi che chiariscono come le persone categorizzano gli elementi che vedono e come sviluppano le loro idee a proposito degli eventi che gli accadono intorno. Leggi utili ai designer per organizzare meglio le informazioni. Queste leggi sono:
+-	Di pregnanza, umani tendono a elaborare i pattern regolare e ordinati più velocemente di quelli complessi e articolati => organizzare dati logicamente in modo lineare e semplice
+-	Di continuità, occhi istintivamente portati a raggruppare oggetti allineati => organizzare dati allineandoli per facilitare raggruppamento, comparazione e conseguente comprensione da parte del fruitore
+-	Di similarità, oggetti che hanno caratteristiche simile (e.g. colore, forma, dim, orientamento) solitamente percepiti come un unico gruppo (rafforza dunque aggregazione, raggruppamento) => utilizzare caratteristiche simili per stabilire relazioni
+-	Del punto focale, simmetrica alla precedente, in una rapp visuali oggetti diversi creano punti focali che attirano l'attenzione e dunque convincono l'osservatore delle differenze tra oggetti => utilizzare caratteristiche distintive per aumentare le differenze ed evidenziare ciò che interessa
+-	Degli isomorfi, eventi e oggetti interpretati da utenti in base alla loro esperienza passata, dunque bisogna tener conto di convenzioni/condizionamenti culturali (e.g. rosso in occidente pericolo, perdita) => tenere sempre presenti le convenzioni e le abitudini preesistenti
+-	Dell'immagine e dello sfondo, oggetti interpretati in maniera diversa in base alle relazioni con lo sfondo (se integrati perdono importanza, mentre separati hanno maggior rilievo) => assicurare un buon contrasto tra quelli che sono dati marginali come lo sfondo e le informazioni prioritarie da mettere in evidenza
+-	Del fato o del destino comune, somiglianza di gruppo di ogg. consente di vederli come struttura (elem. che si spostano nella stessa direzione sono percepiti come maggiormente correlati => utilizzare le direzioni e i movimenti per stabilire o interrompere delle relazioni tra oggetti simili
+%CAP 16: Il colore
+Da usare con cura, in quanto il colore nell'infografica è strumento che permette di segnalare (e.g. dati specifici), sostenere, rafforzare o indicare il discorso narrativo. Inoltre, colore cattura l'attenzione, migliora l'informazione (facilitando anche la lettura, se ad alto contrasto, altrimenti poco leggibili se scelgo e.g. combinazioni rosso, marrone e verde), facilita il ricordo e influenza il comportamento del consumatore.
+Ad ogni colore vengono associate sensazioni precise (che possono variare da area culturale/geografica qui passati dei valori generali, legati magari più all'occidente):
+-	Colori caldi:
+    o	Rosso:
+        -	Uso: loghi, per attenzione, per att. promozionali, passione, velocità
+        -	Valori: passione, amore, aggressività, emozioni forti, violenza
+    o	Arancione
+        -	Uso: fast food, banner pubblicità, richiamare attenzione e.g. per novità per temi giovanili e dinamici
+        -	Valori: salute, energia, ottimismo, vitalità, appetito
+    o	Giallo
+        -	Uso: prodotti per bambini, prodotti innovativi, per richiamare attenzione
+        -	Valori: vitalità, ottimismo, energia, allegria, felicità
+        -	Colori freddi:
+    o	Verde
+        -	Uso: prodotti bio, eco e prodotti sanitari
+        -	Valori: crescita, invidia, salute, natura, tranquillità
+    o	Blu
+        -	Uso: banche, compagnie assicurative, automobili
+        -	Valori: affidabilità, onestà, sicurezza, calma, stabilità
+    o	Porpora (viola)
+        -	Uso: centri bellezza, beni di lusso, prodotti antietà
+        -	Valori: eleganza, nobiltà, mistero, creatività, spiritualità
+        -	Colori neutri
+    o	Marrone
+        -	Uso: prodotti naturali
+        -	Valori: terra, affidabilità, sicurezza, tristezza, calore
+    o	Bianco
+        -	Uso: prodotti igienici legati a salute
+        -	Valori: purezza, religiosità, matrimonio, pulizia, semplicità
+    o	Nero
+        -	Uso: prodotti lusso, attività proibite, negazione
+        -	Valori: ribellione, eleganza, formalità, potenza, autorità
+    o	Grigio
+        -	Uso: prodotti tecnologici, moda
+        -	Valori: sofisticato, neutralità, tristezza, moderno, raffinatezza
+L'infografica deve mantenere un tono di colore univoco, possibilmente neutrale e sobrio.
+Sensazioni di calma uso colori complementari, per qcsa di innovativo uso combinazioni stridenti.
+%CAP 17: I caratteri
+Importante nell'infografica (fondamentale in ogni attività che preveda rappr. grafica testuale), il loro utilizzo è contenuto in termini di quantità però è spesso la qualità a rendere incisivo un messaggio.
+Regole basilari della composizione tipografica:
+-	Graziato (serif), caratteri presentano piccole appendici che accompagnano linee ascendenti/discendenti lettera
+o	Uso: per dare serietà al testo (hanno autorevolezza), usati per saggi, romanzi, quotidiani; su pc però meno leggibili
+o	e.g. times new roman
+-	Senza grazie (sans serif), senza le suddette appendici
+o	Uso: ottimi per grandi titoli incisivi e per testi di larghezza contenuta; su schermi più leggibili dei suddetti. Nel caso delle infografiche è meglio usare questi.
+o	E.g. Arial (meglio per testi più lunghi essendo più stretta), Verdana (meglio per poche frasi ad effetto), Helvetica, Rockwell
+-	Carattere decorativo, come script calligrafici (difficili da utilizzare, da evitare su pc) e fumettistici (con curve morbidi e divertenti) etc. 
+-	Chiaro (normale) e grassetto (bold) si riferiscono al peso del tratto (esistono anche varianti più leggere del chiaro tipo light, ultralight ma sono da evitare a schermo)
+o	Uso: bold per componenti testuali brevi per focalizzare lo sguardo ed evidenziarli
+-	Tondo (normale) e corsivo (italico) si riferisce all'inclinazione 
+o	Uso: per citazioni e vocaboli particolari, non per grandi blocchi di testo in quanto poco leggibile
+-	Maiuscolo corrisponde a “innalzamento della voce” da usare per omogeneizzare testi che risultano simili in termini di importanza e funzione (e.g. titoli) purché brevi (sennò difficilmente leggibile)
+-	Sottolineatura nel web per collegamento ipertestuale, può essere usata per evidenziare ma grassetto è più efficace
+-	Interlinea determina distanza tra riga e altra favorendo la leggibilità e se troppo compatta invece di difficile lettura
+-	Spaziature e rientri
+-	Allineamento e lunghezza, se centrato si presta per alcuni titoli meglio se non accompagnati da altro testo (con testi allineati in maniera diversa crea confusione); meglio preferire allineamenti a sinistra. Per quanto riguarda lunghezza testi troppo lunghi non vengono letti volentieri e sarebbe anche necessario usare caratteri più piccoli, meno leggibili
+%CAP 18: Le immagini
+Una visualizzazione più memorabile se:
+-	contiene visualizzazioni che richiamano oggetti riconoscibili da umano
+-	è facile distinguere elementi che la compongono
+-	è colorata (almeno 5 colori e dati raggruppati)
+-	è visivamente densa
+-	possiede basso rapporto dati-inchiostro
+Linguaggio immagini fortemente evocativo (valori simbolici). Alcune regole da usare per controllare espressività e costruire comunicazione efficace:
+-	gestalt (vedi cap. 15)
+-	lettura della pagina, dato dal diagramma di gutenberg (vedi foto) per cultura occidentale che suddivide l'area di lettura in 4 quadranti: punto di partenza in alto a sx (primaria importanza), in basso a dx dove termina la lettura, l'area in alto a dx e in basso a sx che sono di scarsa/debole lettura
+-	immagini evocative, possono provocare un'esperienza sensorale
+-	risoluzione dell'immagine
+
+%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+% cap 6
+Capacità di prevedere il comportamento del cervello (i.e. meccanismi di percezione delle caratteristiche di base, dette pre-attentive) per avere migliori infografiche.
+Il cervello riesce a percepire più velocemente variazioni di colore che di forma -> cervello ama contrasto/differenze. In generale, il cervello visivo è sostanzialmente un sistema che si è evoluto per individuare gli schemi (regioni nel campo visivo che condividono stessa natura o appartengono a entità diverse). Questi meccanismi di classificazione istantanea di differenze e somiglianze (che è percezione pre-attentiva) sono studiati nella psicologia della Gestalt, letteralmente forma, schema (Germania inizi xx secolo). Dice che il cervello non riconosce macchie di colore e forme come singole ma come complessi.
+(vedi altri docs per singoli principi).
+Scala cleveland e mcgill (vedi foto) da journal of the american statistical association, articolo “graphical perception:theory, experimentation, and application to the development of graphical methods), più si sale più accurate sono le valutazioni che i lettori riescono a fare in base ai grafici. Ci sono dieci attività percettive elementari, dove ciascuna costituisce un metodo per rappresentare i dati e classificati in base a come il cervello umano riesce a individuare le differenze e metterle a confronto (n.b. lunghezza, direzione e angolazione hanno uguale accuratezza; volume e curvatura pure; tonalità e intensità del colore anche).
+Tutto questo tratta della percezione visiva di basso livello, i.e. differenziazioni tra primo piano e sfondo, stima dimensioni relative e deduzione semplici schemi ambiente.
+Meccanismi di percezione delle caratteristiche di base, dette pre-attentive
+
+% cap 9
+“The design of everyday things” di Donald A. Norman che tratta di come ci rapportiamo a oggetti comuni, che sostiene la priorità dei bisogni dell'utente rispetto alle preoccupazioni estetiche dei designer. Principi proposti utili anche per infografiche (interattive):
+-	Visibilità
+o	Più visibile è la funzionalità di un oggetto, più facile sarà per gli utenti crearsi un modello mentale di ciò che possono ricavarne (evidenziare elem. importanti dell'infografica in modo che lettori possano percepirne pertinenza e funzionamento) -> norman descrive come “perceived affordances”, la forma di un oggetto deve suggerire visivamente cosa permette di fare (e.g. pulsante che assomigli a un pulsante reale)
+o	Importante non solo per progettazione di interfacce ma anche per organizzazione degli elementi visivi, se un'info è indispensabile alla comprensione dell'intero resoconto dovrebbe essere sempre visibile e non nascosto sotto strato di interattività (utente non dovrebbe essere costretto a cliccare per visualizzare dati che dovrebbero essere sempre visibili)
+-	Feedback
+o	Per ogni azione, i lettori dovrebbero percepire una reazione, una risposta che indichi il buon esito dell'operazione che hanno cercato di compiere
+-	Vincoli
+o	Per evitare confusione, il designer deve porre intenzionalmente dei vincoli per orientare la navigazione dell'utente 
+-	Uniformità
+o	Entità di natura analoga dovrebbero somigliarsi
+Principio delle informazioni visive di Ben Schneiderman “prima panoramica, zoom e filtri, poi dettagli su richiesta” che può essere ampliato a tutte le infografiche intende: 1 presentare i dati più importanti o punti più rilevanti e 2 permettere ai lettori di addentrarsi nelle info, esplorandone e dandone una propria lettura. Possono esserci infografiche lineari e non lineari ma comunque parte introduttiva con titolo e breve cappello. (vedi foto)
+Jennifer Tidwell (designing interfaces) identifica diverse tecniche di esplorazione e navigazione delle infografiche:
+-	Scorrimento e panning
+o	E.g. scorrimento verticale su sito web, panning su mappa per spostarsi
+-	Zoom
+o	E.g. zoom su mappa
+-	Apertura e chiusura
+o	E.g. aprire e chiudere nuove finestre con dettaglio cosa 
+-	Classificazione e riordino
+o	E.g. riordino tabella
+-	Ricerca e filtro
+Queste possono però poi essere raggruppate/classificate in base a come gli utenti possono sperimentare le potenzialità dell'interfaccia (stili di interazione generali):
+-	Istruzione
+o	L'utente dice all'infografica di fare qualcosa (e.g. cliccando pulsanti)
+-	Dialogo
+o	L'utente dialoga con la presentazione (rara), cambiandone i parametri 
+-	Manipolazione
+o	L'utente cambia struttura o aspetto di ciò che viene presentato per raggiungere i loro obiettivi 
+-	Esplorazione
+o	E.g. muoversi all'interno di modelli 3D, sensazione di star dirigendo personalmente l'azione
+
+%Design is storytelling” di Ellen Lupton
+%atto 3
+Vediamo il mondo in base a ciò che vogliamo fare, cerchiamo dei pattern con i nostri sensi e agiamo in base a queste percezioni. In base a quello visto in precedenza, proviamo a prevedere quello che accadrà (tendiamo a vedere solo quello che stiamo cercando)
+Gestalt:
+-	Prossimità, elementi posti uno vicino all'altro formano gruppi
+-	Similarità, elementi di stessa forma o colore fanno parte di uno stesso gruppo
+-	Fato comune, elementi sembrano cambiare come gruppo
+-	Figure/ground ambiguity, gli spazi bianchi sono letti o come sfondo o come in primo piano
+-	Chiusura e continuazione, mentalmente vengono chiusi gli spazi su linee o su forme regolari 
+Un oggetto che innesca un'azione viene detto “affordance”, alcune di queste “affordance” sono accidentali (e.g. davanzale vicino a fermata del bus, perfetto per posare il caffè), altre sono imparate con il tempo (e.g. barre e bottoni nei website), magari rifacendosi ad oggetti reali
+
+% (da vedere) su utils VIF... e narrative flow (?)
+
+% “Visual thinking” di Willemien Brand 
+Chiedersi quali linee sono necessarie per disegnare x (meno linee + impatto).
+Quando si racconta una storia usiamo il linguaggio del corpo per stabilire un ordine/direzione, stessa cosa si può fare per i template di design. Si riportano di seguito
+-	La lista, storia va da sopra v/sotto. Utile per agende, programmi e timetables
+-	Vari steps, storia va da sotto v/alto. Utile per roadmaps (che va verso l'orizzonte in alto), calcoli
+-	Timeline, storia va da dx v/sx. Utile per mostrare step cronologici, timelines (anche con diversi livelli), situazioni desiderabili e cambiamenti
+-	Road, da basso sx a alto sx. Utile per rappresentare step da fare, un viaggio del consumatore, milestones da realizzare e possibile opportunità/pericoli lungo la strada per raggiungere obiettivo finale
+-	Mandala, dal centro v/quattro direzioni diagonali. Utile per brainstorms e sessioni interattivi senza un risultato preciso.
+-	Matrice, quattro angoli collegati tra loro. Utile per mostrare differenti tipi di in formazioni su un argomento (e.g. SWOT analysis) e per mostrare do e do not.
+
+% “Visual doing” di Willemien Brand 
+Non utilizzare più di sei livelli su cui sviluppare gli elementi:
+-	Titolo principale grande (main topic)
+-	Sottotitolo (main content)
+-	Content e sub-content
+-	Elementi di supporto (linee direzionali, divisori e contenitori, dettagli e side notes)
+-	Segreti, dettagli e side notes (e tutto quello di cui non siè sicuri)
+-	Highlights, triggers
+
+% https://www.sciencedirect.com/book/9780128235676/visual-thinking-for-information-design
+% cap 3 vedi immagini da file infografiche
+
+%https://medium.com/@tetracubetech/infographics-purpose-elements-and-types-ae8bfc7cd89b
+Elementi di una infografica:
+-	Elementi visivi (grafiche, colori, icone)
+-	Elementi conoscitivi (fatti)
+-	Elementi di contenuto (statistiche, references etc.)
+
+
+\section{Come costruire un'infografica}
+% (da vedere) file synthesis... su utils e immagine content...(sempre su utils)
+
+%Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
+Come creare infografica
+5 step:
+1.	Get the idea
+2.	Sketch it out, Bozza/prototipo dei component principali e come dovrebbero essere creati nell'infografica
+3.	Collect the data/information
+4.	Develop PoC
+5.	Lay it out with styles, aggiungere tutto assieme
+
+%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
+%CAP 2: Regole della creatività (3 per chartjunk)
+Infografica deve saper comunicare idee complesse con chiarezza, precisione ed efficienza. Per far ciò l'infografica deve (preso da edward tufte, visual display of quantitative information):
+-	Mostrare i dati e renderne coerenti le varie tipologie (specie per grandi qtà)
+    o	Scegliere set allestisce la “scena” del racconto
+-	Indurre il lettore a pensare alla sostanza piuttosto che alla metodologia, la progetto grafico e simili
+-	Evitare di distorcere quello che i dati devono dire
+-	Incoraggiare il confronto tra classi di dati
+-	Rivelare i dati a vari livelli di dettaglio
+    o	Narrazione su più piani, diversa granularità, si approfondisce 
+-	Seguire uno scopo chiaro, sia esplicativi che decorativi
+    o	Trasparenza dei dati e solo nel secondo piano design, non esibire bravura di tecnica nello sviluppo di questi (chartjunk, no fare solo perché tecnologia permette, non decorare esposizione informazioni, e.g. effetto moirè (che avviene anche per barre equidistanti) o griglie inutili (specie se in nero scuro, meglio se grige se necessario) o tutti i comportamenti che fanno sì di dover compiere uno sforzo maggiore per la decifrazione del grafico)
+-	Integrata con descrizioni statistiche e verbali dell'archivio dei dati
+%CAP 6: Uno sguardo sul piano di lavoro (INFOMODEL)
+InfoModel (vedi foto) comprende tutti i passaggi da eseguire per la presentazione di un lavoro infografico che abbia senso. È composto dai seguenti stanze (in cui il progetto si articola):
+•	identificazione degli interlocutori, per cercare di rappresentare l'idea che queste persone vogliono
+•	identificazione della storia e suoi effetti
+•	identificazione dei dati disponibili
+•	preparazione ed analisi dei dati, per comprendere le conseguenze tecniche (qualità, rappresentatività e compatibilità reciproca) delle scelte compiute nelle stanze precedenti
+•	rappresentazione/narrazione della storia (metafora narrativa, i.e. applicare strutture narratologiche e retoriche per creare un discorso suggestivo)
+%CAP 7: Identificare il tipo di pubblico (infomodel 1)
+Due piani del discorso: logico (senso logico frasi) e pragmatico (persuasioni ed azioni che derivano dall'enunciazione delle frasi) detti anche da John Austin in locutorio e illocutorio (o performativo).
+Persuasione = a volte più efficace di imporre la propria volontà, bisogna avvicinare pubblico intuendo quali sono sue inclinazioni cognitive (modalità di comprensione e di analisi dei fenomeni, categorizzate con il myers briggs type indicator) e decisionali (modalità apprendimento schematizzate da McCharthy).
+(vedi foto)
+Possibile costruire modello di classificazione decisionale per costruire racconti adeguati a ciascun interlocutore. E.g. mi chiedo se avrò di fronte qualcuno molto legato alla concretezza dell'esperienza, dei req. Etc. o qualcuno che vuole più percorrere un percorso concettuale. Poi ci si può chiedere se l'esposizione deve concentrarsi sulle prestazioni o sull'organizzazione sociale.
+%CAP 8: Formulare la storia (infomodel 2)
+Storia composta da azioni ed agenti
+Struttura classifica del racconto (e.g. composta da 3 atti – equilibrio iniziale e sua rottura, ovvero inizio e movente/complicazione, peripezie del'eroe, ristabilimento dell'equilibrio, i.e. la conclusione - e dall'intervento di agenti che ricoprono il ruolo dell'eroe, del cattivo, dell'aiutante e del falso eroe) assicura la cattura di interesse dei lettori.
+Di solito, infatti, si ha un paragone, inserito all'interno di un contesto storico (mostra stato iniziale e conclusivo).
+%CAP 9: Individuare il dataset (infomodel 3)
+Scegliere i dataset in base anche al pubblico scelto 
+È innanzitutto necessario verificare il contenuto del dataset, verificando fonti e rappresentatività del campione e pulendolo da eventuali incoerenze di notazione (o per renderli coerenti al resto).
+Dispositivi narrativi seguenti (che vengono innescati dai dataset):
+•	proporzioni, per dimensionare il fenomeno confrontandolo con grandezze note o intuibilmente chiare (e.g. fatturato azienda con pil nazione)
+•	comparazioni interne, mette in luce strategie, anche inconsapevoli, che governano il fenomeno sulla base dei pesi degli elementi (e.g. investimenti)
+•	comparazioni esterne, confrontano strategie riferite a risorse interne rispetto all'uso consueto
+•	cambiamenti nel corso del tempo
+•	classifiche
+•	analisi per categoria
+•	associazioni 
+%CAP 10: Raccontare la storia con i dati (infomodel 4 e 5)
+Bisogna esaminare bene l'archivio di dati prima di rappresentarli, rappresentarli (viz preliminare e scriversi le prime impressioni che emergono alla viz, per capire pregiudizi. Poi interpretare meglio), trovare pattern e trasformarne poi l'impianto per esaltare le regolarità (e.g. con zoom, aggregazioni per isolare un gruppo, filtri o riduzione del rumore. Trasformazioni da fare con attenzione!).
+Ricordandosi di indirizzare i dati al pubblico giusto.
+%CAP 11: Rappresentare storie con i dati 
+Guardare oltre ai dati, essi raccontano una storia di cui possono essere mostrati alcuni diversi aspetti in base a come i dati stessi vengono esposti e relazionati.
+Che cosa cercare nelle relazioni?
+Trovare relazioni con modelli in termini di tempo e proporzioni, poi cercare relazioni tra diverse variabili (c'è rapporto causa-effetto, c'è correlazione?) 
+Aspetto visivo
+Importante fare delle bozze di visualizzazione, cercnado di mediare le seguenti caratterstiche (più complessa/approfondita-più semplice/superficiale):
+-	astrazione/raffigurazione
+-	funzionalità/decorazione
+-	densità/leggerezza (più dati o meno)
+-	originalità/familiarità
+-	novità/ridondanza (ripetere concetti in più modi)
+-	multidimensionalità/unidimensionalità (contemporaneamente più aspetti o concentrati su pochi)
+Il processo di trasformazione del dato
+-	Complessità
+-	Aggregazione
+-	Selezione 
+-	Formalizzazione 
+
+%"L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+% cap 3
+La complessità dell'infografica dovrebbe essere adatta alla natura del vostro lettore medio (per complessità di faccia riferimento alla ruota delle complessità, i.e. per mia infografica potrei provare a fare radar chart su questa ruota, in cui si hanno i seguenti assi:
+-	Astrazione-raffigurazione, un'infografica è completamente figurativa (più raffigurazione) quando il rapporto tra il referente (soggetto da rappresentare) e la sua rappresentazione è perfettamente mimetica (i.e. tipo foto, mentre astrazione può essere ad esempio pittogramma)
+-	Funzionalità-decorazione, inclusione o meno di elem. visivi che non vengono utilizzati direttamente per favorire la comprensione del materiale (non si intendono dunque font, colori che giocano un ruolo nella comprensibilità), i.e. elementi decorativi
+-	Densità-leggerezza, quantità di dati presentati in relazione allo spazio utilizzato
+-	Multidimensionalità-unidimensionalità, numero di livelli di approfondimento di un'infografica
+-	Originalità-familiarità, forme grafiche comuni (e.g. pie, bar chart) o meno viste
+-	Novità-ridondanza, spiegare le cose una volta sono o più volte con diversi mezzi (novità per non annoiare e ridondanza per far capire bene, quindi è importante trovare un equilibrio)
+)
+% cap 4
+Come costruire l'infografica:
+-	Pensare dapprima a assi densità-leggerezza e multidimensionalità-unidimensionalità
+    o	Sostare di almeno un 10\% verso densità e multidimensionalità (si tende spesso a sottostimare capacità dei lettori)
+    o	Organizzare l'infografica in livelli
+    o	Fornire una sintesi dei dati (introduzione, media, dati salienti) che rappresenta il punto d'ingresso nell'infografica
+    o	Sotto lo strato esterno, inserire il maggior numero di sottostrati (non tutta l'info ma solo quello che serve all'obiettivo)
+    o	Sistemare gli strati in ordine logico
+-	Pensare prima alla struttura e come organizzare i dati e poi ai fronzoli, penso all'asse funzionalità-decorazione (e astrazione-raffigurazione, non cercare di mettere solo immaginette perché si pensa che i lettori non ci arrivino altrimenti)
+-	Penso agli assi originalità-ridondanza e novità-familiarità, sperimentare forme nuove è una necessità; tuttavia, meno comune è la forma grafica che scelgo per la mia visualizzazione più ridondanze dovrò inserire. In ogni caso è importante tenere conto dei lettori che potrebbero preferire diversi stili e ciò che voglio suscitare può essere diverso
+
+%Design is storytelling” di Ellen Lupton
+%atto i e ii
+ATTO 1: pattern storie (pianificazione dello scenario)
+Ingredienti di una storia:
+-	Arco narrativo, la storia ha un inizio, una parte centrale e una fine
+-	Cambiamento, l'azione trasforma il personaggio o la situazione
+-	Tema, l'azione trasmette un significato
+-	Coerenza, l'azione si deve basare su dettagli concreti e rilevanti
+-	Plausibilità, l'azione è credibile e segue delle regole 
+Arco narrativo/struttura della storia:
+1.	Esposizione
+2.	Crescita dell'azione
+3.	Climax
+4.	Decrescita dell'azione
+5.	Epilogo
+Storia include conflitto e suspence, la storia è il processo di risponde alla domanda iniziale e risolvere l'incertezza, se questa domanda viene risposta troppo in fretta la storia diventa banale/noiosa. 
+Regola dei 3: struttura a 3 parti (max 4) per costruire storie (inizio, centro e fine) e interazioni sorprendenti e soddisfacenti (“Ready, set e go” mi dà l'impressione di un processo semplice), infatti l'ultimo elemento rompe lo schema dei primi 2)
+ATTO 2: esprimere emozioni
+Pensare a come utente possa sentirsi durante l'esperienza e come se la ricorderà poi, il designer deve empatizzare con i valori dell'utente, le aspirazioni, la cultura.
+3 livelli di user experience (di Don Norman's)
+-	Viscerale, all'inizio (tempo presente), il design provoca una reazione istantanea dovuta a forma, colore, texture e materiale
+-	Comportamentale, al centro (tempo presente), il design provoca una reazione fisica o un'azione (e.g. cliccare bottone, comprare etc.)
+-	Riflessiva, alla fine (tempo futuro), il design innesta memorie e associazioni relative al prodotto che rimangono nel tempo
+Creare molteplici “persona”, ovvero archetipi di utenti in modo da capire come differenti persone con diversi desideri e abilità si approcciano/vivono lo strumento/servizio. Si concentrano sul perché fanno le cose queste “persone” più che sulla singola azione, ricostruendone backstory, emozioni, risorse, obiettivo e scenario.
+Il colore è importante, crea una impressione sensoriale che riflette umore ed emozione. Un cambiamento nel “clima”/palette dei colori può essere utilizzato per un cambio di mood nel drama. Pantone 448 per disgusto
+
+
