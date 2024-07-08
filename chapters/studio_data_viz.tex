@@ -4,7 +4,6 @@
 Viene inoltre proposto un metodo di classificazione dei grafici per ottimizzare le visualizzazioni.}\\
 
 \section{Definizione e applicazioni}
-
 \subsection{La necessità di rappresentare i dati}
 %INTRO + CAP 1: “Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
 La visualizzazione dei dati ha una tradizione millenaria. Sin dagli albori della civiltà umana, 
@@ -12,7 +11,7 @@ le persone hanno sviluppato metodi per rappresentare visivamente i dati al fine 
 memorizzare e trasmettere.
 Negli ultimi decenni, tuttavia, questa esigenza ha conosciuto un incremento senza precedenti.
 
-Viviamo infatti nell'epoca dell'``information overload'' e dei ``big data'', dove le informazioni
+Viviamo infatti nell'epoca dell'\emph{information overload} e dei \emph{big data}, dove le informazioni
 arrivano con una velocità, un volume e una varietà così travolgenti che non siamo in grado di comprenderli se non attraverso
 un ulteriore strato di astrazione.
 Tale rivoluzione si deve soprattutto allo sviluppo delle tecnologie digitali, grazie alle quali siamo arrivati a disporre di una quantità 
@@ -27,6 +26,7 @@ altrimenti sarebbero rimaste nascoste, facilitando eventuali risoluzioni e valut
 \noindent Possiamo dunque definire la \emph{data visualization} come l'insieme dei meccanismi di traduzione dei dati in rappresentazioni grafiche
 mediante i quali l'informazione viene resa più chiara ed efficace. Più specificamente, 
 potremmo dire che è un processo di traslazione dei dati all'interno di un contesto visivo atto ad amplificarne la cognizione.
+
 
 \subsection{Obiettivi della data visualization}
 %cap 6: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119209560
@@ -69,90 +69,156 @@ Infatti, solo grazie a essa è possibile ricavare delle intuizioni altrimenti im
 tali risultati in maniera chiara e intuitiva. Ciò risulta particolarmente importante per tali organi in quanto la loro mission è proprio diffondere 
 e comunicare informazioni.
 
+
+
 \section{Principi e linee guida}
-%“The visual Display of Quantitative Information” di Edward R. Tufte
-%CAP 1: Graphical excellence
-Principi generali della graphical excellence
--	Idee complesse comunicate con chiarezza, precisione ed efficienza (una rappresentazione elegante combina semplicità di design e complessità dei dati)
--	L'utente finale deve avere il maggior numero di idee nel periodo più corto possibile con il minore uso di inchiostro (togliere dunque tutte le parti che possono essere eliminate senza perdere dati) nello spazio più piccolo
--	Quasi sempre multivariata 
--	Bisogna dire la verità sui dati
-%CAP 1: Graphical Integrity
-Principi generali dell'integrità grafica
--	La rappresentazione di numeri misurate fisicamente sul grafico dovrebbe essere direttamente proporzionale alle quantità numeriche rappresentate
--	Usare etichette dettagliate e chiare per evitare distorsione/ambiguità dei grafici (per documentare eventi importanti nei dati, spiegare i dati nel grafico stesso)
--	Mostrare la vera variazione dati non la variazione nel design (e.g. usare scale con intervalli regolari)
--	Nelle visualizzazioni di soldi nel tempo, unità standardizzati sono meglio che unità nominali (e.g. per non essere influenzati dall'inflazione etc.)
--	Il numero di variabili/dimensioni non deve eccede il numero di queste nei dati (e.g. non mostrare una variazione di una dimensione con un'area, tipo banconota che si ingrandisce diminuisce per rappresentare l'inflazione non la rappresenta giustamente perché l'area è a due dimensioni mentre il problema riguarda 1)
--	Grafici non dovrebbero citare dati fuori dal loro contesto
-%CAP 8: Data density and small multiples
-Densità = number entries in una matrice di dati / area del grafico.
-Meglio se è più alta (mappe è altissima), risulta anche essere più affidabile. Bisogna comunque evitare di sovrappopolare lo spazio, in quel caso conviene utilizzare tecniche di data-reduction (averaging, clustering, smoothing).
-Attenzione! Stiamo parlando della parte di dati, per quanto riguarda la parte non strettamente riguardante questi (chartjunk) meglio meno.
-%CAP 9: AESTHETICS AND TECHNIQUE IN DATA GRAPHICAL DESIGN
-Per migliorare il design di info statistiche bisogna:
--	Scegliere un format e un design appropriato
-    o	Combinazione frasi, tabelle e grafici (non per forza tutto ma di solito almeno un paio):
-        -	Frasi non vanno bene per più di due numeri perché non ottimali per comunicare comparazione, in quel caso conviene distribuirli su una tabella (sempre se rimangono data set piccoli, meglio della torta da non usare praticamente!)
-        -	Tabelle funzionano bene anche quando ho tanti confronti tra elementi localizzati (supertable, divisa tipo in paragrafi per topic, meglio di tanti piccoli bar chart)
-        -	Per numeri con tanti dati testuali, grafico con molte etichette.
--	Usare parole, numeri e disegni assieme con coerenza
--	Riflettere un bilancio, proporzione, un senso di una certa rilevanza
--	Visualizzare una complessità (anche dei dettagli) che sia accessibile
-OK	NON OK
-Evitati misteriosità, troppa elaborazione. Le parole sono esplicitate	Troppe abbreviazioni, l'utente deve passare tutto il testo per capire
-Parole da sx a dx (per occidente)	Parole in verticale (Y-axis) o in altre direzioni
-Piccoli messaggi che aiutano a spiegare i dati	La grafica è criptica, ha bisogno di più sguardi a testo sparso
-Evitati sfumature, colori e tratteggi incrociati troppo elaborati; meglio nessuna legenda necessaria	Codifica strana che richiede continuare a controllare grafico e legenda
-Grafico che attrae l'utente, che lo incuriosisce	Il grafico è pieno di chartjunk
-Colori, se usati, devono essere scelti in modo che le persone color-deficient e color-blind possano decifrarlo	Usare verde e rosso come contrasto essenziale e design che non considera utenti color-deficient 
-Tipo di carattere chiaro, preciso, modesto	Caratteri troppo tracotanti
-Maiuscolo e minuscolo con serif	Caratteri tutti maiuscoli, sans serif
--	Avere una storia da raccontare sui dati
--	Essere disegnato in maniera professionale, con dettagli tecnici
--	Evitare decorazioni content-free (chartjunk)
-
-
-%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 2
-“La funzione vincola la forma” dell'infografica, i.e. deve aiutarci a compiere alcune attività intellettive (al contrario dell'arte in sé) e pertanto deve aspirare a oggettività, precisione e funzionalità. 
-“La forma segue la funzione” Louis Sullivan sull'architettura.
-Un complesso di dati può assumere differenti forme ma non può assumere una forma qualsiasi, in particolare meglio sono definiti gli scopi di un artefatto, meno vasta sarà la gamma di forme che può assumere.
-Umano non bravo a calcolare le aree delle superfici, bensì è più bravo a confronta singole dimensioni (come lunghezza o altezza).
-%cap 3
-Tufte per efficienza grafica:
--	Rapporto dati-inchiostro: inchiostro x codifica dati / tot. dell'inchiostro utilizzato per stampare il grafico (più vicino a 1 meglio è)
-Tuttavia, elemento che Tufte considera “chartjunk” non è sempre da buttare, infatti in alcuni casi sembra facilitare la memoria. Idea di Holmes che finchè la funzione principale è comunicare i dati per il resto ci si può divertire con la forma con cui compaiono le statistiche
-Neurath -> “umanizzazione della conoscenza” , linugaggio universale basato su pittogrammi per superare barriere culturali. In “From Hyeroglyphics to Isotype” dice “il soggetto della mostra deve essere serio ma va combinato con un fascino e un richiamo diretto per tutti”.
-%Cap 4
-Per capire quale meglio tra Tufte e Homes+Neurath, bisogna ricordare che infografica ha come obiettivo presentare le info e permettere all'utente di esplorarle.
-In ogni caso, che sia verso la parte più minimalistica di Tufte che quella più artistica di Holmes, bisogna sfruttare sempre lo spazio a disposizione per ricercare la profondità (nei limiti del ragionevole) e solo poi ci si può preoccupare di come rendere più bella la presentazione (gli effetti speciali occupano uno spazio che avrebbe potuto essere utilizzato per evidenziare altri aspetti del fenomeno e troppo spazio non deve essere sprecato per elementi che non aiutano i lettori a capire i dati). 
-Profondità da ricercare sempre e non avere sfiducia nell'interesse dei lettori per gli argomenti trattati.
-Le infografiche non dovrebbero semplificare le informazioni/messaggio bensì chiarirlo evidenziando tendenze, schemi o realtà prima non visibili (devono permettere riflessioni e non essere superficiali, sostituibili con una riga di testo).
-
-
+\subsection{Creare visualizzazioni efficaci}
 %https://infogram.com/blog/what-is-data-visualization/?_gl=1*1rypyyw*_up*MQ..*_ga*MTg5MzY2NzU2MS4xNzE5MzMxMTgw*_ga_LD50PRQER7*MTcxOTMzMTE3OS4xLjAuMTcxOTMzMTE3OS4wLjAuMA..
-In order to craft a good data visualization, you need to start with clean data that is well-sourced and complete. Once your data is ready to visualize, you need to pick the right chart. This can be tricky, but there are many resources available to help you choose the right type of chart for your data. 
-After you have decided which chart type is best, you need to design and customize your visualization to your liking. Remember, simplicity is key – you don't want to add any elements that distract from the data. Now that your visualization is complete, it's time to publish and share it with your colleagues, customers, or readers.
+Una buona visualizzazione nasce dall'incontro di comunicazione, data science e design.
+% immagine da https://venngage.com/templates/diagrams/data-viz-edf4207a-7fb4-47ce-ae1e-df730cc93d78 ma rifatta
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.8\columnwidth]{data-viz/venn_good_dataviz} 
+    \caption{Diagramma di Venn: intersezione tra data science, comunicazione e design nella visualizzazione dei dati}
+    \label{fig:venn_good_dataviz}
+\end{figure}
 
-Good data visualizations are created when communication, data science, and design collide. Data visualizations done right offer key insights into complicated datasets in ways that are meaningful and intuitive. American statistician and Yale professor Edward Tufte believes excellent data visualizations consist of ‘complex ideas communicated with clarity, precision, and efficiency.'
-(vedi immagine quella con venn)
+\noindent Se realizzata correttamente, infatti, essa è capace di ricavare da dataset complessi delle informazioni significative e trasmetterle in maniera intuitiva.
+Usando le parole di Edward Tufte, statistico e luminare nel campo della \emph{data visualization}, una visualizzazione dei dati eccellente consiste in
+``idee complesse comunicate con chiarezza, precisione ed efficienza''.
+% TODO: aggiungere citazione come footnote (%“The visual Display of Quantitative Information” di Edward R. Tufte, CAP 1: Graphical excellence)
 
 %cap1: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-Gerarchia DIKV (Data, Information, Knowledge, Wisdom) -> vedi foto (realtà -> documentazione di osservazioni -> codifica -> consumo di informazione -> comprensione profonda della conoscenza acquisita). Il cervello cerca sempre di ridurre la distanza tra fenomeni e conoscenza (cognizione), il ruolo di un architetto dell'info è anticipare questo processo e generare ordine prima che il cervello delle persone lo faccia da solo.
+Da ciò ne consegue che l'obiettivo della \emph{data visualization} e ruolo di un architetto dell'informazione è quello di rendere il più efficiente possibile il processo che il cervello
+umano compie nell'acquisire conoscenza e saggezza a partire dall'osservazione di fenomeni.
+Tale processo può essere descritto, in maniera semplificata, attraverso la cosiddetta gerarchia DIKV (\emph{Data-Information-Knowledge-Wisdom}) di seguito riportata.
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\columnwidth]{data-viz/DIKV} 
+    \caption{Gerarchia DIKV}
+    \label{fig:DIKV}
+\end{figure}
+
+Come si nota subito dall'immagine \ref{fig:DIKV}, è essenziale ottenere dati puliti, completi e rappresentativi (responsabilità della data science). Solo successivamente sarà possibile rappresentare tali dati e 
+ottenere una conoscenza valida (responsabilità di comunicazione e design).
+
+\bigskip
+%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+% cap 2
+\noindent Nella visualizzazione dei dati in sé, bisogna tener conto innanzitutto che la forma grafica delle informazioni non è di per sé un'applicazione artistica; infatti, 
+essa deve anche coadiuvare il fruitore in attività intellettive. Pertanto, la forma deve aspirare a oggettività, precisione e, soprattutto, funzionalità.
+Per descrivere tale principio, possiamo dunque prendere in prestito le parole di Louis Sullivan sull'architettura modernista del XX secolo: ``La forma segue la funzione''. 
+Tale massima può infatti essere applicata anche all'architettura dell'informazione nel contesto della \emph{data visualization}, giacché
+un complesso di dati può assumere più forme, ma non tutte le forme sono sempre adatte e usabili. Infatti, la loro scelta deve dipendere dal
+tipo di dati e obiettivo della rappresentazione. Ne consegue che più preciso è lo scopo, più limitata sarà la gamma di forme tra cui scegliere.
+
+Il processo di decisione della rappresentazione grafica viene meglio approfondito nella sezione \ref{sec:classificare_grafici}.
+
+\bigskip
+\noindent Una volta decisa la forma migliore, bisogna comunque adattarla alla visualizzazione del caso specifico attraverso delle scelte di design.
+In tal senso, si può adottare un approccio più minimalistico, promosso dal sopracitato Edward Tufte, o un approccio più ``artistico'', 
+sostenuto da Nigel Holmes, famoso grafico specializzato nel design delle informazioni.
+
+%“The visual Display of Quantitative Information” di Edward R. Tufte
+%CAP 1: Graphical excellence
+Per Tufte è essenziale combinare una semplicità di design a complessità dei dati. Per lui, il fruitore della visualizzazione deve poter ricavare il maggior numero di idee e informazioni dal minor uso possibile di spazio e inchiostro.
+A tal proposito, egli sviluppa le seguenti formula: 
+\begin{center}
+    $\text{Rapporto dati-inchiostro} = \frac{\text{inchiostro usato per la codifica dei dati}}{\text{inchiostro totale usato per la stampa del grafico}}$
+\end{center}
+\begin{center}
+    $\text{Densità dei dati} = \frac{\text{numero di voci in una matrice di dati}}{\text{area occupata dal grafico}}$            %CAP 8: Data density and small multiples
+\end{center}
+% TODO: aggiungere footnote che questa parte si intende solo quella dei datiDensità = number entries in una matrice di dati / area del grafico.
+%Meglio se è più alta (mappe è altissima), risulta anche essere più affidabile. Bisogna comunque evitare di sovrappopolare lo spazio, in quel caso conviene utilizzare tecniche di data-reduction (averaging, clustering, smoothing).
+%Attenzione! Stiamo parlando della parte di dati, per quanto riguarda la parte non strettamente riguardante questi (chartjunk) meglio meno.
+evidenziando che più il rapporto è alto, migliore è la rappresentazione. Ciò implica che sia necessario evitare di utilizzare tutti gli elementi decorativi o, più in generale, tutte le parti che possono essere omesse 
+senza perdere dati, ovvero tutto ciò che Tufte chiama ``chartjunk'' (e.g. la maggior parte delle griglie e sfondi posti sotto i grafici).
+
+%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+%cap 3
+D'altra parte, Holmes sostiene che ci si può divertire con la forma, purché la funzione principale rimanga comunicare i dati. Infatti, ciò che Tufte potrebbe considerare ``chartjunk'', e dunque superfluo,
+potrebbe invece rivelarsi utile a facilitare la memoria e dunque portare alla saggezza. Holmes segue dunque la linea di pensiero del filosofo austriaco Otto Neurath, padre dell'\emph{Isotype}, il quale sostiene che 
+``il soggetto della mostra deve essere serio ma va combinato con un fascino e un richiamo diretto per tutti''.
+% TODO: citazione footnote? “From Hyeroglyphics to Isotype”
+
+%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+%Cap 4
+Qualsiasi approccio si decida di intraprendere, rimane comunque essenziale sfruttare lo spazio a disposizione per ricercare la profondità, seppur rimanendo nei limiti dettati dal tipo di fruitori.
+Tale profondità si concretizza quasi sempre tramite la rappresentazione di dati multivariati, che consentono l'analisi di un fenomeno in maniera più accurata. %multivariato da %“The visual Display of Quantitative Information” di Edward R. Tufte, CAP 1: Graphical excellence
+Le informazioni non devono infatti essere semplificate o snellite dalla visualizzazione, bensì devono essere solamente chiarite. La rappresentazione dovrebbe permettere dunque di suscitare riflessioni non superficiali ed evidenziare tendenze, pattern 
+o realtà altrimenti invisibili. 
+Solo in un secondo momento ci si può dedicare all'estetica della presentazione, utilizzando gli spazi rimanenti. Tale precauzione è da prendere affinché i dati ricevano subito tutto lo spazio necessario ed eventuali
+effetti speciali o decorazioni siano inseriti solo se ne presenta l'opportunità.
 
 
-\section{Classificare i grafici}
-Because data visualization tools and resources have become readily available, more and more non-technical professionals are expected to be able to gather insights from data.
+\subsection{Linee guida}
+%“The visual Display of Quantitative Information” di Edward R. Tufte
+%CAP 1: Graphical Integrity
+Nel visualizzare dati è necessario garantire che le informazioni siano rappresentate accuratamente e senza distorsioni.
+A tal scopo, è dunque necessario perseguire un'integrità grafica. Ciò implica l'uso di:
+\begin{itemize}
+    \item proporzioni corrette tra la rappresentazione dei numeri sul grafico e le quantità numeriche fornite, come pure tra il 
+    numero di dimensioni rappresentate graficamente e il numero delle variabili nei dati;
+    \item scale appropriate che mostrino la vera variazione dei dati (e.g. scale con intervalli regolari);
+    \item etichette dettagliate e chiare che non forviino l'utente;
+    \item elementi che contestualizzino il grafico.
+\end{itemize}
 
-There is a huge knowledge gap between non-expert
-users and visual models when using technology to
-translate information visually. Without classification,
-it is difficult for users to choose effective techniques
-to represent data.
+%“The visual Display of Quantitative Information” di Edward R. Tufte
+%CAP 9: AESTHETICS AND TECHNIQUE IN DATA GRAPHICAL DESIGN
+\noindent Come accennato precedentemente, altrettanto importante è la scelta del design. Ciò include:
+\begin{itemize}
+    \item La scelta di un formato e layout appropriato, scegliendo la combinazione di frasi, tabelle
+    e grafici che meglio mostri la riflessione che si vuole comunicare (e.g. per più di due numeri, conviene usare una tabella piuttosto che una frase). Ciò comporta:
+    \begin{itemize}
+        \item per l'occidente, un orientamento (specie per quanto riguarda il testo) che va dall'alto a sinistra verso il basso a destra;
+        \item l'uso di grafici corredati da piccoli messaggi di chiarimento, piuttosto che spiegazioni sparse.
+    \end{itemize}
+    \item L'uso simbiotico, coerente e diretto di parole, numeri e figure.
+    \item Visualizzare i dati in maniera accessibile, anche e soprattutto per quanto riguarda dettagli di dati complessi. Ciò comporta:
+    \begin{itemize}
+        \item l'uso di codifiche non troppo elaborate, che non necessitino il continuo controllo della legenda;
+        \item nel caso di grafico con colori, la scelta di quest'ultimi compiuta in modo tale da tenere in considerazione anche le persone daltoniche e color-deficient;
+        \item l'uso di caratteri leggibili.
+    \end{itemize}
+\end{itemize}
 
+
+
+\section{Classificare i grafici}\label{sec:classificare_grafici}
+Lo sviluppo e disponibilità al pubblico di nuovi strumenti avanzati ha consentito anche ad utenti non esperti di visualizzare dati ed estrarne informazioni dettagliate, 
+permettendo loro di creare grafici e diagrammi.
+Tuttavia, persiste ancora un ampio divario di conoscenza tra questi utenti e i modelli visivi esistenti.
+Ne consegue che spesso le forme visive scelte per la rappresentazione non sono le più efficaci essendo limitate da un ristretto numero di opzioni.
+In alcuni casi, addirittura, il formato visivo risulta essere anche poco comprensibile o fuorviante per il caso d'uso specifico.
+
+Senza una classificazione chiara, diventa dunque difficile per questo tipo di utenti selezionare la tecnica di visualizzazione più adeguata.
+Nelle seguenti sezioni, si esaminano i metodi di classificazione identificati, insieme a uno strumento prototipale che mira ad 
+automatizzare questo processo di classificazione.
+
+\subsection{Metodo di classificazione}
+I criteri principali da tenere in considerazione nella scelta del grafico sono:
+\begin{itemize}
+    \item l'obiettivo della visualizzazione,
+    \item i tipi di dati disponibili.
+\end{itemize}
+
+\subsubsection{Obiettivi della visualizzazione}
+
+\subsubsection{Tipi di dati}
+% TODO: dire che non per tutti gli obiettivi, ci possono essere tutti tipi di dato e aggiungere 
+% sviluppata questa classificazione e riportare grafici (?)
+
+
+\subsection{Chart-chooser}
 %file criteri_scelta_grafico_v0.1.0 + codice + prompt LLM
 %fonte: https://www.data-to-viz.com/ e https://ft-interactive.github.io/visual-vocabulary/
+\subsubsection{Analisi dei dati}
+\subsubsection{Individuazione dell'obiettivo}
+\subsubsection{Proposta di grafici}
+
+
 
 
 
