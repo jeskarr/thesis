@@ -190,11 +190,11 @@ A tal scopo, è dunque necessario perseguire un'integrità grafica. Ciò implica
 Lo sviluppo e disponibilità al pubblico di nuovi strumenti avanzati ha consentito anche ad utenti non esperti di visualizzare dati ed estrarne informazioni dettagliate, 
 permettendo loro di creare grafici e diagrammi.
 Tuttavia, persiste ancora un ampio divario di conoscenza tra questi utenti e i modelli visivi esistenti.
-Ne consegue che spesso le forme visive scelte per la rappresentazione non sono le più efficaci essendo limitate da un ristretto numero di opzioni.
-In alcuni casi, addirittura, il formato visivo risulta essere anche poco comprensibile o fuorviante per il caso d'uso specifico.
+Ne consegue che spesso le forme visive scelte per la rappresentazione non sono le più efficaci essendo limitate da un ristretto numero di opzioni conosciute.
+In alcuni casi, addirittura, il formato visivo scelto risulta essere anche poco comprensibile o fuorviante per il caso d'uso specifico.
 
 Senza una classificazione chiara, diventa dunque difficile per questo tipo di utenti selezionare la tecnica di visualizzazione più adeguata.
-Nelle seguenti sezioni, si esaminano i metodi di classificazione identificati, insieme a uno strumento prototipale che mira ad 
+Nelle seguenti sezioni, si esaminano dunque dei criteri di classificazione identificati, assieme a uno strumento prototipale che mira ad 
 automatizzare questo processo di classificazione.
 
 \subsection{Metodo di classificazione}
@@ -205,8 +205,82 @@ I criteri principali da tenere in considerazione nella scelta del grafico sono:
 \end{itemize}
 
 \subsubsection{Obiettivi della visualizzazione}
+Quando parliamo di ``obiettivo della visualizzazione'' intendiamo il tipo di relazione tra i dati che vogliamo mettere in evidenza attraverso
+la rappresentazione grafica. I principali obiettivi individuati sono:
+\begin{itemize}
+    \item \textbf{Divergenza}, quando si vuole mettere in luce le differenze di valori a partire da un punto fisso (solitamente lo 0, ma può essere
+    ad esempio anche una media).
+    \begin{itemize}
+        \item Esempio: confrontare la produttività del turno di mattina con quello del turno di sera.
+    \end{itemize}
+    \item \textbf{Correlazione}, quando si vuole enfatizzare la relazione tra due o più variabili. In questi casi, il fruitore della visualizzazione assumerà che le 
+    variabili coinvolte siano in relazione causale, pertanto se così non fosse è necessario specificarlo.
+    \begin{itemize}
+        \item Esempio: esplorare come la qualità del sonno influenzi le prestazioni accademiche.
+    \end{itemize}
+    \item \textbf{Ranking}, quando si vuole mostrare la posizione degli elementi rispetto agli altri e il loro valore effettivo passa in secondo piano.
+    \begin{itemize}
+        \item Esempio: mostrare i dieci paesi con il tasso di inquinamento più alto.
+    \end{itemize}
+    \item \textbf{Distribuzione}, quando si vogliono mostrare eventuali pattern nei dati, evidenziando valori ed eventi di un dataset e quando si verificano. 
+    \begin{itemize}
+        \item Esempio: mostrare la frequenza di incidenti stradali per tipo di veicolo.
+    \end{itemize}
+    \item \textbf{Cambiamento nel tempo}, quando si vogliono enfatizzare dei trend che variano nel tempo.
+    \begin{itemize}
+        \item Esempio: analizzare come l'uso dei social media è cambiato negli ultimi cinque anni.
+    \end{itemize}
+    \item \textbf{Composizione}, quando si vuole mostrare come una singola entità viene suddivisa nelle sue componenti.
+    \begin{itemize}
+        \item Esempio: mostrare la composizione delle emissioni di gas serra per settore industriale.
+    \end{itemize}
+    \item \textbf{Grandezze}, quando si vogliono comparare grandezze, che siano esse assolute (per un maggior livello di dettaglio) o relative. 
+    \begin{itemize}
+        \item Esempio: mostrare la dimensione del mercato degli smartphone in termini di volumi di vendita.
+    \end{itemize}
+    \item \textbf{Spazi}, quando si vogliono mostrare pattern geografici o posizioni precise.
+    \begin{itemize}
+        \item Esempio: mostrare i paesi con la maggiore concentrazione di risorse naturali.
+    \end{itemize}
+    \item \textbf{Flussi}, quando si vogliono mostrare volumi o intensità con cui si passa tra due o più stati o condizioni.
+    \begin{itemize}
+        \item Esempio: esplorare la rete di interconnessioni finanziarie tra le banche globali.
+    \end{itemize}
+\end{itemize}
 
 \subsubsection{Tipi di dati}
+Una prima distinzione nel tipo di dati riguarda:
+\begin{itemize}
+    \item \textbf{dati numerici},
+    \item \textbf{dati categorici}.
+\end{itemize}
+Il dataset fornito per la visualizzazione potrà dunque essere composto da dati tutti numerici, tutti categorici oppure da un mix dei due.
+
+\bigskip
+\noindent Un'altra distinzione si ha tra:
+\begin{itemize}
+    \item \textbf{dati univariati}, quando ho un dataset molto piccolo composto da una sola variabile;
+    \item \textbf{dati multivariati}, quando ho un dataset composto da più variabili.
+\end{itemize}
+
+\bigskip
+\noindent In base alle suddette classificazioni, si può specificare ulteriormente il tipo di dato:
+\begin{itemize}
+    \item In caso di dataset con multiple variabili numeriche:
+    \begin{itemize}
+        \item \textbf{dati ordinati}, dove è presenta almeno una variabile numerica che è ordinata;
+        \item \textbf{dati non ordinati}, dove l'ordine non è presente.
+    \end{itemize}
+    \item In caso di dataset con multiple variabili categoriche:
+    \item \begin{itemize}
+        \item \textbf{dati ordinati},
+        \item \textbf{dati ordinati},
+        \item \textbf{dati non ordinati}.
+    \end{itemize}
+    \item In caso di almeno 
+\end{itemize}
+
+
 % TODO: dire che non per tutti gli obiettivi, ci possono essere tutti tipi di dato e aggiungere 
 % sviluppata questa classificazione e riportare grafici (?)
 
