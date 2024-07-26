@@ -308,13 +308,19 @@ se i dati sono ordinati o meno, mentre se si hanno dati univariati numerici non 
 \subsubsection{Individuazione dell'obiettivo}
 Una volta definito il tipo di dato è necessario individuare l'obiettivo della visualizzazione.
 A tal fine, \emph{Chart-chooser} richiede all'utente di fornire una breve descrizione di ciò che vuole rappresentare e comunicare.
-Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo tra i nove possibili (definiti in \ref{subsubsec:obj}). 
+Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo più pertinente tra i nove possibili (definiti e descritti in \ref{subsubsec:obj}). 
+Come \gls{llm} viene utilizzato \textbf{\gls{llama7bg}} attraverso \textbf{\gls{llamacppg}}, reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
+impostata a 0 per garantire che l'output del modello sia il più predicibile possibile e restituisca solamente il numero dell'obiettivo.
 
-La tecnica di \gls{promptengg} utilizzata per ottenere tale risultato è quella del \gls{fsl} implementata nello scenario dell'\gls{icl}.
-Nello specifico, per ogni obiettivo vengono fornite al \gls{llm} alcune descrizioni d'esempio in modo tale da facilitare il compito di classificazione al modello e migliorarne le
-prestazioni. Infatti, questo approccio gli permette di comprendere meglio il contesto e rispondere con una maggiore precisione.
+\bigskip
+\noindent Per quanto riguarda invece il metodo di \gls{promptengg} utilizzato, si adopera una tecnica di \gls{fsl} implementata nello scenario dell'\gls{icl}.
+Nello specifico, per ogni obiettivo vengono fornite al \gls{llm} alcune descrizioni d'esempio in modo tale da facilitare al modello il compito di classificazione e migliorarne le
+prestazioni. Questo approccio permette al \gls{llm} di comprendere meglio il contesto e rispondere con una maggiore precisione.
 
-\begin{verbatim}
+Il prompt utilizzato è il seguente:
+\begin{lstlisting}[style=htmlcssjs]
+This is a conversation between User and Llama, a friendly chatbot. Llama is helpful, kind, honest, good at writing, and never fails to answer any requests immediately and with precision.
+
 User: 
 Dati i seguenti obiettivi:
 Obiettivo 1: Mostrami la differenza tra i dati; Confronta due serie di dati divergenti; Mostrami la variazione rispetto a un valore.
@@ -328,25 +334,63 @@ Obiettivo 8: Mostrami la posizione; Mostrami i flussi nel mondo; Mostrami la map
 Obiettivo 9: Mostrami i flussi tra i vari punti; Mostrami la rete; Mostrami le relazioni e la loro intensità; Mostrami cosa influisce nel dato; Mostrami come sono relazionati all'interno di un sistema. 
 
 Classifica la seguente frase, dimmi solamente il numero dell'obiettivo senza altre parole: 
-...descrizione fornita dall'utente...
+${descrizione_utente}
 Llama:
-\end{verbatim}
-% TODO: inserire modello usato (7b?) + codice prompt
-
-\subsubsection{Proposta di grafici}
-Dopo un attento studio dei grafici e metodi di classificazioni trovati.
-%TODO inserire fonti, capire cosa scrivere
-
-Si precisa comunque che non per tutti gli obiettivi sono presenti tutti i tipi di dato.
-
+\end{lstlisting}
+% TODO: rivedere prompt su chart-chooser e inserire modello usato corretto (7b?)
 
 \subsubsection{Implementazione del sistema di regole}\label{subsubsec:rules}
-Le informazioni raccolte sono utilizzate dal motore di regole \textbf{json-rules-engine} (libreria JavaScript disponibile a \href{https://github.com/CacheControl/json-rules-engine}{questo link})
-per analizzare i dati, classificandoli tramite un sistema di regole. Viene scelto questo motore per la sua leggerezza e velocità, nonché per il fatto che le regole siano semplici strutture JSON, 
+Le informazioni raccolte sono utilizzate da un \gls{motoreregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
+Si precisa, infatti, che non per tutti gli obiettivi sono presenti tutti i tipi di dato. Pertanto, la combinazione potrebbe portare a un risultato nullo.
+
+Il \gls{motoreregoleg} scelto è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture JSON, 
 il che le rende più leggibili dall'uomo e facili da mantenere.
 
+\bigskip
+\noindent Gli elementi principali che caratterizzano tale sistema sono:
+\begin{itemize}
+    \item I \emph{fatti}, ovvero dei valori costanti o funzioni pure.
+    \item Le \emph{regole}, ovvero delle strutture composte da:
+    \begin{itemize}
+        \item \emph{Condizioni}, nella forma \texttt{[fact: nome\_fatto, operator: tipo\_operatore, value: valore\_da\_controllare]}
+        che rappresentano i ``requisiti'' della regola, soddisfatti se la relazione definita dall'operatore tra il valore del \emph{fatto} e il valore prestabilito 
+        indicato risulta vera. Si precisa, inoltre, che possono essere creati insiemi di queste \emph{condizioni} attraverso l'uso di operatori booleani.
+        \item \emph{Eventi}, ovvero delle operazioni che il \emph{motore} esegue in base al soddisfacimento o meno delle \emph{condizioni}. 
+    \end{itemize}
+    \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del \gls{motoreregoleg} in quanto si occupa di valutare
+    le \emph{regole} basandosi sui \emph{fatti} forniti, innescando \emph{eventi} a seguito del soddisfacimento o meno delle \emph{condizioni}.
+\end{itemize}
+%TODO: inserire codice esempio cose
+
+\bigskip
+\noindent Per quanto riguarda il funzionamento specifico di ``Chart-chooser'', si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
+Per quanto riguarda gli altri \emph{fatti}, che richiedono un input da parte dell'utente (e.g. l'obiettivo o il fatto di essere dati numerici ordinati o meno), questi sono 
+forniti al \emph{motore} durante la sua esecuzione all'innescarsi di determinati \emph{eventi}. 
+Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti, fermando eventualmente l'esecuzione del \emph{motore} solo
+prima di regole che necessitano dei \emph{fatti} ancora sconosciuti. % TODO: ottenere come promise?
+In tale maniera, inoltre, vengono richiesti all'utente e forniti al \emph{motore} solamente i \emph{fatti} che concernono la situazione specifica. Ad esempio, nel caso in cui si abbiano solamente dati numerici, 
+non verrà chiesta all'utente e non sarà fornita inutilmente al \emph{motore} l'informazione riguardante l'organizzazione delle variabili categoriche.
+
+Tale funzionamento è possibile grazie alla definizione di un \gls{sistemadiregoleg} basato sulle \emph{priorità}, le quali determinano l'ordine di esecuzione delle \emph{regole} stesse.
+Nello specifico, una \emph{priorità} maggiore comporta una valutazione anticipata; mentre, in caso di uguale \emph{priorità} tra più \emph{regole}, queste verranno valutate in parallelo.
+Ne consegue che le \emph{regole} allo stesso livello di \emph{priorità} servano a identificare le classificazioni relative a un determinato tema e presentano dunque \emph{condizioni} mutualmente esclusive.
+Il soddisfacimento delle \emph{condizioni} di una di queste \emph{regole} viene poi comunicato al livello inferiori di \emph{priorità}, aggiungendolo ai \emph{fatti}, in modo tale che solamente le \emph{regole} che richiedono
+tale \emph{condizione} siano passabili.
+
+
+Si ha dunque il seguente \gls{sistemadiregoleg}:
+%TODO: albero regole
+
+
+
+%\subsubsection{Proposta di grafici}
+%Dopo un attento studio dei grafici e metodi di classificazioni trovati.
+%TODO inserire fonti, capire cosa scrivere
+
+%Tecnologie utilizzate
+
 \subsubsection{Limitazioni dello strumento}
-Come già accennato precedente ``Chart-chooser'' è uno strumento prototipale, infatti presenta diverse limitazioni.
+Come già accennato precedente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
 Innanzitutto, l'applicativo è disponibile soltanto da console e non dispone di un'interfaccia grafica.
 %TODO: numerici categorici boh date, presuppone conoscenza dell'utente sul set di dati (essendo che chiedo domande)
 %file disponibile in locale e di tipo json costruito in un certo modo
