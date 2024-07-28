@@ -77,7 +77,7 @@ e comunicare informazioni.
 %https://infogram.com/blog/what-is-data-visualization/?_gl=1*1rypyyw*_up*MQ..*_ga*MTg5MzY2NzU2MS4xNzE5MzMxMTgw*_ga_LD50PRQER7*MTcxOTMzMTE3OS4xLjAuMTcxOTMzMTE3OS4wLjAuMA..
 Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascienceg} e design.
 % immagine da https://venngage.com/templates/diagrams/data-viz-edf4207a-7fb4-47ce-ae1e-df730cc93d78 ma rifatta
-\begin{figure}[!h] 
+\begin{figure}[H] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{data-viz/venn_good_dataviz} 
     \caption{Diagramma di Venn: intersezione tra data science, comunicazione e design nella visualizzazione dei dati}
@@ -93,7 +93,7 @@ Usando le parole di Edward Tufte, statistico e luminare nel campo della \gls{dat
 Da ciò ne consegue che l'obiettivo della \gls{datavizg} e ruolo di un architetto dell'informazione è quello di rendere il più efficiente possibile il processo che il cervello
 umano compie nell'acquisire conoscenza e saggezza a partire dall'osservazione di fenomeni.
 Tale processo può essere descritto, in maniera semplificata, attraverso la cosiddetta gerarchia DIKV (\emph{Data-Information-Knowledge-Wisdom}) di seguito riportata.
-\begin{figure}[!h] 
+\begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{data-viz/DIKV} 
     \caption{Gerarchia DIKV}
@@ -343,7 +343,7 @@ Llama:
 Le informazioni raccolte sono utilizzate da un \gls{motoreregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
 Si precisa, infatti, che non per tutti gli obiettivi sono presenti tutti i tipi di dato. Pertanto, la combinazione potrebbe portare a un risultato nullo.
 
-Il \gls{motoreregoleg} scelto è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture JSON, 
+Il \gls{motoreregoleg} scelto è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture \gls{jsong}, 
 il che le rende più leggibili dall'uomo e facili da mantenere.
 
 \bigskip
@@ -365,33 +365,55 @@ il che le rende più leggibili dall'uomo e facili da mantenere.
 \bigskip
 \noindent Per quanto riguarda il funzionamento specifico di ``Chart-chooser'', si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
 Per quanto riguarda gli altri \emph{fatti}, che richiedono un input da parte dell'utente (e.g. l'obiettivo o il fatto di essere dati numerici ordinati o meno), questi sono 
-forniti al \emph{motore} durante la sua esecuzione all'innescarsi di determinati \emph{eventi}. 
+forniti al \emph{motore} durante la sua esecuzione, all'innescarsi di determinati \emph{eventi}. 
 Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti, fermando eventualmente l'esecuzione del \emph{motore} solo
 prima di regole che necessitano dei \emph{fatti} ancora sconosciuti. % TODO: ottenere come promise?
 In tale maniera, inoltre, vengono richiesti all'utente e forniti al \emph{motore} solamente i \emph{fatti} che concernono la situazione specifica. Ad esempio, nel caso in cui si abbiano solamente dati numerici, 
 non verrà chiesta all'utente e non sarà fornita inutilmente al \emph{motore} l'informazione riguardante l'organizzazione delle variabili categoriche.
 
-Tale funzionamento è possibile grazie alla definizione di un \gls{sistemadiregoleg} basato sulle \emph{priorità}, le quali determinano l'ordine di esecuzione delle \emph{regole} stesse.
-Nello specifico, una \emph{priorità} maggiore comporta una valutazione anticipata; mentre, in caso di uguale \emph{priorità} tra più \emph{regole}, queste verranno valutate in parallelo.
-Ne consegue che le \emph{regole} allo stesso livello di \emph{priorità} servano a identificare le classificazioni relative a un determinato tema e presentano dunque \emph{condizioni} mutualmente esclusive.
-Il soddisfacimento delle \emph{condizioni} di una di queste \emph{regole} viene poi comunicato al livello inferiori di \emph{priorità}, aggiungendolo ai \emph{fatti}, in modo tale che solamente le \emph{regole} che richiedono
-tale \emph{condizione} siano passabili.
+Il funzionamento descritto è reso possibile grazie all'adozione di un \gls{sistemadiregoleg} gerarchico. Nello specifico, a ciascuna \emph{regola} viene attribuita una \emph{priorità} che ne determina l'ordine di valutazione:
+una \emph{priorità} maggiore comporta una valutazione anticipata; mentre, in caso di più \emph{regole} ad uguale \emph{priorità}, queste verranno valutate in parallelo.
+Questo meccanismo viene sfruttato per realizzare una classificazione stratificata, in cui ogni livello di \emph{priorità} rappresenta una fase di classificazione più dettagliata rispetto al livello precedente. 
+Ne consegue che le \emph{regole} appartenenti allo stesso livello siano mutualmente esclusive, poiché ciascuna di esse definisce un gruppo specifico in cui possono essere catalogati i dati forniti.
+Per consentire ai livelli inferiori di conoscere il gruppo identificato precedentemente e procedere con ulteriori sottoclassificazioni dello stesso, viene aggiunto ai \emph{fatti} un valore booleano per ogni \emph{regola}. 
+Tale valore rappresenta il soddisfacimento delle \emph{condizioni} della \emph{regola}, assumendo il valore di \texttt{true} in caso positivo o \texttt{false} altrimenti.
+
+\bigskip
+\noindent Si ha dunque il seguente \gls{sistemadiregoleg}:
+
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{data-viz/rules_pt1} 
+    \caption{Sistema gerarchico di priorità per le regole di \emph{Chart-chooser} - priorità 20 e 15}
+    \label{fig:rules_pt1}
+\end{figure}
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{data-viz/rules_pt2} 
+    \caption{Sistema gerarchico di priorità per le regole di \emph{Chart-chooser} - priorità dalla 10 all'1}
+    \label{fig:rules_pt2}
+\end{figure}
+
+Dalla figura \ref{fig:rules_pt2} si osserva un'eccezione rispetto al funzionamento descritto in precedenza per quanto riguarda il livello di \emph{priorità} 7. In questo caso, il livello non effettua alcuna suddivisione, 
+bensì si occupa solamente di recuperare il numero di obiettivo, necessario per poter proseguire con la classificazione. Tale configurazione permette di valutare le \emph{regole} relative al tipo di dato mentre  
+il numero di obiettivo viene ricavato dall'elaborazione del \gls{llm} dell'input utente, anziché attendere passivamente il completamento di quest'ultima.
 
 
-Si ha dunque il seguente \gls{sistemadiregoleg}:
-%TODO: albero regole
+\subsubsection{Proposta di grafici}
+Le \emph{regole} di \emph{priorità} minore o uguale a 5, se soddisfatte, innescano degli \emph{eventi} che hanno come parametri il nome dei grafici adatti al caso d'uso specifico indicato dalla classificazione fornita dalla \emph{regola} stessa. 
+Il \emph{motore}, dunque, al termine della valutazione delle \emph {regole}, controlla gli \emph{eventi} emessi e mostra all'utente i parametri di questi, ovvero il nome dei grafici trovati (se presenti).
 
-
-
-%\subsubsection{Proposta di grafici}
 %Dopo un attento studio dei grafici e metodi di classificazioni trovati.
-%TODO inserire fonti, capire cosa scrivere
+%TODO inserire fonti? tecnologie usate js?
 
-%Tecnologie utilizzate
 
 \subsubsection{Limitazioni dello strumento}
 Come già accennato precedente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
-Innanzitutto, l'applicativo è disponibile soltanto da console e non dispone di un'interfaccia grafica.
-%TODO: numerici categorici boh date, presuppone conoscenza dell'utente sul set di dati (essendo che chiedo domande)
-%file disponibile in locale e di tipo json costruito in un certo modo
-%TODO: per un futuro approfondire parsing dati
+Innanzitutto, l'applicativo è disponibile soltanto da riga di comando e non dispone di un'interfaccia grafica.
+Inoltre, esso richiede che i dati siano disponibili in locale e che siano formattati secondo uno schema specifico
+(una specifica struttura \gls{jsong}). 
+L'utente deve, altresì, essere a conoscenza del \emph{dataset} per poter rispondere correttamente alle domande relative ad esso.
+
+Ciononostante, \emph{Chart-chooser} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva. 
+Una possibile direzione per uno sviluppo futuro potrebbe essere l'implementazione di un \emph{parsing} automatico dei dati e la capacità di 
+rilevare e interpretare informazioni chiave direttamente dai \emph{dataset}, riducendo così la dipendenza dall'intervento dell'utente. 
