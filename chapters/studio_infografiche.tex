@@ -4,55 +4,66 @@
 presentate le loro applicazioni. Verrà inoltre fornita una classificazione delle infografiche basata sulla 
 loro struttura e output visivo.}\\
 
-%(anche diff con data viz)
-%Infographics Explained: What are infographics and how do they differ from other forms of data visualization?
-%Design Principles: Key principles for designing effective infographics (e.g., clarity, accuracy, aesthetics).
-%Web Technologies for Data Visualization: Overview of technologies used for web-based data visualization.
-%Cosa cambia da quello scritto sopra, importanza dell'interattività etc.
-
-
 \section{Definizione e applicazioni}
-%cap 5: “Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
-Infografiche più antiche scoperta della natura discreta del linguaggio e invenzione originaria dell'alfabeto
-Elenchi, liste, tabelle e formule inaugurano decontestualizzazione (sorta di discontinuità) e oggettivazione scientifica 
-Infografica moderna legata allo sviluppo del mathesis universalis del 600 (distribuzione ordinata della quantificazione aritmetiche all'interno dello spazio cognitivo della rappresentazione) e statistica 800 (studi di teoria della probabilità e applicazione)
-
-Allo stesso modo, le infografiche trasformano i dati in idee accessibili, accompagnandoli 
-con una narrazione che rende la comunicazione più immediata ed efficace.
-
-
+\subsection{Cos'è un infografica e in cosa si distingue dalla data visualization}
 %cap1: Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
-Questo è obiettivo infografica.  In altre parole l'obiettivo base è trasformare dei dati in un'idea e raccontarla in maniera semplice e comprensibile
+Analogamente alla \gls{datavizg}, le infografiche si occupano di rappresentare visivamente i dati al fine di comunicarli in maniera più semplice e accessibile.
+Esse trasformano i dati in idee chiare, permettendo di inquadrare facilmente un fenomeno, una situazione o un processo, coadiuvando così la presa di decisioni ponderate sul tema presentato.
+Queste idee sono generate a partire dall'interpretazione, formalizzazione e contestualizzazione dei dati, che spesso sono disomogenei per formato, tipo di contenuto e origine. Tale interpretazione ha il compito di 
+svelare il significato nascosto nel \emph{dataset} e selezionare le connessioni o fenomeni più interessanti per il destinatario della comunicazione.
+In altre parole, l'infografica non si limita a mostrare i dati, ma li organizza e li presenta in un modo da renderne più evidente significato e importanza.
 
-Infografica è dunque prodotto di intelligenza che interpreta dati in modo da inquadrare un fenomeno, situazione, evento o processo per assumere dele decisioni più ponderate.
-Infografica è un prodotto di comunicazione, no imparziale e completa (in quel caso guardi i dati e basta), forma di racconto, di lettura che per forza di cose esclude delle connessioni presenti nel dataset, devo rintracciare le parti/leggi che risultano più interessanti per destinatario.
-
-Fonte infografica è set di dati, solitamente disomogenei (x formato, tipo di contenuto, origine), bisogna formalizzare la comunicazione integrando elementi grafici con testuali per dare una lettura più semplice possibile del significato implicito del dataset.
-The visual display of quantitative information, Edward Tufte [2001], Introduction, p.10 “un'infografica mostra visivamente grandezze misurate mediante l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore” definizione da estendere con quanto detto sopra di comunicazione a destinatario (no solo focus su oggetto). 
-
-%Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
-Usi dell'infografica:
--	Analysis, capire meglio I dati per poi agire in base a quanto capito 
-    o	Nello specifico più utile per “exploratory data analysis”, dove non so cosa sto cercando, non ho una domanda a priori e sto cercando di capire cosa è interessante
--	Presentation, comunicare e informare altri in maniera efficace
-    o	Raccontare una storia
-Vantaggi della visualizzazione:
--	Facilitare la conoscenza 
--	Contribuire a generare nuove domande e a rispondere ad altre
--	Generare insight
--	Raccontare una storia e fare il punto della situazione
-Questi vantaggi però sono difficili da misurare, la valutazione è ancora una delle sfide principali. 
-
-% (da vedere su utils) Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
-
-% tabella differenze su file infografiche
+Per raggiungere questo obiettivo, le infografiche combinano elementi testuali e grafici per presentare le informazioni; usando le parole di E. Tufte ``un'infografica mostra visivamente grandezze misurate mediante 
+l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore''. Pertanto, le infografiche rigettano la tradizione di ``purezza grafica'' (i.e. rappresentazione dei dati 
+basata solo su grafici, diagrammi e mappe) imposta alla \gls{datavizg} e abbracciano, invece, un insieme molto più amplio di tecniche di comunicazione visiva, come illustrazioni, immagini, etc.
+% TODO: aggiungere citazione come footnote The visual display of quantitative information, Edward Tufte [2001], Introduction, p.10
+Inoltre, il focus dell'infografica non è solamente l'oggetto da rappresentare, come invece accade con la \gls{datavizg}. Infatti, le infografiche
+prendono in considerazione anche il destinatario della comunicazione, scegliendo e disponendo gli elementi per costruire una narrazione.
+Possiamo infatti pensare all'infografica come a una forma di racconto, di lettura che non è di per sé né imparziale né completa, ma si limita a fare luce ed esporre i punti salienti individuati nel \emph{dataset}.
+%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+In realtà, tale caratteristica delle infografiche è proprio ciò che maggiormente le distingue dalla \gls{datavizg}. Infatti, mentre le prime sono progettate per presentare i dati raccontandoli attraverso storie specifiche, guidando il lettore con una narrazione, la seconda
+è più orientata verso l'esplorazione autonoma delle informazioni da parte del fruitore, che deve analizzare e scoprire i dati per conto proprio. 
+Questa differenza nel livello di analisi richiesto si ripercuote anche sul tipo di pubblico di ciascun tipo di rappresentazione. Nello specifico, le infografiche, grazie alla loro capacità di semplificare e contestualizzare i dati, sono accessibili anche a coloro
+che non possiedono capacità analitiche avanzate e, pertanto, hanno un pubblico più ampio. 
 
 %intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-Infografica racconta storie delineate da comunicatore mentre la visualizazione aiuta a scoprirle per conto proprio.
-Presentazione ed esplorazione, più una rappresentazione grafica si avvicina alla presentazione (quindi esplorazione limitata) si ha un'infografica e viceversa. Tuttavia, ogni visualizzazione ha una certa parte di presentazione e una di esplorazione (in diversi gradi) e dunque possiamo dire che infografica e viz esistono in continuum.
+Nonostante queste differenze, infografiche e \gls{datavizg} sono strettamente connesse e complementari. Le infografiche, pur essendo maggiormente orientate alla narrazione, 
+possono includere elementi che stimolano l'esplorazione autonoma dei dati. Allo stesso modo, le \emph{visualizzazioni dei dati} possono contenere aspetti narrativi che facilitano 
+l'interpretazione.
+
+
+\subsection{Applicazioni e vantaggi}
+Le infografiche sono strumenti versatili che vengono utilizzati in una vasta gamma di settori e contesti, in particolare al fine 
+di analizzare o presentare dati. Offrono infatti vantaggi significativi che le rendono particolarmente adatte a questi scopi.
+
+%Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
+Per quanto riguarda l'\textbf{analisi dei dati}, le infografiche sono utili per la cosiddetta \gls{expdataanalysisg}, dove il fruitore non ha una domanda precisa a cui sta cercando risposta, bensì 
+vuole semplicemente scoprire cosa emerge di interessante dal \emph{dataset}.
+
+Per quanto riguarda invece la \textbf{presentazione dei dati}, va da sé che le infografiche siano perfette per tale scopo, in quanto riescono attraverso una narrazione a comunicare in maniera efficace 
+e abbracciare in tal modo un pubblico molto amplio.
+
+\bigskip
+\noindent In generale, quale sia l'applicazione, l'uso di infografiche consente anche di:
+\begin{itemize}
+    \item \textbf{Facilitare la scoperta di informazioni} nascoste e \textbf{stimolare la curiosità} per una ricerca futura;
+    \item \textbf{Semplificare la comprensione}, facilitando così il raggiungimento della \emph{saggezza};
+    \item \textbf{Raccontare una storia} che permetta una visione d'insieme della situazione, fenomeno o processo presentato.
+\end{itemize}
 
 
 \section{Classificare le infografiche}
+% Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
+Data visualization is grounded in the tradition of graphic purity, while infographics have no such ideal, and in contrast have traditionally made use of illustration.
+ suggest that effective designs will make use of conventions and figurative elements to reduce the effort required for the user to understand and remember the message a visualization.
+Data
+visualizations often combined many facets of a subject into a single
+graphic composition. Infographics, which are grounded in a tradition
+of narrative, are far more likely in our sample to use a panel
+composition where different component representations can be read
+in sequence. Each component representation in a panel composition
+may itself be a simple statistical graph
+
 % file criteri_scelta_infografica_v0.1.0
 
 \section{Design delle infografiche}

@@ -6,7 +6,7 @@ Viene inoltre proposto un metodo di classificazione dei grafici per ottimizzare 
 \section{Definizione e applicazioni}
 \subsection{La necessità di rappresentare i dati}
 %INTRO + CAP 1: “Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-La visualizzazione dei dati ha una tradizione millenaria. Sin dagli albori della civiltà umana, 
+La \emph{visualizzazione dei dati} ha una tradizione millenaria. Sin dagli albori della civiltà umana, 
 le persone hanno sviluppato metodi per rappresentare visivamente i dati al fine di renderli più facili da comprendere, 
 memorizzare e trasmettere.
 Negli ultimi decenni, tuttavia, questa esigenza ha conosciuto un incremento senza precedenti.
@@ -73,6 +73,7 @@ e comunicare informazioni.
 
 
 \section{Principi e linee guida}
+%TODO: capire se immagine è da cambiare
 \subsection{Creare visualizzazioni efficaci}
 %https://infogram.com/blog/what-is-data-visualization/?_gl=1*1rypyyw*_up*MQ..*_ga*MTg5MzY2NzU2MS4xNzE5MzMxMTgw*_ga_LD50PRQER7*MTcxOTMzMTE3OS4xLjAuMTcxOTMzMTE3OS4wLjAuMA..
 Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascienceg} e design.
@@ -85,13 +86,13 @@ Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascience
 \end{figure}
 
 \noindent Se realizzata correttamente, infatti, essa è capace di ricavare da \emph{dataset} complessi delle informazioni significative e trasmetterle in maniera intuitiva.
-Usando le parole di Edward Tufte, statistico e luminare nel campo della \gls{datavizg}, una visualizzazione dei dati eccellente consiste in
+Usando le parole di Edward Tufte, statistico e luminare nel campo della \gls{datavizg}, una \emph{visualizzazione dei dati} eccellente consiste in
 ``idee complesse comunicate con chiarezza, precisione ed efficienza''.
 % TODO: aggiungere citazione come footnote (%“The visual Display of Quantitative Information” di Edward R. Tufte, CAP 1: Graphical excellence)
 
 %cap1: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 Da ciò ne consegue che l'obiettivo della \gls{datavizg} e ruolo di un architetto dell'informazione è quello di rendere il più efficiente possibile il processo che il cervello
-umano compie nell'acquisire conoscenza e saggezza a partire dall'osservazione di fenomeni.
+umano compie nell'acquisire conoscenza e \emph{saggezza} a partire dall'osservazione di fenomeni.
 Tale processo può essere descritto, in maniera semplificata, attraverso la cosiddetta gerarchia DIKV (\emph{Data-Information-Knowledge-Wisdom}) di seguito riportata.
 \begin{figure}[H] 
     \centering 
@@ -106,7 +107,7 @@ ottenere una conoscenza valida (responsabilità di comunicazione e design).
 \bigskip
 %“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 % cap 2
-\noindent Nella visualizzazione dei dati in sé, bisogna tener conto innanzitutto che la forma grafica delle informazioni non è di per sé un'applicazione artistica; infatti, 
+\noindent Nella \emph{visualizzazione dei dati} in sé, bisogna tener conto innanzitutto che la forma grafica delle informazioni non è di per sé un'applicazione artistica; infatti, 
 essa deve anche coadiuvare il fruitore in attività intellettive. Pertanto, la forma deve aspirare a oggettività, precisione e, soprattutto, funzionalità.
 Per descrivere tale principio, possiamo dunque prendere in prestito le parole di Louis Sullivan sull'architettura modernista del XX secolo: ``La forma segue la funzione''. 
 Tale massima può infatti essere applicata anche all'architettura dell'informazione nel contesto della \gls{datavizg}, giacché
@@ -139,7 +140,7 @@ senza perdere dati, ovvero tutto ciò che Tufte chiama \gls{chartjunkg} (e.g. la
 %“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 %cap 3
 D'altra parte, Holmes sostiene che ci si può divertire con la forma, purché la funzione principale rimanga comunicare i dati. Infatti, ciò che Tufte potrebbe considerare \gls{chartjunkg}, e dunque superfluo,
-potrebbe invece rivelarsi utile al processo di memorizzazione e dunque portare più facilmente alla saggezza. 
+potrebbe invece rivelarsi utile al processo di memorizzazione e dunque portare più facilmente alla \emph{saggezza}. 
 
 %“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 %Cap 4
@@ -152,6 +153,7 @@ effetti speciali o decorazioni siano inseriti solo se se ne presenta l'opportuni
 
 
 \subsection{Linee guida}
+%TODO: aggiungere che qanto scritto è preso da tufte
 %“The visual Display of Quantitative Information” di Edward R. Tufte
 %CAP 1: Graphical Integrity
 Nel visualizzare dati è necessario garantire che le informazioni siano rappresentate accuratamente e senza distorsioni.
@@ -363,7 +365,7 @@ il che le rende più leggibili dall'uomo e facili da mantenere.
 %TODO: inserire codice esempio cose
 
 \bigskip
-\noindent Per quanto riguarda il funzionamento specifico di ``Chart-chooser'', si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
+\noindent Per quanto riguarda il funzionamento specifico di Chart-chooser, si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
 Per quanto riguarda gli altri \emph{fatti}, che richiedono un input da parte dell'utente (e.g. l'obiettivo o il fatto di essere dati numerici ordinati o meno), questi sono 
 forniti al \emph{motore} durante la sua esecuzione, all'innescarsi di determinati \emph{eventi}. 
 Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti, fermando eventualmente l'esecuzione del \emph{motore} solo
@@ -372,7 +374,7 @@ In tale maniera, inoltre, vengono richiesti all'utente e forniti al \emph{motore
 non verrà chiesta all'utente e non sarà fornita inutilmente al \emph{motore} l'informazione riguardante l'organizzazione delle variabili categoriche.
 
 Il funzionamento descritto è reso possibile grazie all'adozione di un \gls{sistemadiregoleg} gerarchico. Nello specifico, a ciascuna \emph{regola} viene attribuita una \emph{priorità} che ne determina l'ordine di valutazione:
-una \emph{priorità} maggiore comporta una valutazione anticipata; mentre, in caso di più \emph{regole} ad uguale \emph{priorità}, queste verranno valutate in parallelo.
+una \emph{priorità} maggiore comporta una valutazione anticipata; mentre, in caso di più \emph{regole} a uguale \emph{priorità}, queste verranno valutate in parallelo.
 Questo meccanismo viene sfruttato per realizzare una classificazione stratificata, in cui ogni livello di \emph{priorità} rappresenta una fase di classificazione più dettagliata rispetto al livello precedente. 
 Ne consegue che le \emph{regole} appartenenti allo stesso livello siano mutualmente esclusive, poiché ciascuna di esse definisce un gruppo specifico in cui possono essere catalogati i dati forniti.
 Per consentire ai livelli inferiori di conoscere il gruppo identificato precedentemente e procedere con ulteriori sottoclassificazioni dello stesso, viene aggiunto ai \emph{fatti} un valore booleano per ogni \emph{regola}. 
@@ -412,7 +414,7 @@ Come già accennato precedente \emph{Chart-chooser} è uno strumento prototipale
 Innanzitutto, l'applicativo è disponibile soltanto da riga di comando e non dispone di un'interfaccia grafica.
 Inoltre, esso richiede che i dati siano disponibili in locale e che siano formattati secondo uno schema specifico
 (una specifica struttura \gls{jsong}). 
-L'utente deve, altresì, essere a conoscenza del \emph{dataset} per poter rispondere correttamente alle domande relative ad esso.
+L'utente deve, altresì, essere a conoscenza del \emph{dataset} per poter rispondere correttamente alle domande relative a esso.
 
 Ciononostante, \emph{Chart-chooser} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva. 
 Una possibile direzione per uno sviluppo futuro potrebbe essere l'implementazione di un \emph{parsing} automatico dei dati e la capacità di 
