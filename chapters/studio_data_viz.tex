@@ -319,9 +319,9 @@ impostata a 0 per garantire che l'output del modello sia il più predicibile pos
 Nello specifico, per ogni obiettivo vengono fornite al \gls{llm} alcune descrizioni d'esempio in modo tale da facilitare al modello il compito di classificazione e migliorarne le
 prestazioni. Questo approccio permette al \gls{llm} di comprendere meglio il contesto e rispondere con una maggiore precisione.
 
-Il prompt utilizzato è il seguente:
+Il \emph{prompt} utilizzato è il seguente:
 \begin{lstlisting}[style=htmlcssjs]
-This is a conversation between User and Llama, a friendly chatbot. Llama is helpful, kind, honest, good at writing, and never fails to answer any requests immediately and with precision.
+Questa è una conversazione tra User e Llama, un chatbot amichevole. Llama è disponibile, onesto, bravo a scrivere e non manca mai di rispondere immediatamente e con precisione a qualsiasi richiesta.
 
 User: 
 Dati i seguenti obiettivi:
@@ -410,7 +410,7 @@ Il \emph{motore}, dunque, al termine della valutazione delle \emph {regole}, con
 
 
 \subsubsection{Limitazioni dello strumento}
-Come già accennato precedente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
+Come già accennato precedentemente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
 Innanzitutto, l'applicativo è disponibile soltanto da riga di comando e non dispone di un'interfaccia grafica.
 Inoltre, esso richiede che i dati siano disponibili in locale e che siano formattati secondo uno schema specifico
 (una specifica struttura \gls{jsong}). 
@@ -419,3 +419,4 @@ L'utente deve, altresì, essere a conoscenza del \emph{dataset} per poter rispon
 Ciononostante, \emph{Chart-chooser} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva. 
 Una possibile direzione per uno sviluppo futuro potrebbe essere l'implementazione di un \emph{parsing} automatico dei dati e la capacità di 
 rilevare e interpretare informazioni chiave direttamente dai \emph{dataset}, riducendo così la dipendenza dall'intervento dell'utente. 
+%TODO: aggiungere parti test e che fa schifo?

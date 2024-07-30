@@ -52,7 +52,154 @@ e abbracciare in tal modo un pubblico molto amplio.
 \end{itemize}
 
 
+
 \section{Classificare le infografiche}
+\subsection{Metodi di classificazione}\label{subsec:info_classifica}
+% file criteri_scelta_infografica_v0.1.0
+Una prima classificazione delle infografiche può essere fatta \textbf{in base all'output visivo}. Nello specifico, si hanno:
+\begin{itemize}
+    \item \textbf{Infografiche statiche}, in cui le informazioni sono rappresentate e visibili tutte in un'unica volta, avendo così un impatto più
+    veloce e immediato sul pubblico.
+    \begin{itemize}
+        \item Esempio: infografiche presenti nei giornali.
+    \end{itemize}
+    \item \textbf{Infografiche animate}, in cui le informazioni sono presentate sequenzialmente in maniera consistente oppure contengono altri tipi di animazione.
+    \begin{itemize}
+        \item Esempio: infografiche realizzate tramite presentazioni multimediali.
+    \end{itemize}
+    \item \textbf{Infografiche interattive}, in cui le informazioni sono presentate in base a scelte operate dall'utente.
+    \begin{itemize}
+        \item Esempio: infografiche online in cui è l'utente a selezionare il dettaglio a partire da un insieme complesso di informazioni visualizzate.
+    \end{itemize}
+\end{itemize}
+
+\bigskip
+\noindent Un'altra classificazione può essere fatta \textbf{in base all'obiettivo}. Nello specifico, si hanno:
+\begin{itemize}
+    \item \textbf{Infografiche basate su processi ordinati}, le quali vengono usate per mostrare passo dopo passo un processo o una 
+    sequenza ordinata di informazioni ad esempio per insegnare qualcosa di nuovo all'utente (e.g. ricette).
+    \item \textbf{Infografiche a mo' di lista}, in questo caso le informazioni sono rappresentate sotto forma di elenco testuale, eventualmente accompagnato da icone.
+    Per costruzione, queste infografiche permettono di mostrare molte informazioni e, allo stesso tempo, di farle comprenderle velocemente.
+    \item \textbf{Infografiche basate sul tempo}, in cui viene mostrata una sequenza cronologica di eventi, in altre parole come si evolve una storia o un soggetto nel tempo.
+    Quest'ultimo è solitamente rappresentato tramite una linea, chiamata appunto ``linea del tempo''.
+    \item \textbf{Infografiche basate sul confronto}, esse comparano due diversi argomenti in contrasto ponendoli uno a fianco all'altro.  Ciò ritorna molto utile per mostrare
+    quali elementi i due hanno in comune oppure per quanto divergono o sono superiori/inferiori uno rispetto all'altro.
+    \item \textbf{Infografiche basate su una gerarchia}, le quali vengono utilizzate per mostrare informazioni organizzate per livelli e il collegamento tra questi.
+    \item \textbf{Infografiche basate su informazioni correlate poste allo stesso livello}, in cui si vuole comunicare un nuovo concetto o dare una panoramica su un argomento; infatti,
+    tali infografiche sono anche dette ``Infografiche informative''. Solitamente, lo spazio viene diviso in sezioni con un proprio titolo descrittivo.
+\end{itemize}
+
+
+\subsection{Infographic-helper}
+Come accennato in precedenza, l'infografica è una forma di racconto e, pertanto, la scelta e scrittura della storia da comunicare sono centrali nella sua costruzione.
+Nel corso dello stage si è dunque voluto sviluppare uno strumento prototipale, \emph{Infographic-helper}, che potesse aiutare il ``narratore'' in tale compito.
+Nello specifico, questo strumento consente di validare tale narrativa, oltre a individuarne le parti e l'obiettivo principale.
+
+Lo strumento è disponibile a \href{http://www.overleaf.com}{questo link}.
+
+\subsubsection{Validazione della narrativa}
+Uno degli obiettivi di \emph{Infographic-helper} è garantire che la narrativa dell'infografica sia persuasiva e venga recepita efficacemente dal pubblico. 
+Questi obiettivi coincidono con quelli della retorica, la quale fornisce i principi per costruire messaggi convincenti e chiari, che espongono il punto di vista del comunicatore in maniera comprensibile. 
+Questi principi non solo sono applicabili alla pura comunicazione verbale, ma si rivelano utili anche per le infografiche. 
+Infatti, nonostante queste siano rappresentazioni visive, esse sono comunque una forma di narrazione e comunicazione e pertanto oggetto di retorica. 
+
+Aristotele, pioniere di quest'arte, definisce suddetti principi come \emph{ethos}, \emph{pathos} e \emph{logos}. Nello specifico:
+\begin{itemize}
+    \item \textbf{\emph{Ethos}}, comprende tutto ciò che stabilisce o aumenta la credibilità e autorità del comunicatore e delle fonti;
+    \item \textbf{\emph{Pathos}}, comprende tutto ciò che suscita emozioni nel pubblico, che crea una connessione emotiva con gli spettatori;
+    \item \textbf{\emph{Logos}}, comprende tutto ciò che fa parte di un'argomentazione razionale, logica e coerente, come dati e statistiche.
+\end{itemize}
+\emph{Infographic-helper} si ispira dunque a questi principi aristotelici per migliorare la costruzione delle storie delle infografiche. Nello specifico, controlla che questi elementi siano presenti
+nel testo e, eventualmente, ne suggerisce di altri.
+
+In aggiunta a questi elementi retorici, \emph{Infographic-helper} tiene conto anche del target dell'infografica, ovvero il pubblico a cui è destinata, per poter contestualizzare meglio la storia. 
+Inoltre, lo strumento controlla anche se sono presenti eventuali elementi estranei o irrilevanti per il tema principale della storia. 
+
+\bigskip
+\noindent Queste funzionalità sono implementate attraverso interrogazione a un \gls{llm}, nello specifico si utilizza il modello \textbf{\gls{llama7bg}} attraverso \textbf{\gls{llamacppg}}, reso disponibile dall'azienda ospitante.
+
+Il \emph{prompt} utilizzato è il seguente:
+\begin{lstlisting}[style=htmlcssjs]
+Questa è una conversazione tra User e Llama, un chatbot amichevole. Llama è disponibile, onesto, bravo a scrivere e non manca mai di rispondere immediatamente e con precisione a qualsiasi richiesta.
+
+User: 
+Devo presentare il seguente testo a ${target}.
+${ethos}.
+
+Testo:
+${storia}
+
+Domande:
+1.	Supponi che un elemento è di 'pathos' se può indurre il pubblico a sentire (o non sentire) una connessione emotiva con il contenuto.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di 'pathos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'pathos' da poter inserire nel Testo.
+2.  Supponi che un elemento è di 'ethos' se può indurre il pubblico a ritenere che l'autore sia (o meno) affidabile e credibile.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di 'ethos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'ethos' da poter inserire nel Testo basandoti sul mio ruolo SE rilevante al tema del Testo.
+3.  Supponi che un elemento è di 'logos' se può indurre il pubblico a credere che l'argomentazione sia (o meno) logica e supportata da prove adeguate.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di 'logos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'logos' da poter inserire nel Testo.
+4.	Supponi che un elemento è 'estraneo' se può ritenersi estraneo rispetto al tema principale del Testo oppure può ritenersi un'assurdità.
+    Riporta tutti gli elementi (frasi, espressioni e parole) 'estraneo' presenti nel Testo.
+
+[...continua...]
+\end{lstlisting}
+% TODO: inserire modello usato corretto (7b?) e llama.cpp
+dove \texttt{\$target} rappresenta il pubblico di destinazione dell'infografica e \texttt{\$ethos} rappresenta il ruolo di chi espone la storia, inseriti per una maggiore contestualizzazione della storia poi riportata (inserita al posto di \texttt{{\$storia}}).
+
+\subsubsection{Ricerca del layout da utilizzare}
+L'altro obiettivo di \emph{Infographic-helper} è quello di classificare la storia in base alla seconda classificazione data in \ref{subsec:info_classifica} (ovvero la ``classificazione per obiettivo'') e trovare le sue principali parti costitutive.
+Tali informazioni consentono di individuare il \emph{layout} più adatto per raccontare visivamente la storia e definire l'argomento specifico da trattare per ciascuna delle sezioni di tale \emph{layout}.
+
+I possibili \emph{layout} sono descritti al paragrafo \ref{subsec:info_layout}.
+
+\bigskip
+\noindent Queste funzionalità sono anch'esse implementate attraverso interrogazione al \gls{llm} descritto precedentemente. 
+
+Il \emph{prompt} utilizzato è il seguente:
+\begin{lstlisting}[style=htmlcssjs]
+[...segue...]
+5.	Quali sono le parti in cui si divide il testo? Per ogni parte, dimmi solo un titoletto breve.
+6.	Tolta l'introduzione, identifica la relazione generale tra le parti come una delle seguenti:
+    -	parti di una lista, 
+    -	parti di una linea del tempo, 
+    -	parti poste a confronto, 
+    -	parti che compongono gerarchia, 
+    -	parti correlate poste allo stesso livello, 
+    -	parti di un processo ordinato. 
+
+Fornisci solamente le risposte nel seguente formato JSON: 
+{ 'pathos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'ethos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'logos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'elementi_estraneo': {'presente': boolean, 'elementi': [string]}, 'parti': [string], 'relazione': 'string' }
+
+
+Llama:
+\end{lstlisting}
+
+\noindent Si noti inoltre che è stata definita una \gls{grammaticag} corrispondente allo schema menzionato nel prompt (fornito per ulteriore chiarezza), la quale consente di ottenere l'output del \gls{llm} nel formato fisso \gls{jsong} indicato. 
+Questo approccio facilita il \emph{parsing} dei dati, garantendo risposte precise con un formato standard, e ne agevola l'eventuale integrazione futura con un'interfaccia grafica.
+
+
+\subsubsection{Limitazioni dello strumento}
+Come già accennato precedentemente \emph{Infographic-helper} è uno strumento prototipale, presenta infatti diverse limitazioni.
+Innanzitutto, l'applicativo è disponibile soltanto da riga di comando e non dispone di un'interfaccia grafica.
+Inoltre, esso non ha la capacità di individuare molteplici obiettivi. Potrebbero essere infatti presenti diverse macro-sezioni nella narrativa
+con obiettivi distinti. 
+Lo strumento, inoltre, non è capace di valutare la veridicità del contenuto della storia, ma valida soltanto il modo in cui questo è comunicato. Pertanto, è compito del'utente
+assicurarsi che quanto scritto corrisponda a verità.
+
+Ciononostante, \emph{Infographic-helper} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva.
+%TODO: aggiungere che fa schifo ?, aggiungere parti test ?
+
+
+\section{Design delle infografiche}
+% fattori che influenzano la presentazione dei dati:
+% per caratteri e colori guarda qaunto ho scritto su data viz.docs
+% per titolo, boh (https://www.copypress.com/kb/infographics/11-tips-creating-infographics/)
+% per effetti speciali (infografiche interattive), boh
+% per scala, visual thinking (per layout) e visual doing
+% per feed dati (praticamente da dove prendo i dati), boh (anche cap 9 libro infografiche)
+
+\subsection{Layout}\label{subsec:info_layout}
+% layout vedi foto visual leaders
+% in base alla classificazione sopra (faccio io template immaginine)
+
 % Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
 Data visualization is grounded in the tradition of graphic purity, while infographics have no such ideal, and in contrast have traditionally made use of illustration.
  suggest that effective designs will make use of conventions and figurative elements to reduce the effort required for the user to understand and remember the message a visualization.
@@ -63,18 +210,6 @@ of narrative, are far more likely in our sample to use a panel
 composition where different component representations can be read
 in sequence. Each component representation in a panel composition
 may itself be a simple statistical graph
-
-% file criteri_scelta_infografica_v0.1.0
-
-\section{Design delle infografiche}
-% fattori che influenzano la presentazione dei dati:
-% per caratteri e colori guarda qaunto ho scritto su data viz.docs
-% per titolo, boh (https://www.copypress.com/kb/infographics/11-tips-creating-infographics/)
-% per effetti speciali (infografiche interattive), boh
-% per scala, visual thinking (per layout) e visual doing
-% per feed dati (praticamente da dove prendo i dati), boh (anche cap 9 libro infografiche)
-
-%layout vedi foto visual leaders
 
 
 %“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
