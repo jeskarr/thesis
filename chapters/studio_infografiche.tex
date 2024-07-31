@@ -188,122 +188,146 @@ Ciononostante, \emph{Infographic-helper} ha il potenziale per essere migliorato 
 %TODO: aggiungere che fa schifo ?, aggiungere parti test ?
 
 
+
 \section{Design delle infografiche}
-% fattori che influenzano la presentazione dei dati:
-% per caratteri e colori guarda qaunto ho scritto su data viz.docs
-% per titolo, boh (https://www.copypress.com/kb/infographics/11-tips-creating-infographics/)
-% per effetti speciali (infografiche interattive), boh
-% per scala, visual thinking (per layout) e visual doing
-% per feed dati (praticamente da dove prendo i dati), boh (anche cap 9 libro infografiche)
+\subsection{I fattori che influenzano il design}
+Possiamo ordinare gerarchicamente i fattori che influenzano, in generale, la presentazione dei dati. Tale gerarchia è suddivisa in quattro livelli come segue:
+%TODO: inserire immagine, inserire da dove presa immagine, spiegare come funziona l'immagine (o aggiungi leggenda nell'immagine)
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.8\columnwidth]{infografiche/fattori_design_info.png} 
+    \caption{Gerarchia dei fattori che influenzano la presentazione dei dati}
+    \label{fig:fattori_design_info}
+\end{figure}
+Vediamo dunque come applicare al meglio tali fattori nella costruzione del design di un'infografica.
 
-\subsection{Layout}\label{subsec:info_layout}
-% layout vedi foto visual leaders
-% in base alla classificazione sopra (faccio io template immaginine)
+\subsubsection{I titoli}
+Le intestazioni devono essere incisive e invogliare il fruitore dell'infografica a continuare a visionare la presentazione. 
+A tal fine, i titoli sono generalmente formulati in uno dei seguenti modi:
+\begin{itemize}
+    \item \textbf{Sotto forma di domanda}, si pone un interrogativo curioso o interessante che stimoli il lettore a cercarne la risposta nei dati presentati.
+    \item \textbf{Includendo la statistica principale}, evidenziando il dato presentato più significativo.
+    \item \textbf{Come confronto}, si mette in relazione fin da subito due o più elementi di cui se ne mostreranno differenze e similitudini.
+    \item \textbf{Come introduzione a un elenco numerato}, il titolo funziona come introduzione a una lista (e.g. ``Top X'').
+\end{itemize}
 
-% Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
-Data visualization is grounded in the tradition of graphic purity, while infographics have no such ideal, and in contrast have traditionally made use of illustration.
- suggest that effective designs will make use of conventions and figurative elements to reduce the effort required for the user to understand and remember the message a visualization.
-Data
-visualizations often combined many facets of a subject into a single
-graphic composition. Infographics, which are grounded in a tradition
-of narrative, are far more likely in our sample to use a panel
-composition where different component representations can be read
-in sequence. Each component representation in a panel composition
-may itself be a simple statistical graph
-
-
+\bigskip
 %“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-%CAP 13: Estetica delle informazioni
-Data viz è lo studio delle rappresentazioni grafiche dei dati, ovvero di come declinare le informazioni numeriche in modo tale da ottenere un'astrazione riassumendole in forma più schematica. 
-Importante non troppo testo, usare infografica SOLO se abbastanza info da raccontare storia ma non troppe (che creano rumore).
-%CAP 15: Gestalt (parte di design) 
-Oltre a comunicazione visiva nel design è importante anche la gestalt che offre una serie di leggi che chiariscono come le persone categorizzano gli elementi che vedono e come sviluppano le loro idee a proposito degli eventi che gli accadono intorno. Leggi utili ai designer per organizzare meglio le informazioni. Queste leggi sono:
--	Di pregnanza, umani tendono a elaborare i pattern regolare e ordinati più velocemente di quelli complessi e articolati => organizzare dati logicamente in modo lineare e semplice
--	Di continuità, occhi istintivamente portati a raggruppare oggetti allineati => organizzare dati allineandoli per facilitare raggruppamento, comparazione e conseguente comprensione da parte del fruitore
--	Di similarità, oggetti che hanno caratteristiche simile (e.g. colore, forma, dim, orientamento) solitamente percepiti come un unico gruppo (rafforza dunque aggregazione, raggruppamento) => utilizzare caratteristiche simili per stabilire relazioni
--	Del punto focale, simmetrica alla precedente, in una rapp visuali oggetti diversi creano punti focali che attirano l'attenzione e dunque convincono l'osservatore delle differenze tra oggetti => utilizzare caratteristiche distintive per aumentare le differenze ed evidenziare ciò che interessa
--	Degli isomorfi, eventi e oggetti interpretati da utenti in base alla loro esperienza passata, dunque bisogna tener conto di convenzioni/condizionamenti culturali (e.g. rosso in occidente pericolo, perdita) => tenere sempre presenti le convenzioni e le abitudini preesistenti
--	Dell'immagine e dello sfondo, oggetti interpretati in maniera diversa in base alle relazioni con lo sfondo (se integrati perdono importanza, mentre separati hanno maggior rilievo) => assicurare un buon contrasto tra quelli che sono dati marginali come lo sfondo e le informazioni prioritarie da mettere in evidenza
--	Del fato o del destino comune, somiglianza di gruppo di ogg. consente di vederli come struttura (elem. che si spostano nella stessa direzione sono percepiti come maggiormente correlati => utilizzare le direzioni e i movimenti per stabilire o interrompere delle relazioni tra oggetti simili
-%CAP 16: Il colore
-Da usare con cura, in quanto il colore nell'infografica è strumento che permette di segnalare (e.g. dati specifici), sostenere, rafforzare o indicare il discorso narrativo. Inoltre, colore cattura l'attenzione, migliora l'informazione (facilitando anche la lettura, se ad alto contrasto, altrimenti poco leggibili se scelgo e.g. combinazioni rosso, marrone e verde), facilita il ricordo e influenza il comportamento del consumatore.
-Ad ogni colore vengono associate sensazioni precise (che possono variare da area culturale/geografica qui passati dei valori generali, legati magari più all'occidente):
--	Colori caldi:
-    o	Rosso:
-        -	Uso: loghi, per attenzione, per att. promozionali, passione, velocità
-        -	Valori: passione, amore, aggressività, emozioni forti, violenza
-    o	Arancione
-        -	Uso: fast food, banner pubblicità, richiamare attenzione e.g. per novità per temi giovanili e dinamici
-        -	Valori: salute, energia, ottimismo, vitalità, appetito
-    o	Giallo
-        -	Uso: prodotti per bambini, prodotti innovativi, per richiamare attenzione
-        -	Valori: vitalità, ottimismo, energia, allegria, felicità
-        -	Colori freddi:
-    o	Verde
-        -	Uso: prodotti bio, eco e prodotti sanitari
-        -	Valori: crescita, invidia, salute, natura, tranquillità
-    o	Blu
-        -	Uso: banche, compagnie assicurative, automobili
-        -	Valori: affidabilità, onestà, sicurezza, calma, stabilità
-    o	Porpora (viola)
-        -	Uso: centri bellezza, beni di lusso, prodotti antietà
-        -	Valori: eleganza, nobiltà, mistero, creatività, spiritualità
-        -	Colori neutri
-    o	Marrone
-        -	Uso: prodotti naturali
-        -	Valori: terra, affidabilità, sicurezza, tristezza, calore
-    o	Bianco
-        -	Uso: prodotti igienici legati a salute
-        -	Valori: purezza, religiosità, matrimonio, pulizia, semplicità
-    o	Nero
-        -	Uso: prodotti lusso, attività proibite, negazione
-        -	Valori: ribellione, eleganza, formalità, potenza, autorità
-    o	Grigio
-        -	Uso: prodotti tecnologici, moda
-        -	Valori: sofisticato, neutralità, tristezza, moderno, raffinatezza
-L'infografica deve mantenere un tono di colore univoco, possibilmente neutrale e sobrio.
-Sensazioni di calma uso colori complementari, per qcsa di innovativo uso combinazioni stridenti.
 %CAP 17: I caratteri
-Importante nell'infografica (fondamentale in ogni attività che preveda rappr. grafica testuale), il loro utilizzo è contenuto in termini di quantità però è spesso la qualità a rendere incisivo un messaggio.
-Regole basilari della composizione tipografica:
--	Graziato (serif), caratteri presentano piccole appendici che accompagnano linee ascendenti/discendenti lettera
-o	Uso: per dare serietà al testo (hanno autorevolezza), usati per saggi, romanzi, quotidiani; su pc però meno leggibili
-o	e.g. times new roman
--	Senza grazie (sans serif), senza le suddette appendici
-o	Uso: ottimi per grandi titoli incisivi e per testi di larghezza contenuta; su schermi più leggibili dei suddetti. Nel caso delle infografiche è meglio usare questi.
-o	E.g. Arial (meglio per testi più lunghi essendo più stretta), Verdana (meglio per poche frasi ad effetto), Helvetica, Rockwell
--	Carattere decorativo, come script calligrafici (difficili da utilizzare, da evitare su pc) e fumettistici (con curve morbidi e divertenti) etc. 
--	Chiaro (normale) e grassetto (bold) si riferiscono al peso del tratto (esistono anche varianti più leggere del chiaro tipo light, ultralight ma sono da evitare a schermo)
-o	Uso: bold per componenti testuali brevi per focalizzare lo sguardo ed evidenziarli
--	Tondo (normale) e corsivo (italico) si riferisce all'inclinazione 
-o	Uso: per citazioni e vocaboli particolari, non per grandi blocchi di testo in quanto poco leggibile
--	Maiuscolo corrisponde a “innalzamento della voce” da usare per omogeneizzare testi che risultano simili in termini di importanza e funzione (e.g. titoli) purché brevi (sennò difficilmente leggibile)
--	Sottolineatura nel web per collegamento ipertestuale, può essere usata per evidenziare ma grassetto è più efficace
--	Interlinea determina distanza tra riga e altra favorendo la leggibilità e se troppo compatta invece di difficile lettura
--	Spaziature e rientri
--	Allineamento e lunghezza, se centrato si presta per alcuni titoli meglio se non accompagnati da altro testo (con testi allineati in maniera diversa crea confusione); meglio preferire allineamenti a sinistra. Per quanto riguarda lunghezza testi troppo lunghi non vengono letti volentieri e sarebbe anche necessario usare caratteri più piccoli, meno leggibili
-%CAP 18: Le immagini
-Una visualizzazione più memorabile se:
--	contiene visualizzazioni che richiamano oggetti riconoscibili da umano
--	è facile distinguere elementi che la compongono
--	è colorata (almeno 5 colori e dati raggruppati)
--	è visivamente densa
--	possiede basso rapporto dati-inchiostro
-Linguaggio immagini fortemente evocativo (valori simbolici). Alcune regole da usare per controllare espressività e costruire comunicazione efficace:
--	gestalt (vedi cap. 15)
--	lettura della pagina, dato dal diagramma di gutenberg (vedi foto) per cultura occidentale che suddivide l'area di lettura in 4 quadranti: punto di partenza in alto a sx (primaria importanza), in basso a dx dove termina la lettura, l'area in alto a dx e in basso a sx che sono di scarsa/debole lettura
--	immagini evocative, possono provocare un'esperienza sensorale
--	risoluzione dell'immagine
+\noindent Un altro elemento fondamentale per quanto riguarda i titoli, e in generale per tutto il testo contenuto nell'infografica, è la scelta del carattere tipografico. 
+Nello specifico, la gamma di caratteri utilizzati non deve essere troppo amplia (max. 3 o 4); bisogna invece concentrarsi sulla scelta del tipo di carattere, il quale
+può avere un impatto significativo sul design complessivo dell'infografica.
 
+A tal fine, si possono applicare le seguenti regole:
+\begin{itemize}
+    \item Per quanto riguarda l'uso di \textbf{caratteri graziati} (\emph{serif}), essi sono da utilizzare quando si vuole conferire serietà e autorevolezza al testo; sono infatti impiegati tipicamente in saggi e quotidiani. 
+    Tuttavia, possono risultare meno leggibili su schermo.
+    \begin{itemize}
+        \item Esempio: Times New Roman.
+    \end{itemize}
+    \item Per quanto riguarda l'uso di \textbf{caratteri senza grazie} (\emph{sans serif}), essi sono da utilizzare per testi brevi e/o su schermi, in quanto più leggibili.
+    \begin{itemize}
+        \item Esempio: Arial (adatto per testi lunghi, essendo più stretto), Verdana (ideale per frasi ad effetto), Helvetica.
+    \end{itemize}
+    \item Per quanto riguarda l'uso di \textbf{caratteri decorativi}, essi sono spesso difficili da utilizzare e generalmente, dunque, sono da evitare. Possono essere considerati, seppur con prudenza, per casi specifici per riflettere il tema discusso nella presentazione.
+    \begin{itemize}
+        \item Esempio: caratteri calligrafici o fumettistici.
+    \end{itemize}
+    \item Per quanto riguarda l'uso del \textbf{grassetto} (\emph{bold}), è da utilizzare per evidenziare componenti testuali brevi e focalizzare l'attenzione su di essi. 
+    \item Per quanto riguarda l'uso del \textbf{corsivo} (\emph{italic}), è da utilizzare per citazioni o termini particolari.
+    \item Per quanto riguarda l'uso del \textbf{maiuscolo}, è da utilizzare per dare maggiore importanza o evidenziare testi brevi, come i titoli, in quanto corrisponde ad un ``innalzamento della voce''.
+\end{itemize}
+Sempre con riferimento ai caratteri, è importante seguire anche le seguenti regole:
+\begin{itemize}
+    \item Per quanto riguarda la \textbf{sottolineatura}, nel web questa è da evitare per evidenziare elementi (preferendo invece il grassetto), in quanto solitamente rappresenta un collegamento 
+    ipertestuale.
+    \item Per quanto riguarda l'\textbf{interlinea}, conviene che la distanza tra una riga e l'altra sia abbastanza ampia da consentire una lettura agevole.
+    \item Per quanto riguarda l'\textbf{allineamento}, si utilizza solitamente il ``centrato'' per i titoli, specie se non accompagnati da ulteriore testo. Per il resto, si preferisce invece l'allineamento
+    ``a sinistra''.
+    \item Per quanto riguarda la \textbf{lunghezza}, testi troppo lunghi non sono letti volentieri dal pubblico e, inoltre, necessiterebbero di caratteri più piccoli, meno leggibili.
+\end{itemize}
+
+
+\subsubsection{I colori}
+%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
+%CAP 16: Il colore
+Il colore è un elemento cruciale nel design delle infografiche e, pertanto, è da utilizzare con cura. 
+Esso infatti, se scelto in maniera appropriata, può migliorare la leggibilità e facilitare la comprensione e memorizzazione dell'informazione.
+
+Generalmente, si utilizza il colore per catturare l'attenzione, evidenziare dati specifici e per rafforzare il messaggio narrativo. Quest'ultimo punto è possibile in quanto ogni colore porta con sé un 
+significato simbolico influenzato dalla cultura e dalla geografia che rende possibile evocare sensazioni e valori specifici nel pubblico.
+Di seguito sono riportati i valori più spesso associati ai colori, con riferimento alla cultura dell'Occidente:
+\begin{itemize}
+    \item Colori caldi:
+    \begin{itemize}
+        \item \textbf{Rosso}:
+        \begin{itemize}
+            \item Valori: emozioni forti come amore o aggressività.
+            \item In linea con tali valori, viene utilizzato principalmente per attirare l'attenzione.
+        \end{itemize}
+        \item \textbf{Arancione}:
+        \begin{itemize}
+            \item Valori: ottimismo, vitalità.
+            \item In linea con tali valori, viene generalmente utilizzato per temi giovanili e/o dinamici.
+        \end{itemize}
+        \item \textbf{Giallo}:
+        \begin{itemize}
+            \item Valori: energia, allegria, felicità.
+            \item In linea con tali valori, viene anch'esso utilizzato principalmente per attirare l'attenzione, specie per temi innovativi.
+        \end{itemize}
+    \end{itemize}
+    \item Colori freddi:
+    \begin{itemize}
+        \item \textbf{Verde}:
+        \begin{itemize}
+            \item Valori: salute, natura, tranquillità.
+            \item In linea con tali valori, viene generalmente utilizzato per temi riguardanti la sanità, salute ed ecologia.
+        \end{itemize}
+        \item \textbf{Blu}:
+        \begin{itemize}
+            \item Valori: affidabilità, sicurezza, stabilità.
+            \item In linea con tali valori, viene utilizzato ad esempio da banche o compagnie assicurative.
+        \end{itemize}
+        \item \textbf{Viola}:
+        \begin{itemize}
+            \item Valori: eleganza, nobiltà, spiritualità.
+            \item In linea con tali valori, viene generalmente utilizzato per temi riguardanti il settore della bellezza o del lusso.
+        \end{itemize}
+    \end{itemize}
+    \item Colori neutri:
+    \begin{itemize}
+        \item \textbf{Marrone}:
+        \begin{itemize}
+            \item Valori: terra, calore.
+            \item In linea con tali valori, viene generalmente utilizzato per temi riguardanti la natura.
+        \end{itemize}
+        \item \textbf{Bianco}:
+        \begin{itemize}
+            \item Valori: purezza, pulizia, semplicità.
+            \item In linea con tali valori, viene generalmente utilizzato per temi riguardanti la sanità.
+        \end{itemize}
+        \item \textbf{Nero}:
+        \begin{itemize}
+            \item Valori: ribellione, formalità, potenza.
+            \item In linea con tali valori, viene generalmente utilizzato per temi di protesta o riguardanti il settore del lusso.
+        \end{itemize}
+        \item \textbf{Grigio}:
+        \begin{itemize}
+            \item Valori: modernità, raffinatezza.
+            \item In linea con tali valori, viene generalmente utilizzati per temi riguardanti tecnologia o moda.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\bigskip
+\noindent In ogni caso, è fondamentale mantenere un tono di colore coerente nell'infografica, preferibilmente sobrio. Tuttavia, potrebbe essere utile utilizzare colori 
+complementari per trasmettere sensazioni di calma o combinazioni di colori più stridenti per rappresentare innovazione.
+
+Si aggiunge infine che, come per la \gls{datavizg}, anche in questo caso, è importante scegliere uan gamma di colori che sia accessibile anche a persone daltoniche o \emph{color-deficient}.
+
+
+\subsubsection{Gli effetti speciali}
 %intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 6
-Capacità di prevedere il comportamento del cervello (i.e. meccanismi di percezione delle caratteristiche di base, dette pre-attentive) per avere migliori infografiche.
-Il cervello riesce a percepire più velocemente variazioni di colore che di forma -> cervello ama contrasto/differenze. In generale, il cervello visivo è sostanzialmente un sistema che si è evoluto per individuare gli schemi (regioni nel campo visivo che condividono stessa natura o appartengono a entità diverse). Questi meccanismi di classificazione istantanea di differenze e somiglianze (che è percezione pre-attentiva) sono studiati nella psicologia della Gestalt, letteralmente forma, schema (Germania inizi xx secolo). Dice che il cervello non riconosce macchie di colore e forme come singole ma come complessi.
-(vedi altri docs per singoli principi).
-Scala cleveland e mcgill (vedi foto) da journal of the american statistical association, articolo “graphical perception:theory, experimentation, and application to the development of graphical methods), più si sale più accurate sono le valutazioni che i lettori riescono a fare in base ai grafici. Ci sono dieci attività percettive elementari, dove ciascuna costituisce un metodo per rappresentare i dati e classificati in base a come il cervello umano riesce a individuare le differenze e metterle a confronto (n.b. lunghezza, direzione e angolazione hanno uguale accuratezza; volume e curvatura pure; tonalità e intensità del colore anche).
-Tutto questo tratta della percezione visiva di basso livello, i.e. differenziazioni tra primo piano e sfondo, stima dimensioni relative e deduzione semplici schemi ambiente.
-Meccanismi di percezione delle caratteristiche di base, dette pre-attentive
-
 % cap 9
 “The design of everyday things” di Donald A. Norman che tratta di come ci rapportiamo a oggetti comuni, che sostiene la priorità dei bisogni dell'utente rispetto alle preoccupazioni estetiche dei designer. Principi proposti utili anche per infografiche (interattive):
 -	Visibilità
@@ -336,18 +360,19 @@ o	L'utente cambia struttura o aspetto di ciò che viene presentato per raggiunge
 -	Esplorazione
 o	E.g. muoversi all'interno di modelli 3D, sensazione di star dirigendo personalmente l'azione
 
-%Design is storytelling” di Ellen Lupton
-%atto 3
-Vediamo il mondo in base a ciò che vogliamo fare, cerchiamo dei pattern con i nostri sensi e agiamo in base a queste percezioni. In base a quello visto in precedenza, proviamo a prevedere quello che accadrà (tendiamo a vedere solo quello che stiamo cercando)
-Gestalt:
--	Prossimità, elementi posti uno vicino all'altro formano gruppi
--	Similarità, elementi di stessa forma o colore fanno parte di uno stesso gruppo
--	Fato comune, elementi sembrano cambiare come gruppo
--	Figure/ground ambiguity, gli spazi bianchi sono letti o come sfondo o come in primo piano
--	Chiusura e continuazione, mentalmente vengono chiusi gli spazi su linee o su forme regolari 
-Un oggetto che innesca un'azione viene detto “affordance”, alcune di queste “affordance” sono accidentali (e.g. davanzale vicino a fermata del bus, perfetto per posare il caffè), altre sono imparate con il tempo (e.g. barre e bottoni nei website), magari rifacendosi ad oggetti reali
 
+\subsubsection{Il feed dati}
 % (da vedere) su utils VIF... e narrative flow (?)
+
+% “Visual doing” di Willemien Brand 
+Non utilizzare più di sei livelli su cui sviluppare gli elementi:
+-	Titolo principale grande (main topic)
+-	Sottotitolo (main content)
+-	Content e sub-content
+-	Elementi di supporto (linee direzionali, divisori e contenitori, dettagli e side notes)
+-	Segreti, dettagli e side notes (e tutto quello di cui non siè sicuri)
+-	Highlights, triggers
+
 
 % “Visual thinking” di Willemien Brand 
 Chiedersi quali linee sono necessarie per disegnare x (meno linee + impatto).
@@ -359,18 +384,8 @@ Quando si racconta una storia usiamo il linguaggio del corpo per stabilire un or
 -	Mandala, dal centro v/quattro direzioni diagonali. Utile per brainstorms e sessioni interattivi senza un risultato preciso.
 -	Matrice, quattro angoli collegati tra loro. Utile per mostrare differenti tipi di in formazioni su un argomento (e.g. SWOT analysis) e per mostrare do e do not.
 
-% “Visual doing” di Willemien Brand 
-Non utilizzare più di sei livelli su cui sviluppare gli elementi:
--	Titolo principale grande (main topic)
--	Sottotitolo (main content)
--	Content e sub-content
--	Elementi di supporto (linee direzionali, divisori e contenitori, dettagli e side notes)
--	Segreti, dettagli e side notes (e tutto quello di cui non siè sicuri)
--	Highlights, triggers
 
-% https://www.sciencedirect.com/book/9780128235676/visual-thinking-for-information-design
-% cap 3 vedi immagini da file infografiche
-
+\subsubsection{La scala}
 %https://medium.com/@tetracubetech/infographics-purpose-elements-and-types-ae8bfc7cd89b
 Elementi di una infografica:
 -	Elementi visivi (grafiche, colori, icone)
@@ -378,7 +393,99 @@ Elementi di una infografica:
 -	Elementi di contenuto (statistiche, references etc.)
 
 
+\subsubsection{Tecniche di visualizzazione dei dati inserite}
+%CAP 18: Le immagini
+Una visualizzazione più memorabile se:
+-	contiene visualizzazioni che richiamano oggetti riconoscibili da umano
+-	è facile distinguere elementi che la compongono
+-	è colorata (almeno 5 colori e dati raggruppati)
+-	è visivamente densa
+-	possiede basso rapporto dati-inchiostro
+Linguaggio immagini fortemente evocativo (valori simbolici). Alcune regole da usare per controllare espressività e costruire comunicazione efficace:
+-	gestalt (vedi cap. 15)
+-	lettura della pagina, dato dal diagramma di gutenberg (vedi foto) per cultura occidentale che suddivide l'area di lettura in 4 quadranti: punto di partenza in alto a sx (primaria importanza), in basso a dx dove termina la lettura, l'area in alto a dx e in basso a sx che sono di scarsa/debole lettura
+-	immagini evocative, possono provocare un'esperienza sensorale
+-	risoluzione dell'immagine
+
+a) The title (inscription). The presence of a clear and
+distinct title with correct font design will highlight the
+main idea of infographics and attract the attention of
+readers.
+b) The subtitle. It serves to reveal the contents of
+the main title and the subtitle cannot exist without it.
+c) The lead. This is the introductory part in the
+infographics, which is located mainly near the title and is
+italicized.
+d) The main text. Some types of infographics require
+a textual explanation to better perceive the information
+provided. The basic material should perform the function
+of readability. Its design must meet the criteria of different
+types of infographics [1], [10].
+e) The footnotes. This is formal information that
+should not distract the reader. Typically, the smallest, but
+the easy-to-read font size is chosen for this.
+
+
+j) The graphs. They are an important part of
+infographics. They depict the logical interrelations of
+elements that form a single entity, structure, and classify
+the data. Graphs are lines that combine objects. Different
+types of graphs are used to visualize the connections.
+
+
+\subsection{Layout}\label{subsec:info_layout}
+% layout vedi foto visual leaders
+% in base alla classificazione sopra (faccio io template immaginine)
+
+% Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
+Data visualization is grounded in the tradition of graphic purity, while infographics have no such ideal, and in contrast have traditionally made use of illustration.
+ suggest that effective designs will make use of conventions and figurative elements to reduce the effort required for the user to understand and remember the message a visualization.
+Data
+visualizations often combined many facets of a subject into a single
+graphic composition. Infographics, which are grounded in a tradition
+of narrative, are far more likely in our sample to use a panel
+composition where different component representations can be read
+in sequence. Each component representation in a panel composition
+may itself be a simple statistical graph
+
+
+\subsection{Principi di Gestalt}
+%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
+% cap 6
+Capacità di prevedere il comportamento del cervello (i.e. meccanismi di percezione delle caratteristiche di base, dette pre-attentive) per avere migliori infografiche.
+Il cervello riesce a percepire più velocemente variazioni di colore che di forma -> cervello ama contrasto/differenze. In generale, il cervello visivo è sostanzialmente un sistema che si è evoluto per individuare gli schemi (regioni nel campo visivo che condividono stessa natura o appartengono a entità diverse). Questi meccanismi di classificazione istantanea di differenze e somiglianze (che è percezione pre-attentiva) sono studiati nella psicologia della Gestalt, letteralmente forma, schema (Germania inizi xx secolo). Dice che il cervello non riconosce macchie di colore e forme come singole ma come complessi.
+(vedi altri docs per singoli principi).
+Scala cleveland e mcgill (vedi foto) da journal of the american statistical association, articolo “graphical perception:theory, experimentation, and application to the development of graphical methods), più si sale più accurate sono le valutazioni che i lettori riescono a fare in base ai grafici. Ci sono dieci attività percettive elementari, dove ciascuna costituisce un metodo per rappresentare i dati e classificati in base a come il cervello umano riesce a individuare le differenze e metterle a confronto (n.b. lunghezza, direzione e angolazione hanno uguale accuratezza; volume e curvatura pure; tonalità e intensità del colore anche).
+Tutto questo tratta della percezione visiva di basso livello, i.e. differenziazioni tra primo piano e sfondo, stima dimensioni relative e deduzione semplici schemi ambiente.
+Meccanismi di percezione delle caratteristiche di base, dette pre-attentive
+
+
+%Design is storytelling” di Ellen Lupton
+%atto 3
+Vediamo il mondo in base a ciò che vogliamo fare, cerchiamo dei pattern con i nostri sensi e agiamo in base a queste percezioni. In base a quello visto in precedenza, proviamo a prevedere quello che accadrà (tendiamo a vedere solo quello che stiamo cercando)
+Gestalt:
+-	Prossimità, elementi posti uno vicino all'altro formano gruppi
+-	Similarità, elementi di stessa forma o colore fanno parte di uno stesso gruppo
+-	Fato comune, elementi sembrano cambiare come gruppo
+-	Figure/ground ambiguity, gli spazi bianchi sono letti o come sfondo o come in primo piano
+-	Chiusura e continuazione, mentalmente vengono chiusi gli spazi su linee o su forme regolari 
+Un oggetto che innesca un'azione viene detto “affordance”, alcune di queste “affordance” sono accidentali (e.g. davanzale vicino a fermata del bus, perfetto per posare il caffè), altre sono imparate con il tempo (e.g. barre e bottoni nei website), magari rifacendosi ad oggetti reali
+
+%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
+%CAP 15: Gestalt (parte di design) 
+Oltre a comunicazione visiva nel design è importante anche la gestalt che offre una serie di leggi che chiariscono come le persone categorizzano gli elementi che vedono e come sviluppano le loro idee a proposito degli eventi che gli accadono intorno. Leggi utili ai designer per organizzare meglio le informazioni. Queste leggi sono:
+-	Di pregnanza, umani tendono a elaborare i pattern regolare e ordinati più velocemente di quelli complessi e articolati => organizzare dati logicamente in modo lineare e semplice
+-	Di continuità, occhi istintivamente portati a raggruppare oggetti allineati => organizzare dati allineandoli per facilitare raggruppamento, comparazione e conseguente comprensione da parte del fruitore
+-	Di similarità, oggetti che hanno caratteristiche simile (e.g. colore, forma, dim, orientamento) solitamente percepiti come un unico gruppo (rafforza dunque aggregazione, raggruppamento) => utilizzare caratteristiche simili per stabilire relazioni
+-	Del punto focale, simmetrica alla precedente, in una rapp visuali oggetti diversi creano punti focali che attirano l'attenzione e dunque convincono l'osservatore delle differenze tra oggetti => utilizzare caratteristiche distintive per aumentare le differenze ed evidenziare ciò che interessa
+-	Degli isomorfi, eventi e oggetti interpretati da utenti in base alla loro esperienza passata, dunque bisogna tener conto di convenzioni/condizionamenti culturali (e.g. rosso in occidente pericolo, perdita) => tenere sempre presenti le convenzioni e le abitudini preesistenti
+-	Dell'immagine e dello sfondo, oggetti interpretati in maniera diversa in base alle relazioni con lo sfondo (se integrati perdono importanza, mentre separati hanno maggior rilievo) => assicurare un buon contrasto tra quelli che sono dati marginali come lo sfondo e le informazioni prioritarie da mettere in evidenza
+-	Del fato o del destino comune, somiglianza di gruppo di ogg. consente di vederli come struttura (elem. che si spostano nella stessa direzione sono percepiti come maggiormente correlati => utilizzare le direzioni e i movimenti per stabilire o interrompere delle relazioni tra oggetti simili
+
+
+
 \section{Come costruire un'infografica}
+Importante non troppo testo, usare infografica SOLO se abbastanza info da raccontare storia ma non troppe (che creano rumore).
 % (da vedere) file synthesis... su utils e immagine content...(sempre su utils)
 
 %Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
