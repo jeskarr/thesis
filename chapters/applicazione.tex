@@ -1,88 +1,38 @@
 \chapter{Applicazione pratica di infografiche web con D3.js}
 \label{cap:applicazione}
+\intro{In questo capitolo verrà presentato il processo di sviluppo - comprendente progettazione, codifica e validazione - di un'infografica web sviluppata durante il corso dello stage.
+Tale infografica ha lo scopo di presentare il corso di laurea triennale di Informatica dell'Università degli Studi di Padova.}\\
 
 \section{Progettazione dell'infografica}
-(praticamente info-model del caso)
+La scelta di realizzare un'infografica sul corso di laurea triennale in Informatica dell'Università degli Studi di Padova è stata motivata dall'esperienza personale dello stagista ome 
+studente del corso, prossimo alla sua conclusione. 
+Questo background ha consentito di trattare il tema con l'\emph{ethos} e l'autorevolezza necessari per creare un'infografica informativa e credibile.
+Una solida conoscenza e competenza sull'argomento della presentazione sono, infatti, essenziali per garantire la qualità e l'accuratezza delle informazioni esposte.  
 
-\subsection{Casi d'uso}
+Inoltre, la disponibilità di dati pubblici e di fonti autorevoli, come i report dell'Università stessa e le statistiche di Almalaurea (il più importante consorzio interuniversitario italiano), ha 
+garantito anche l'affidabilità del contenuto, contribuendo alla scelta di questo argomento.
 
-Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo UML dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
+\bigskip
+\noindent Per quanto riguarda il processo di progettazione dell'infografica, questo ha seguito gli \emph{step} delineati dall'\emph{Infomodel}, come descritto nel capitolo precedente. 
+Si riportano di seguito le varie scelte progettuali effettuate per ciascuna fase del processo.
 
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
-    \caption{Use Case - UC0: Scenario principale}
-\end{figure}
+\subsection{Identificazione degli interlocutori}
 
-\begin{usecase}{0}{Scenario principale}
-\usecaseactors{Sviluppatore applicativi}
-\usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-\label{uc:scenario-principale}
-\end{usecase}
+\subsection{Identificazione della storia e dei suoi effetti}
 
-\subsection{Tracciamento dei requisiti}
+\subsection{Identificazione del dataset}
 
-Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
-Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
-\begin{enumerate}
-	\item[R =] requisito
-    \item[F =] funzionale
-    \item[Q =] qualitativo
-    \item[V =] di vincolo
-    \item[N =] obbligatorio (necessario)
-    \item[D =] desiderabile
-    \item[Z =] opzionale
-\end{enumerate}
-Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
+\subsection{Analisi e rappresentazione della storia}
 
-\newpage
 
-\begin{table}%
-\caption{Tabella del tracciamento dei requisti funzionali}
-\label{tab:requisiti-funzionali}
-\begin{tabularx}{\textwidth}{lXl}
-\hline\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline
-RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
-\hline
-\end{tabularx}
-\end{table}%
-
-\begin{table}%
-\caption{Tabella del tracciamento dei requisiti qualitativi}
-\label{tab:requisiti-qualitativi}
-\begin{tabularx}{\textwidth}{lXl}
-\hline\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline
-RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
-\hline
-\end{tabularx}
-\end{table}%
-
-\begin{table}%
-\caption{Tabella del tracciamento dei requisiti di vincolo}
-\label{tab:requisiti-vincolo}
-\begin{tabularx}{\textwidth}{lXl}
-\hline\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline
-RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
-\hline
-\end{tabularx}
-\end{table}%
 
 \section{Codifica dell'infografica}
 \subsection{Tecnologie e strumenti}\label{subsec:tecnologie}
 (d3.js)
 \subsection{Design Pattern adottati}
 \subsection{Codifica}
+
+
 
 \section{Verifica e validazione dell'infografica}
 \subsection{Test implementati}
