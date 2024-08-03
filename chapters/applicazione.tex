@@ -295,16 +295,42 @@ potenziali futuri studenti universitari e dunque inclini a gestire informazioni 
 Inoltre, per una maggiore facilità di comprensione e navigazione, viene incluso uno strumento - il \emph{chatbot} - che consente di ricevere risposta ai propri dubbi e/o 
 trovare l'informazione ricercata all'interno dell'infografica.
 
-\section{Codifica dell'infografica}
-\subsection{Tecnologie e strumenti}\label{subsec:tecnologie}
-(d3.js)
-\subsection{Design Pattern adottati}
+\section{Implementazione dell'infografica e uso}
+Innanzitutto, è necessario premettere che sono disponibili due versioni dell'infografica, differenziate solamente dall'algoritmo che caratterizza il \emph{chatbot}.
+\begin{itemize}
+    \item La prima versione, da qui in poi chiamata \textbf{versione base}, è stata sviluppata dallo stagista e implementa l'algoritmo solamente attraverso codice \gls{js}. 
+    \item La seconda versione, da qui in poi chiamata \textbf{versione integrata}, implementa una ricerca ibrida attraverso i linguaggi \gls{pythong} e \gls{sql}.
+    Tale versione è così chiamata in quanto integra in sè il codice prodotto dal collega Fabio Meneghini come parte della sua tesi.    
+\end{itemize}
+Per una descrizione dettagliata delle differenze tra le due versioni si rimanda alla sezione \ref{subsubsec:chatbot}.
+
+\subsection{Strumenti e tecnologie utilizzati}\label{subsec:tecnologie}
+Il progetto di stage applica concretamente quanto ricercato utilizzando la libreria \gls{js} \textbf{\gls{d3g}}, che riveste dunque un ruolo fondamentale nello sviluppo.
+Tutte le rappresentazioni di \gls{datavizg} sono infatti implementate attraverso tale libreria.
+\gls{d3g} consente di creare grafici e visualizzazioni scalabili, essendo in formato \gls{svg}, e interattive, oltre che altamente personalizzabili. 
+Ciò permette di rendere maggiormente coinvolgente e dinamica l'esperienza utente. 
+Inoltre, questa libreria fornisce anche dei metodi per il \emph{parsing} dei dati, permettendo dunque di manipolarli con maggiore facilità e precisione.
+
+La libreria è disponbibile al link \href{https://d3js.org/}{https://d3js.org/}.
+
+\bigskip
+\noindent Sono inoltre necessarie le seguenti tecnologie, diverse in base alla versione scelta.
+
+\subsubsection{Versione base}
+Si utilizzano:
+\begin{itemize}
+    \item \textbf{Node.js} e nello specifico http-server
+\end{itemize}
+
+\subsubsection{Versione integrata}
+
 \subsection{Codifica}
 
+\subsubsection{Chatbot}\label{subsubsec:chatbot}
 
 
-\section{Verifica e validazione dell'infografica}
-\subsection{Test implementati}
-\subsection{Metodo di validazione}
+\subsection{Validazione}
 validazione a/b o chatbot
+cosa non fatte
 
+\section{Uso dell'infografica}
