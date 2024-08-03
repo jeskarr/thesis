@@ -306,12 +306,25 @@ provengono da vari principi di design come ad esempio i principi di \emph{Gestal
 
 Sono individuati i seguenti \emph{pattern} principali di \gls{vif}, distinti in base alla loro \emph{backbone shape}, ovvero da una diversa forma della linea lungo cui la 
 maggior parte dei \emph{gruppi visivi} è allineata nella narrazione.
-%\begin{tabular}{|c|m{13cm}|}\hline
-%    Symbol & Description \\\hline
-%     & \\ [-0.5em] \icon{infografiche/pattern_vif.png} & Text in only one line. \\ 
-%     [-0.5em] & \\\hline
-%     & \\ [-0.5em] \icon{infografiche/pattern_vif.png} & Here is a longer text that is displayed over more than one line. The symbol is not vertically centered, but has the same distance to the top as the icon in the first line. Here is a longer text that is displayed over more than one line. The symbol is not vertically centered, but has the same distance to the top as the icon in the first line. \\ [-0.5em] & \\\hline
-%\end{tabular}
+%\begin{table}[H]
+%    \centering
+%    \begin{tabular}{|>{\centering\arraybackslash} m{0.15\textwidth}| >{\centering\arraybackslash} m{0.25\textwidth}| >{\centering\arraybackslash} m{0.15\textwidth}| >{\centering\arraybackslash} m{0.25\textwidth}|}
+%        \hline
+%        Backbone Shape & Pattern & Backbone Shape & Pattern \\
+%        \hline
+%        \icon{infografiche/clock_vif.png} & Clock & \icon{infografiche/downladder_vif.png} & Down-ladder\\ 
+%        \icon{infografiche/dome_vif.png} & Dome & \icon{infografiche/upladder_vif.png} & Up-ladder\\ 
+%        \icon{infografiche/bowl_vif.png} & Bowl & \icon{infografiche/landscape_vif.png} & Landscape\\ 
+%        \icon{infografiche/leftwing_vif.png} & Left-wing & \icon{infografiche/portrait_vif.png} & Portrait\\ 
+%        \icon{infografiche/rightwing_vif.png} & Right-wing & \icon{infografiche/pulse_vif.png} & Pulse\\ 
+%        \icon{infografiche/star_vif.png} & Star & \icon{infografiche/spiral_vif.png} & Spiral\\ 
+%        \hline
+%    \end{tabular}
+%    \vspace{0.2cm}
+%    \caption{Backbone shape dei pattern di Visual Information Flow (VIF)}
+%    \label{tab:pattern_vif}
+%\end{table}
+
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{infografiche/pattern_vif.png} 
@@ -382,7 +395,7 @@ Nello specifico, vengono definite le seguenti disposizioni generali a cui si pos
 \end{itemize}
 Si noti che i \emph{pattern} \gls{vif} potrebbero essere applicati in maniera composita per diverse macro-aree dell'infografica.
 
-\subsubsection{Grandezza degli elementi}
+\subsubsection{La grandezza degli elementi}
 La scelta della dimensione degli elementi deve essere fatta con cura per poter garantire l'accessibilità dei dati, una simmetria nel design e poter trasmettere correttamente l'ordine di importanza 
 dei dati presentati.
 
@@ -393,11 +406,11 @@ In secondo luogo, gli elementi e dati più rilevanti dovrebbero avere dimensioni
 La scala degli elementi è importante dunque anche per dare una sorta di ``gerarchia visiva'', che permette di strutturare meglio l'infografica, facilitando il confronto tra elementi con stesso livello ed evidenziando sezioni e 
 relazioni tra le parti.
 
-\subsubsection{Tecniche di visualizzazione dei dati inserite}
+\subsubsection{Le tecniche di visualizzazione dei dati inserite}
 Un elemento determinante nella presentazione dei dati nelle infografiche è rappresentato dalle tecniche di \gls{datavizg} utilizzate e, nello specifico, dalla scelta dei grafici e diagrammi.
 Questo argomento è già stato affrontato nella sezione \ref{sec:classificare_grafici}, che riguarda la classificazione dei grafici e la loro scelta tramite lo strumento \emph{Chart-chooser}.
 
-\subsubsection{Simmetria nel design}
+\subsubsection{La simmetria nel design}
 La simmetria è un altro principio fondamentale nel design delle infografiche, poiché contribuisce a creare un senso di equilibrio e ordine visivo che può aiutare l'occhio del lettore a orientarsi
 all'interno dell'infografica.
 
@@ -416,7 +429,7 @@ Tale equilibrio può essere raggiunto in due diversi modi:
 \end{itemize}
 
 
-\subsubsection{Elementi grafici}
+\subsubsection{Gli elementi grafici}
 Oltre a grafici, diagrammi ed elementi testuali, l'infografica può contenere anche altre tecniche di comunicazione visiva. Tra queste, ad esempio, vengono spesso utilizzati
 illustrazioni, icone e simboli.
 
@@ -589,7 +602,7 @@ opposti. Tali coppie sono:
     \item \textbf{Estroversione o Introversione}, fornisce una preferenza riguardante il modo di trarre energia dell'individuo.
     Se ci si concentra più sul mondo esterno che quello interiore si tende al primo valore, in caso contrario al secondo.   
     \item \textbf{Sensitività o Intuizione}, fornisce una preferenza riguardante la modalità di acquisire informazioni. 
-    Se ci si concentra più sui fatti concreti che sul quadro generale e sulle possibile implicazioni si tende al primo valore, in caso contrario al secondo.
+    Se ci si concentra più sui fatti concreti che sul quadro generale e sulle possibili implicazioni si tende al primo valore, in caso contrario al secondo.
     \item \textbf{Ragionamento o Sentimento}, fornisce una preferenza sulle modalità di decisione e raggiungimento di conclusioni.
     Se si adotta un approccio più oggettivo che empatico si tende al primo valore, in caso contrario al secondo.
     \item \textbf{Giudicare o Percepire}, fornisce preferenza sui modi di rapportarsi con il mondo esterno.
@@ -759,6 +772,6 @@ Nello specifico, si cerca di trovare un equilibrio tra le seguenti coppie di car
     Il livello più esterno deve fungere da punto di ingresso dell'infografica, fornendo una sintesi chiara e concisa delle informazioni presentate, comprese introduzione e punti salienti.
     \item Una volta determinate tali caratteristiche, si pensa a \emph{funzionalità - decorazione} e \emph{astrazione - raffigurazione}, definendo dapprima struttura e organizzazione dei dati e successivamente la loro rappresentazione. 
     Solo in un secondo momento si scelgono eventuali elementi decorativi aggiuntivi
-    \item Infine, si pensa a \emph{originalità - ridondanza} e \emph{novità - familiarità}, cercando di garantire la comprensione dei concetti esposti ma anche di evitare la noia che la ripetizione di questi potrebbe portare.
+    \item Infine, si pensa a \emph{Originalità - familiarità} e \emph{novità - ridondanza}, cercando di garantire la comprensione dei concetti esposti ma anche di evitare la noia che la ripetizione di questi potrebbe portare.
     In linea generale, meno comune è la forma grafica scelta più ridondanze dovranno essere inserite.
 \end{enumerate}

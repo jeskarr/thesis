@@ -17,14 +17,283 @@ garantito anche l'affidabilità del contenuto, contribuendo alla scelta di quest
 Si riportano di seguito le varie scelte progettuali effettuate per ciascuna fase del processo.
 
 \subsection{Identificazione degli interlocutori}
+\subsubsection{Attori}
+Il target di riferimento dell'infografica sono principalmente gli individui che desiderano proseguire la loro formazione con un percorso universitario e sono interessati
+in particolare all'ambito informatico. 
+Inoltre, l'infografica potrebbe anche attrarre studenti che già frequentano il corso, i quali potrebbero essere interessati a visualizzare e analizzare le statistiche relative al loro programma di studi. 
+%TODO: Sono dunque definiti i seguenti attori che interagiscono con l'infografica:
+
+\subsubsection{Scelte individuate a partire dalle inclinazioni cognitive}
+Per quanto riguarda le loro inclinazioni cognitive, possiamo ragionevolmente supporre che la maggior parte degli interlocutori tendano maggiormente al \emph{ragionamento} piuttosto che al \emph{sentimento}. 
+Questo poiché il campo dell'informatica richiede una forte capacità di analisi logica e \emph{problem solving}, elementi che sono tipicamente associati al ragionamento analitico. 
+
+Alla stessa maniera, è probabile che i futuri studenti di informatica siano più inclini al \emph{percepire} che al \emph{giudicare}, essendo flessibilità e apertura all'innovazione fondamentali per questo settore 
+in continua rivoluzione. 
+
+Per quanto riguarda invece \emph{sensitività o intuizione}, è probabile che la maggior parte degli interlocutori tenda verso il secondo, in quanto avere una visione globale e una capacità di immaginare le possibili conseguenze 
+risultano essenziali per lo sviluppo di programmi informatici.
+
+\bigskip
+\noindent L'infografica è quindi progettata tenendo conto di queste caratteristiche. Nello specifico, essa fornirà una panoramica generale del corso di laurea, illustrando anche le potenziali conseguenze e benefici (\emph{intuizione}). Si cercherà, inoltre, 
+di fornire molti dati oggettivi (\emph{ragionamento}), pur inserendo elementi di \emph{pathos}, necessari per connettersi emotivamente con gli utenti. Infine, verranno inclusi elementi innovativi nella presentazione per stimolare l'interesse e 
+l'\emph{engagement} degli interlocutori (\emph{percepire}).
+
+\subsubsection{Scelte individuate a partire dalle inclinazioni decisionali}
+Per quanto riguarda invece le loro inclinazioni decisionali, si considerano tutti gli stili di apprendimento degli interlocutori, facendo però una particolare attenzione all'\emph{apprendimento analitico}. Si suppone infatti che la 
+maggior parte degli individui interessati all'informatica sia incline a tale approccio, che predilige la scomposizione delle informazioni in parti più gestibili e l'uso di ragionamenti logici per risolvere problemi complessi. Questo tipo di
+procedimento è infatti alla base del funzionamento di molti algoritmi informatici.
+
+\bigskip
+\noindent Si struttura la storia rispondendo alle seguenti domande:
+\begin{itemize}
+    \item \textbf{Perchè?}
+    \begin{itemize}
+        \item Si inserisce una spiegazione iniziale che illustra l'importanza e rilevanza del corso e i motivi per cui sceglierlo.
+    \end{itemize}
+    \item \textbf{Cosa?}
+    \begin{itemize}
+        \item Si dedica una grossa fetta dell'infografica a descrivere il corso, fornendo tutti i dati possibili per averne un quadro generale.
+    \end{itemize}
+    \item \textbf{Come?}
+    \begin{itemize}
+        \item Si inseriscono le opinioni degli studenti laureati all'interno dell'infografica, in modo tale da avere anche la prospettiva più pratica fornita
+        da chi ha vissuto in prima persona l'esperienza del corso.
+    \end{itemize}
+    \item \textbf{Cosa succede se?}
+    \begin{itemize}
+        \item Si esplorano le opportunità e opzioni sia accademiche sia professionali che il corso apre con il suo completamento.
+    \end{itemize}
+\end{itemize}
+
 
 \subsection{Identificazione della storia e dei suoi effetti}
+\subsubsection{Formulazione della storia}\label{subsubsec:app_storia}
+La storia viene formulata a partire dalle risposte alle domande definite nella sezione precedente, a formare un arco narrativo di tre parti come segue:
+\begin{itemize}
+    \item \textbf{Introduzione al corso}:
+    \begin{itemize}
+        \item La prima parte dell'infografica fornisce una panoramica generale del corso. Viene illustrata brevemente l'importanza del corso, indicando le sue principali aree di studio e 
+        i motivi per cui potrebbe essere una scelta valida. 
+        \item Questa parte risponde alla domanda ``perchè?''.
+    \end{itemize}
+    \item \textbf{Descrizione del corso}:
+    \begin{itemize}
+        \item La seconda parte esplora i vari aspetti del corso in modo più approfondito. Vengono forniti dettagli sulla durata del corso, il voto medio degli studenti, sui requisiti necessari ma anche sui luoghi di studio e 
+        le materie ed esperienze pratiche offerte dal corso. Inoltre, si delineano anche i profili tipici degli studenti iscritti.
+        Si include anche la prospettiva degli studenti laureati, che forniscono la loro opinione sui vari argomenti trattati.
+        \item Questa parte risponde alle domande ``cosa?'' e ``come?''.
+    \end{itemize} 
+    \item \textbf{Valutazione finale e opportunità post-laurea}:
+    \begin{itemize}
+        \item L'ultima parte dell'infografica analizza se il corso rappresenti effettivamente una scelta valida, esaminando le opportunità professionali e accademiche che si presentano dopo il completamento e fornendo 
+        l'opinione finale dei laureati sul corso.
+        \item Questa parte risponde alla domanda ``cosa succede se?''.
+    \end{itemize}
+\end{itemize}
+
+\bigskip
+\noindent Nello specifico, si ha la seguente storia:
+\begin{itemize}
+    \item \textbf{Primo atto dell'arco narrativo: introduzione al corso}
+    \begin{itemize}
+        \item \textit{\textbf{Il corso in breve} \\
+        Il corso di laurea fa parte del dipartimento di matematica `Tullio-Levi-Cita' dell'Università degli Studi di Padova e dura 3 anni. \\
+        Il corso di laurea consente di ottenere una competenza e metodologia di lavoro essenziale per adattarsi a diverse situazioni sia presenti che future. Ciò è molto importante, specie nel campo dell'informatica che, 
+        come sappiamo, è continuamente stravolto da nuove scoperte. \\
+        Ciò è possibile grazie ad un corso di laurea che offre una solida base teorica e pratica, combinando l'apprendimento di nozioni e fondamenti classici di matematica e informatica con corsi di taglio progettuale e stage obbligatorio. \\
+        I contenuti del corso di laurea hanno la certificazione di qualità concessa dal GRIN, ente nazionale che si occupa di vagliare, organizzare e promuovere attività scientifiche e didattiche informatiche. 
+        Inoltre, l'università di Padova ottiene buoni ranking (4a) nell'ambiente nazionale anche secondo il QS.
+        }
+    \end{itemize}
+    \item \textbf{Secondo atto dell'arco narrativo: descrizione del corso}
+    \begin{itemize}
+        \item \textit{\textbf{Cosa ti serve per iniziare?}
+            \begin{itemize}
+                \item Diploma di maturità quinquennale (o equipollenti), non è necessario aver studiato meterie specifiche precedentemente, si partirà dalle basi.
+                \item Superare il test d'ingresso TOLC-I in quanto il corso ha accesso a numero programmato.
+                \item Avere la giusta attitudine: un'attenzione all'innovazione, un interesse per la tecnologia, una curiosità scientifica, un pensiero astratto e logico, un'inclinazione al problem solving. 
+            \end{itemize}
+            \item \textbf{Chi ti accompagnerà?} \\
+            La maggior parte degli studenti sono dei ragazzi giovani, di circa 19 anni, provenienti da istituti tecnici o licei scientifici. Tuttavia, se sei una ragazza, se non sei più così giovane, 
+            o se la tua formazione pre-universitaria non segue il percorso tradizionale, non preoccuparti! Il corso accoglie studenti con storie diverse, offrendo opportunità di successo a tutti coloro che sono motivati e appassionati.
+            \item \textbf{Dove si va?} \\
+            L'università dispone di una vasta area, con quasi 800.000 ettari di proprietà che includono sia edifici moderni che con secoli di storia. Tuttavia, tu non dovrai correre da una parte all'altra della città per arrivare a lezione. 
+            Il corso, infatti, si svolge a Padova, all'interno di poche aule situate nella zona del Piovego. 
+            \item \textbf{Cosa imparerai?} \\
+            Dei 180 CFU totali, 48 sono dedicati alla parte matematica, 102 all'informatica e 12 allo stage (i rimanenti per tesi, abilità linguistica di inglese ed esami a scelta). \\
+            Per alcuni ambiti quali programmazione a oggetti, basi di dati, tecnologie web e ingegneria del software vengono svolti progetti per sperimentare e toccare con mano quanto appreso. 
+            Nell'ultimo caso, vi è anche la collaborazione con aziende esterne, che propongono i progetti, rendendo l'esperienza ancora più vicina alla realtà del campo professionale.  \\
+            Anche lo stage inoltre copre un ruolo fondamentale nel corso di laurea essendo poi su quello che si baserà la tesi di laurea. \\
+            Per quanto riguarda il carico di studio, esso viene ritenuto adeguato da quasi il 90\% degli studenti. 
+            \item \textbf{Ma è difficile?} \\
+            La maggior parte degli studenti si laurea entro i tre anni prestabiliti; tuttavia, la durata degli studi è mediamente 4.3 anni. Per quanto riguarda il voto medio questo è 96.8. \\
+            Quindi potremmo considerare il corso generalmente abbastanza difficile.
+        }
+    \end{itemize}
+    \item \textbf{Terzo atto dell'arco narrativo: valutazione finale e opportunità post-laurea}
+    \begin{itemize}
+        \item \textit{\textbf{Finalmente laureati! E poi?} \\
+            Si può prosegue con la magistrale, della durata di due anni, per arricchire la propria formazione ed acquisire competenze specifiche. \\
+            Alternativamente o parallelamente, si può iniziare a lavorare. I principali sbocchi lavorativi riguardano lo sviluppo di app software e la gestione di reti informatiche. 
+            Non ci si deve preoccupare di non trovare lavoro! Infatti, il tasso di disoccupazione è basso: si aggira intorno al 3.9\%. \\
+            La maggior parte dei laureati sceglie quest'ultima strada, perseguendo professioni tecniche o intellettuali. Nel caso, invece, di proseguimento degli studi con la laurea magistrale, 
+            solitamente il corso scelto rappresenta il proseguimento naturale di quanto studiato, confermando la scelta effettuata con la triennale. 
+            \item \textbf{Quindi, ne vale la pena?} \\
+            Circa il 90\% degli studenti si ritiene soddisfatto abbastanza del corso, nello specifico il 46\% si dichiara decisamente entusiasta. \\
+            Complessivamente l'80\% si iscriverebbe nuovamente al corso.
+        }
+    \end{itemize}
+\end{itemize}
+
+%TODO: Tale storia è stata anche data in input a \emph{Infographic-helper} il quale ha fornito elementi di \emph{pathos}, \emph{ethos} e \emph{logos} da aggiungere.
+% con parametri???
+% INSERIRE IL FATTO CHE STORIA GIA DIVISA IN SEZIONE
+
+%TODO: \subsubsection{Effetti della storia} -> archetipi utenti
+
 
 \subsection{Identificazione del dataset}
+I dati sono stati presi dai report dell'università, disponibili a \href{https://www.unipd.it/dati-statistici}{questo link} e dai dati forniti
+da Almalaurea, disponibili a \href{https://apex.cca.unipd.it/pls/apex/f?p=144:32:::::P32_CODICIONE,P32_COD_CDS,P32_CODICE_SEDE,P32_TIPO_CORSO:0280106203100001,SC1167,PD,L2023}{questo link}.
+I dati considerati sono quelli relativi all'anno più recente disponibile (2022 e/o 2023), per assicurare che le informazioni siano aggiornate e riflettano la situazione attuale.
 
-\subsection{Analisi e rappresentazione della storia}
+Altri dati, riguardanti ad esempio le materie, sono stati ricavati manualmente dalla pagina del corso di laurea (disponibile a \href{https://www.didattica.unipd.it/off/2023/LT/SC/SC1167}{questo link}).
 
+Per quanto riguarda i luoghi di studio, sono stati anch'essi ricavati manualmente a partire dall'esperienza personale dello stagista-studente e dei colleghi, cercando di inserire tutte le strutture utili presenti nelle vicinanze.
 
+\bigskip
+\noindent In base ai diversi dataset disponibili, si identificano i diversi aspetti di questi che si vogliono mettere in luce con la visualizzazione:
+\begin{itemize}
+    \item \emph{Analisi per categoria} per quanto riguarda i dati sul profilo degli studenti, le materie di studio, le opportunità post-laurea;
+    \item \emph{Comparazioni interne} per quanto riguarda i dati sulla difficoltà del corso e sull'opinione degli studenti;
+    \item \emph{Associazioni} per quanto riguarda i luoghi.
+\end{itemize}
+
+\subsection{Analisi dei dati e rappresentazione della storia}
+\subsubsection{Analisi dei dati}
+Per quanto riguarda l'analisi dei dati, essendo questi provenienti da fonti autorevoli, possono essere considerati di qualità. Inoltre, il numero limitato di enti distributori di tali fonti e l'elaborazione 
+dei dati che loro stessi forniscono ha permesso di non avere particolari problemi di notazione. 
+È stato, infatti, necessario solo un parsing dei dati: per quanto riguarda i dati dell'Università di Padova, sono state escluse le informazioni non pertinenti al corso di laurea;
+mentre, per i dati di Almalaurea, è stato necessario strutturare i dati in sezioni, domande e relative risposte-dati. 
+Questo ha permesso di ottenere dati utili e pertinenti alla rappresentazione.
+
+Ulteriori analisi effettuate utili per il design dell'infografica sono riportate successivamente per i vari fattori di interesse.
+
+\subsubsection{Scelte progettuali che influenzano la rappresentazione}
+Si riportano di seguito le scelte progettuali effettuate per ciascuno dei fattori che influenzano il design dell'infografica
+e, di conseguenza, la rappresentazione della storia.
+
+\paragraph{I Colori.} I colori principali scelti per l'infografica sono:
+\begin{itemize}
+    \item Rosso scuro e sue sfumature, in quanto colore del logo dell'Università degli Studi di Padova. Ciò permette di mantenere una certa coerenza visiva con il
+    tema presentato e, allo stesso tempo, attrarre l'attenzione del pubblico. Inoltre, le sfumature più tendenti all'arancione aggiungono un tocco giovanile e dinamico,
+    riflettendo il carattere innovativo del settore dell'informatica.
+    \item Gradazioni di grigio, utilizzato in maniera simmetrica ai rossi sui grafici per mostrare divergenze oppure per rapprentare altri elementi che si scostano 
+    dall'obiettivo principale della singola visualizzazione. 
+    Le gradazioni di grigio simboleggiano tecnologia, quindi perfettamente in tema, e contemporanemante offrono un contrasto neutro che bilancia l'uso del colore 
+    principale.
+    \item Tonalità di bianco e nero, utilizzate per gli sfondi e per il colore del testo. 
+    Si precisa che la scelta del colore dei vari blocchi di testo è stato scelto in maniera tale da rispettare lo standard AA definito dal \gls{wcag}.
+\end{itemize}
+
+\paragraph{Il layout.}
+%Si è utilizzato lo strumento \emph{Infographic-helper} per individuare le varie sezioni della storia, come descritto alla sezione \ref{subsubsec:app_storia}, e l'obiettivo. 
+%TODO: cosa di infographic-helper che ha sbagliato
+L'obiettivo della presentazione corrisponde a ``infografiche basate su un processo ordinato''. Seguendo i principi enunciati nel capitolo precedente, si sceglie una \emph{disposizione 
+a passi}. Nello specifico, si adotta il \emph{pattern} \gls{vif} \emph{spiral}, che consente di implementare uno scorrimento verticale, poiché il \emph{layout} è sviluppato anch'esso verticalmente.  
+Tale tipo di scorrimento risulta esserre più agevole e familiare agli utenti di quello orizzontale, essendo la convenzione nella maggior parte dei siti web. 
+È importante notare che l'infografica richiede necessariamente uno scorrimento per essere visualizzata nella sua interezza poichè contiene numerose informazioni.
+
+\paragraph{La grandezza degli elementi.} La grandezza degli elementi è influenzata principalmente dalle inclinazioni cognitive e decisionali del pubblico target. 
+Infatti, per rispondere alla predominanza di ragionamento e apprendimento analitico, si attribuisce maggiore importanza ai dati oggettivi, rappresentandoli attraverso grafici di dimensioni maggiori. 
+Al contrario, le opinioni degli studenti, che si basano più sulla pratica e sull'esperienza soggettiva, sono rappresentate con dimensioni minori e possono essere visualizzate in modo opzionale.
+
+\paragraph{Le tecniche di visualizzazione dei dati inserite.}
+Si è utilizzato lo strumento \emph{Chart-chooser} per individuare le tecniche di \gls{datavizg} più adatte. 
+Le visualizzazioni risultanti scelte sono le seguenti:
+%TODO: Si riportano di seguito gli input forniti e gli output prodotti dallo strumento per ogni tipologia di dato:
+\begin{itemize}
+    \item Per la visualizzazione dei dati riguardanti il profilo degli studenti si è scelto di utilizzare un diagramma Sankey. 
+    \item Per la visualizzazione dei dati geografici si è utilizzata una semplice mappa con evidenziate i luoghi d'interesse.
+    \item Per la visualizzazione dei dati riguardanti le materie di studio si è scelto di utilizzare un \emph{treemap}.
+    \item Per la visualizzazione dei dati riguardanti la regolarità (intesa come durata) negli studi si è scelto di utilizzare un semplice grafico a barre.
+    \item Per la visualizzazione dei dati riguardanti le opportunità post-laurea si è utilizzato un diagramma Venn, correddato da dei \emph{waffle chart}.
+    \item Per la visualizzazione dei dati riguardanti l'opinione degli studenti si è scelto di utilizzare degli \emph{diverging stacked bar charts} per opinioni
+    divergenti, altrimenti dei \emph{waffle chart} per opinioni non classificabili solamente in positive e negative.
+\end{itemize}
+Si precisa che, essendo lo strumento prototipale e non compatibile con il formato dei dati, il numero di variabili è stato inserito manualmente nel codice per ottenere dei risultati corretti.
+
+\paragraph{La simmetria del design.} Per la struttura generale dell'infografica si è impiegata la \emph{symmetrical balance}.
+Nello specifico, il \emph{layout} utilizzato ha consentito di allineare gli elementi sia a sinistra che a destra in modo equilibrato. 
+Questa scelta di design è stata fatta per rappresentare al meglio la storia dell'infografica (tramite il \emph{layout} scelto) e ottenere una distribuzione visiva armoniosa e ordinata,
+che crei un senso di equilibrio e coerenza per una maggiore facilità nell'interpretazione delle informazioni.
+
+\paragraph{Gli elementi grafici.} Si è scelto di inserire come elementi grafici delle icone piuttosto che immagini realistiche in quanto più adatte a rappresentare concetti astratti e categorie, che costituiscono la maggior parte 
+delle informazioni da visualizzare. Per la parte rimanente non-astratta e non-categorica si è comuqnue scelto di usare icone per coerenza con il resto dell'infografica.
+
+Si è inoltre prestata particolare attenzione alla risoluzione di tali elementi grafici, al fine di garantire una corretta visione su tutti i tipi di dispositivo.
+Infatti, si usa nella stragrande maggioranza dei casi il formato \gls{svg}, che permette di scalare l'elemento senza perderne la qualità.
+
+\paragraph{I blocchi di testo.} I blocchi di testo ``standard'' sono inseriti nell'infografica come segue:
+\begin{itemize}
+    \item \textbf{I titoli}: è presente un titolo generale dell'infografica e uno per ogni sezione. Il titolo generale introduce semplicemente il tema; per quanto riguarda invece
+    i titoli delle sezioni, questi sono formulati sotto forma di domanda, in modo tale da generare interesse nell'utente.
+    \item \textbf{I sottotitoli}: sono presenti solo per le sezioni e non per l'infografica nel suo insieme. In particolare, essi specificano il contenuto della sezione rispondendo
+    brevemente alla domanda del titolo con la statistica principale.
+    \item \textbf{L'introduzione}: è presente all'inizio dell'infografica e fornisce una panoramica generale del corso di laurea presentato.
+    \item \textbf{Il testo principale}: esso viene diviso nelle varie sezioni ed è visualizzato in multipli contenitori separati per avere una visione più strutturata dei vari dati.
+    \item \textbf{Le note a piè di pagine}: servono a indicare le fonti da cui vengono presi i dati. 
+\end{itemize}
+Oltre a questi blocchi, è presente del testo anche in:
+\begin{itemize}
+    \item \textbf{Note sul testo e sui grafici}: sono presenti dei \emph{pop-up} e \emph{tooltip} visibili selezionando o posizionandosi col cursore in alcune parti del testo e dei grafici. Essi forniscono 
+    del testo informativo sull'elemento in questione.
+    \item \textbf{Chat}: è infatti presente un \emph{chatbot} dove si può inviare e ricevere blocchi di testo per avere informazioni sull'infografica e guidare la navigazione. Tali testi sono 
+    inseriti in containitori stile ``messaggio''.
+\end{itemize}
+In generale, il testo presente nell'infografica è molto coinciso.
+La priorità è, infatti, la visualizzazione diretta dei dati, con opzioni di approfondimento testuali disponibili su richiesta. 
+Ciò viene fatto per evitare un eccessivo rumore visivo e mantenere l'efficacia comunicativa.
+
+\paragraph{I caratteri tipografici.} Si utilizzano caratteri \emph{sans-serif}, essendo un'infografica web e composta da poco testo. La scelta degli specifici caratteri è stata dettata da preferenze stilistiche
+dello stagista, tuttavia vengono comunque inserite delle opzioni secondarie compatibili con tutti i browser in modo tale da garantire l'accessiblità dell'infografica.
+
+Per mettere in luce alcuni dati, sono stati utilizzati caratteri più spessi, talvolta accompagnati da diversi colori e dimensioni per evidenziarne ulteriormente l'importanza.
+
+Per quanto riguarda invece l'allineamento del testo, questo è generalmente centrato per testi inseriti in contenitori specifici, altrimenti l'allineamento segue
+la struttura del \emph{layout} al fine di mantenere un'armonia e un equilibrio visivo complessivi.
+
+\subsubsection{Interattività}
+Per quanto riguarda gli elementi interattivi presenti all'interno dell'infografica, si hanno:
+\begin{itemize}
+    \item \textbf{\emph{Panning} e zoom}, inseriti sui grafici per aumentarne la visibilità su vari dispositivi;
+    \item \textbf{Apertura e chiusura di \emph{pop-up} e \emph{tooltip}}, utilizzati per riportare dettagli e fornire un ulteriore livello di 
+    approfondimento all'informazione;
+    \item \textbf{Ricerca}, implementata attraverso un \emph{chatbot} che riporta alla sezione dell'infografica in cui si discute dell'argomento richiesto; 
+    \item \textbf{Filtro}, utilizzato per mostrare le materie a seconda dell'affinità (a temi informatici, matematici o altro) oppure a seconda dell'anno 
+    accademico in cui vengono offerte;
+    \item \textbf{Piccole animazioni grafiche}, utilizzate in alcuni grafici per migliorarne la comprensione dei dati, attraendo l'attenzione sugli elementi chiave.
+\end{itemize}
+
+\subsubsection{Complessità dell'infografica}
+Per quanto riguarda \emph{densità - leggerezza}, l'infografica tende verso una maggiore complessità, sono presenti infatti numerose informazioni.
+Dal punto della \emph{multidimensionalità - unidimensionalità}, l'infografica è organizzata su un massimo di due livelli: uno generale che mostra visivamente i dati e 
+uno secondario che ne specifica i valore. Pertanto, si ha una struttura abbastanza semplice.
+
+Per quanto concerne \emph{astrazione - raffigurazione}, l'infografica contiene solamente icone e nessuna immagine realistica. Inoltre, la maggior parte degli elementi
+inseriti sono utili per comprendere l'infografica, rendendola più \emph{funzionale} che \emph{decorativa}.
+
+Per quanto riguarda invece \emph{originalità - familiarità}, l'infografica combina e bilancia elementi non familiari, come ad esempio il diagramma Sankey, con elementi
+ad uso comune, come ad esempio il diagramma Venn. 
+Infine, in termini di \emph{novità - ridondanza}, viene inserito un unico elemento di ridondanza, ovvero il ``secondo livello'' che fornisce informazioni testuali sulla parte visiva 
+dell'infografica.
+
+\bigskip
+\noindent Tale configurazione di caratteristiche crea un'infografica abbastanza complicata. Tuttavia, si ritiene che il target di riferimento possa essere in grado di comprenderla agevolmente, essendo 
+potenziali futuri studenti universitari e dunque inclini a gestire informazioni complesse. 
+
+Inoltre, per una maggiore facilità di comprensione e navigazione, viene incluso uno strumento - il \emph{chatbot} - che consente di ricevere risposta ai propri dubbi e/o 
+trovare l'informazione ricercata all'interno dell'infografica.
 
 \section{Codifica dell'infografica}
 \subsection{Tecnologie e strumenti}\label{subsec:tecnologie}
