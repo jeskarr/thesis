@@ -173,7 +173,7 @@ Per quanto riguarda i luoghi di studio, sono stati anch'essi ricavati manualment
 \subsubsection{Analisi dei dati}
 Per quanto riguarda l'analisi dei dati, essendo questi provenienti da fonti autorevoli, possono essere considerati di qualità. Inoltre, il numero limitato di enti distributori di tali fonti e l'elaborazione 
 dei dati che loro stessi forniscono ha permesso di non avere particolari problemi di notazione. 
-È stato, infatti, necessario solo un parsing dei dati: per quanto riguarda i dati dell'Università di Padova, sono state escluse le informazioni non pertinenti al corso di laurea;
+È stato, infatti, necessario solo un \emph{parsing} dei dati: per quanto riguarda i dati dell'Università di Padova, sono state escluse le informazioni non pertinenti al corso di laurea;
 mentre, per i dati di Almalaurea, è stato necessario strutturare i dati in sezioni, domande e relative risposte-dati. 
 Questo ha permesso di ottenere dati utili e pertinenti alla rappresentazione.
 
@@ -197,7 +197,7 @@ e, di conseguenza, la rappresentazione della storia.
 \end{itemize}
 
 \paragraph{Il layout.}
-%Si è utilizzato lo strumento \emph{Infographic-helper} per individuare le varie sezioni della storia, come descritto alla sezione \ref{subsubsec:app_storia}, e l'obiettivo. 
+%Si è utilizzato lo strumento \emph{Infographic-helper} per individuare le varie sezioni della storia, come descritto alla sezione \nameref{subsubsec:app_storia}, e l'obiettivo. 
 %TODO: cosa di infographic-helper che ha sbagliato
 L'obiettivo della presentazione corrisponde a ``infografiche basate su un processo ordinato''. Seguendo i principi enunciati nel capitolo precedente, si sceglie una \emph{disposizione 
 a passi}. Nello specifico, si adotta il \emph{pattern} \gls{vif} \emph{spiral}, che consente di implementare uno scorrimento verticale, poiché il \emph{layout} è sviluppato anch'esso verticalmente.  
@@ -295,42 +295,387 @@ potenziali futuri studenti universitari e dunque inclini a gestire informazioni 
 Inoltre, per una maggiore facilità di comprensione e navigazione, viene incluso uno strumento - il \emph{chatbot} - che consente di ricevere risposta ai propri dubbi e/o 
 trovare l'informazione ricercata all'interno dell'infografica.
 
-\section{Implementazione dell'infografica e uso}
+\section{Implementazione e uso dell'infografica}
 Innanzitutto, è necessario premettere che sono disponibili due versioni dell'infografica, differenziate solamente dall'algoritmo che caratterizza il \emph{chatbot}.
 \begin{itemize}
     \item La prima versione, da qui in poi chiamata \textbf{versione base}, è stata sviluppata dallo stagista e implementa l'algoritmo solamente attraverso codice \gls{js}. 
     \item La seconda versione, da qui in poi chiamata \textbf{versione integrata}, implementa una ricerca ibrida attraverso i linguaggi \gls{pythong} e \gls{sql}.
     Tale versione è così chiamata in quanto integra in sè il codice prodotto dal collega Fabio Meneghini come parte della sua tesi.    
 \end{itemize}
-Per una descrizione dettagliata delle differenze tra le due versioni si rimanda alla sezione \ref{subsubsec:chatbot}.
+Per una descrizione dettagliata delle differenze tra le due versioni si rimanda alla sezione apposita \nameref{subsubsec:chatbot}.
 
 \subsection{Strumenti e tecnologie utilizzati}\label{subsec:tecnologie}
-Il progetto di stage applica concretamente quanto ricercato utilizzando la libreria \gls{js} \textbf{\gls{d3g}}, che riveste dunque un ruolo fondamentale nello sviluppo.
+\subsubsection{Tutte le versioni}
+\paragraph{HTML + CSS + JS.}
+Il progetto di stage utilizza \gls{html}, \gls{css} e \gls{js} per costruire e stilizzare l'infografica. Nello specifico, si usa \gls{html} per definire la struttura della pagina web, \gls{css} per controllarne l'aspetto visivo 
+e \gls{js} per aggiungerci interattività. Inoltre, attraverso \gls{js} vengono integrati moduli e librerie per la \gls{datavizg} e, nel caso della versione base, si utilizza \gls{js} anche per gestire le richieste del \emph{chatbot}.
+
+\paragraph{D3.js.}
+Il progetto di stage applica concretamente quanto ricercato utilizzando la libreria \gls{js} \gls{d3g}, che riveste dunque un ruolo fondamentale nello sviluppo.
 Tutte le rappresentazioni di \gls{datavizg} sono infatti implementate attraverso tale libreria.
 \gls{d3g} consente di creare grafici e visualizzazioni scalabili, essendo in formato \gls{svg}, e interattive, oltre che altamente personalizzabili. 
 Ciò permette di rendere maggiormente coinvolgente e dinamica l'esperienza utente. 
 Inoltre, questa libreria fornisce anche dei metodi per il \emph{parsing} dei dati, permettendo dunque di manipolarli con maggiore facilità e precisione.
 
-La libreria è disponbibile al link \href{https://d3js.org/}{https://d3js.org/}.
+Per la creazione del diagramma Sankey, inserito nell'infografica per rappresentare il profilo degli studenti, è stato necessario utilizzare l'estensione di \gls{d3g}
+\textbf{d3-sankey}. Tale \emph{plugin} permette di creare diagrammi Sankey interattivi e proporzionali efficientemente e precisamente, migliorando la comprensione dei dati.
+
+Si è inoltre utilizzato il modulo \textbf{d3-legend}, che estende \gls{d3g} per la creazione di legende personalizzate e interattive. L'utilizzo di tale modulo ha 
+consentito di creare le legende più velocemente e con maggiore precisione, migliorando la chiarezza e l'interpretazione dei dati visualizzati. 
+
+La libreria è disponbibile al link \href{https://d3js.org/}{https://d3js.org/}, mentre la documentazione di d3-sankey è disponibile a \href{https://github.com/d3/d3-sankey}{https://github.com/d3/d3-sankey} e del modulo d3-legend 
+al link \href{https://d3-legend.susielu.com/}{https://d3-legend.susielu.com/}.
+
+\paragraph{Venn.js.} 
+Per la creazione del diagramma di Venn che rappresenta le strade intraprese (lavoro o proseguimento della formazione) dai laureati alla fine del corso, si è utilizzata questa libreria.
+Venn.js è una libreria \gls{js}, basata su \gls{d3g}, che è progettata proprio per la creazione di diagrammi di Venn. 
+In particolare, consente di visualizzare le relazioni e le intersezioni tra insiemi e renderle interattive, permettendo agli utenti di esplorare le sovrapposizioni e le esclusioni tra i gruppi di dati in modo dinamico. 
+Inoltre, la libreria garantisce che le dimensioni delle aree nel diagramma siano proporzionali ai valori dei dati, migliorando l'interpretazione delle informazioni. 
+
+La libreria è disponbibile al link \href{https://github.com/benfred/venn.js}{https://github.com/benfred/venn.js}.
+
+\paragraph{Leaflet.} 
+Per la creazione e visualizzazione della mappa delle strutture dell'Università, è stata utilizzata la libreria Leaflet in combinazione con \gls{d3g}. 
+Leaflet è una libreria \gls{js} open-source progettata proprio per gestire e visualizzare dati geospaziali su mappe interattive.
+Questa combinazione delle due tecnologie consente di visualizzare mappe dettagliate e dinamiche, sfruttando la capacità di Leaflet di gestire elementi ``mappe'' in sè
+e la potenza di \gls{d3g} per creare visualizzazioni personalizzate.
+
+Si è inoltre impiegato il modulo \textbf{OverlappingMarkerSpiderfier} di Leaflet per gestire la sovrapposizione dei \emph{marker} (i.e. le puntine) sulla mappa, consentendo 
+una visualizzazione più chiara e completa dei punti di interesse.
+
+La libreria è disponbibile al link \href{https://leafletjs.com/}{https://leafletjs.com/}, mentre la documentazione del modulo OverlappingMarkerSpiderfier è disponibile al seguente link \\
+\href{https://github.com/jawj/OverlappingMarkerSpiderfier-Leaflet}{https://github.com/jawj/OverlappingMarkerSpiderfier-Leaflet}.
 
 \bigskip
 \noindent Sono inoltre necessarie le seguenti tecnologie, diverse in base alla versione scelta.
-
 \subsubsection{Versione base}
 Si utilizzano:
 \begin{itemize}
-    \item \textbf{Node.js} e nello specifico http-server
+    \item \textbf{Node.js} 
+    \begin{itemize} 
+        \item Framework \gls{js} multipiattaforma e open-source tra i più utilizzati. In particolare, si tratta di un ambiente di esecuzione che permette di eseguire codice \gls{js} 
+        come un qualsiasi linguaggio di programmazione, al di fuori dei browser. 
+        Per l'infografica, in particolare, è stato utilizzato il modulo di Node.js \textbf{http-server}, che consente di servire file statici tramite un server HTTP. Questo strumento è fondamentale per 
+        visualizzare l'infografica nel browser, permettendo così l'esecuzione e la visualizzazione delle rappresentazioni create con \gls{d3g}.
+        
+        \item Node.js è dispnibile al link \href{https://nodejs.org/}{https://nodejs.org/}, mentre per maggiori dettagli su http-server si visiti \href{https://www.npmjs.com/package/http-server}{https://www.npmjs.com/package/http-server}.
+    \end{itemize}
 \end{itemize}
 
 \subsubsection{Versione integrata}
+Si utilizzano:
+\begin{itemize}
+    \item \textbf{Python}:
+    \begin{itemize}
+        \item Linguaggio di programmazione ad alto livello, molto versatile e ampliamente utilizzato. Viene adoperato per elaborare i dati e interfacciarsi con il database PostgreSQL per rispondere alle richieste dell'utente fatte via \emph{chatbot}.
+    \end{itemize}
 
-\subsection{Codifica}
+    \item \textbf{PostgreSQL} (anche detto semplicemente Postgres):
+    \begin{itemize}
+        \item Sistema di gestione di database relazionali open-source conforme a \gls{sql}. Nell'infografica viene utilizzato per la memorizzazione e la gestione di testi contenenti le informazioni sull'infografica e le sezioni da cui sono ricavate.
+        Postgres viene utilizzato insieme all'estensione \textbf{pgvector} che consente la gestione di vettori e operazioni di similarità. Questa estensione viene usata nel progetto per memorizzare i vettori di \gls{embeddingsg} riferiti ai suddetti testi. 
+        \item PostgreSQL è disponibile al seguente link \href{https://www.postgresql.org/}{https://www.postgresql.org/}, mentre pgvector è disponibile a \href{https://github.com/pgvector/pgvector}{https://github.com/pgvector/pgvector}.
+    \end{itemize}
+    
+    \item \textbf{pgAdmin}:
+    \begin{itemize}
+        \item Strumento open-source di gestione e amministrazione per Postgres. Esso fornisce un'interfaccia grafica per la gestione dei database. È utilizzato nel progetto per facilitare la gestione e la configurazione del database PostgreSQL.
+        \item La documentazione di pgAdmin è disponibile a \href{https://www.pgadmin.org/}{https://www.pgadmin.org/}.
+    \end{itemize}
+    
+    \item \textbf{psycopg2}:
+    \begin{itemize}
+        \item Libreria \gls{pythong} per l'interazione con database PostgreSQL. Essa rende possibile e facilita l'esecuzione di \emph{query} e la gestione di dati in un database PostgreSQL tramite \gls{pythong}.
+        \item La documentazione di psycopg2 è disponibile al link \href{https://www.psycopg.org/}{https://www.psycopg.org/}.
+    \end{itemize}
+    
+    \item \textbf{Txtai}:
+    \begin{itemize}
+        \item Modulo \gls{pythong} per la gestione di \gls{embeddingsg} e ricerca semantica. Viene utilizzata per generare e gestire gli \gls{embeddingsg} dei testi memorizzati in PostgreSQL. 
+        Questo strumento aiuta, dunque, a trovare risposte più pertinenti e precise grazie alla rappresentazione dei testi in uno spazio vettoriale.
+        \item La documentazione di Txtai è disponibile al link \href{https://neuml.github.io/txtai/}{https://neuml.github.io/txtai/}.
+    \end{itemize}
+
+    \item \textbf{Flask}:
+    \begin{itemize}
+        \item Micro-framework per \gls{pythong} utilizzato per costruire applicazioni web. In questo progetto, Flask è impiegato per creare il server web che gestisce le richieste 
+        provenienti dal \emph{chatbot} dell'infografica, restituendo la risposta al messaggio dell'utente dopo aver richiamato gli algoritmi di ricerca. 
+        Siccome il server Flask e l'infografica risiedono su domini diversi, è necessario utilizzare anche l'estensione \textbf{Flask-CORS} che consente di gestire le richieste \gls{crossoriging}.
+        \item La documentazione di Flask è disponibile a \href{https://flask.palletsprojects.com/}{https://flask.palletsprojects.com/}, mentre Flask-CORS è disponibile al link 
+        \href{https://github.com/corydolphin/flask-cors}{https://github.com/corydolphin/flask-cors}.
+    \end{itemize}
+\end{itemize}
+Si precisa, infine, che nella versione integrata del progetto, si utilizza \textbf{Python HTTP server} (incluso nella libreria standard di \gls{pythong}) per gestire le richieste HTTP e visualizzare i contenuti web dell'infografica. 
+Questo approccio ha scopo analogo a http-server di Node.js nella versione base, ma sfrutta le capacità di \gls{pythong}, integrandosi senza soluzione di continuità con le altre tecnologie \gls{pythong} utilizzate in questa versione. 
+Consente, dunque, di mantenere un'infrastruttura coerente ed evitare l'uso di tecnologie aggiuntive.
+
+
+\subsection{Implementazione}
+Si presentano di seguito i dettagli implementativi dell'infografica. Saranno descritti i vari componenti del prodotto e come essi sono stati realizzati per garantire un'esperienza utente coinvolgente, oltre che informativa.
+
+%TODO: inserire vero link repo
+Per una visione completa dell'infografica e per esplorarne le sue funzionalità interattive, è possibile accedere al prodotto finale attraverso \href{https://www.google.com/}{questo link}.
+
+\subsubsection{Elaborazione e gestione dei dati}
+Per leggere i dati e utilizzarli in \gls{js} si sono utilizzati le seguenti funzioni di \gls{d3g}:
+\begin{itemize}
+    \item \texttt{d3.json()}, usato per caricare i dati \gls{geojsong} relativi alle strutture d'interesse dell'Università.
+    \item \texttt{d3.dsv()}, impiegato per leggere i dati in formato \gls{csv} che utilizzano ``;'' come delimitatore. 
+    Questo metodo è utilizzato sia per i dati delle materie del corso sia per i dati provenienti dai report dell'Università degli Studi di Padova.
+    \item \texttt{d3.text()}, utilizzato per leggere i dati forniti da Almalaurea. Sebbene i dati siano in formato CSV, infatti, la loro struttura complessa, 
+    organizzata in sezioni, domande e risposte, richiede una lettura come testo e una successiva strutturazione manuale. 
+    I dati vengono, infatti, elaborati e organizzati attraverso una funzione creata appositamente.
+\end{itemize}
+Una volta che i dati sono stati letti ed eventualmente elaborati, si passano tali dati alle varie funzioni che creano 
+gli elementi di \gls{datavizg}. Ciò è possibile utilizzando le funzioni \texttt{.then()} per gestire le promesse restituite dalle operazioni 
+di lettura dei dati, assicurando che le elaborazioni e le visulizzazioni siano fatte solamente dopo che sono stati completamente caricati. 
+
+
+\subsubsection{Struttura dell'infografica nel suo insieme}
+\paragraph{Struttura generale del documento HTML.} Il documento HTML dell'infografica è organizzato nelle seguenti parti principali:
+
+\begin{itemize}
+    \item \textbf{Intestazione (\texttt{<head>})}: contiene i metadati del documento, nello specifico il titolo della pagina, le descrizioni e le parole chiave per i motori di ricerca. Contiene, inoltre, i fogli di stile \gls{css} e 
+    i collegamenti a \emph{font} esterni. 
+    \item \textbf{Corpo (\texttt{<body>})}: contiene il contenuto visivo della pagina ed è strutturato come segue:
+        \begin{itemize}
+            \item \textbf{\emph{Chatbot} (\texttt{<div>})}: contiene la parte relativa al \emph{chatbot}. Maggiori informazioni sono disponibili alla sezione apposita \nameref{subsubsec:chatbot}.
+            \item \textbf{\emph{Header} (\texttt{<div>})}: contiene la sezione introduttiva. Questa sezione è posta al di fuori del \texttt{<main>} in quanto non è solo parte del flusso informativo dell'infografica ma ne è anche l'introduzione.
+            Ciò comporta, dal punto di vista stilistico, una grafica più impattante e non conforme al resto del flusso, in quanto deve catturare immediatamente l'attenzione dell'utente. Tale caratteristica stilistica si riflette dunque anche nella 
+            struttura stessa del documento.
+            \item \textbf{Contenuto principale (\texttt{<main>})}: contiene la parte principale, il cuore, del documento. Maggiori informazioni sono disponibile al paragrafo apposito \nameref{par:app_main}.
+            \item \textbf{\emph{Footer} (\texttt{<div>})}: contiene le fonti delle informazioni presentate nell'infografica. Questa sezione è posizionata al di fuori del \texttt{<main>} in quanto non è direttamente parte del flusso informativo 
+            dell'infografica, ma semplicemente ne fornisce informazioni di corredo.
+        \end{itemize}
+    Alla fine del corpo del documento sono inclusi anche i collegamenti agli script \gls{js}, sia di librerie esterne sia di script implementati dallo stagista.
+\end{itemize}
+
+\paragraph{Struttura del <main>.}\label{par:app_main} 
+Il contenuto principale dell'infografica è suddiviso in diverse sezioni, ciascuna rappresentata da un tag \texttt{<div>} con attributo \texttt{class="section"}. Tramite tale attributo, infatti,
+è possibile, tra le altre cose, applicare il \emph{layout} scelto per l'infografica come segue, allineneando il contenuto delle sezioni a destra e a sinistra in maniera alternata.
+\begin{lstlisting}[style=htmlcssjs]
+#content > .section:nth-child(odd) {     /*odd sections*/
+    background-image: url(../images/bg-connection-overlay.svg), linear-gradient(to right, var(--light-neutral), white);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    align-items: flex-start;
+}
+
+#content > .section:nth-child(even) {    /*even sections*/
+    background-image: url(../images/bg-connection-overlay-rotated.svg), linear-gradient(to right, white, var(--light-neutral));
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: right;
+    align-items: flex-end;
+}
+\end{lstlisting}
+Dal codice si nota che le varie sezioni, oltre a un diverso allineamento, hanno anche un diverso sfondo. Nello specifico, vengono utilizzati la stessa immagine 
+e lo stesso gradiente per tutte le sezioni, ma cambiato di direzione, in modo da allinearlo con il contenuto delle sezioni stesse. 
+Questo approccio aiuta a mantenere una coerenza visiva e, al contempo, rafforzare l'impatto del \emph{layout}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\columnwidth]{applicazione/sfondo_sezioni.png}
+    \caption{Esempio di cambio sfondo tra sezioni}
+    \label{fig:app_sfondo_sezione}
+\end{figure}
+
+Per quanto riguarda la composizione interna delle sezioni dell'infografica, queste sono contenitori \emph{flex} a direzione verticale e comprendono un titolo (\texttt{<h2>}), un sottotitolo (\texttt{<h3>}) e una parte di 
+contenuto principale (\texttt{<div>}). Se sono presenti informazioni di corredo, come le opinioni degli studenti sui vari temi, queste sono incluse in ulteriori \texttt{<div>} di appendice.
+
+All'interno dei \texttt{<div>} di contenuto principale, si trovano solitamente i grafici principali e/o i contenitori del testo informativo. Le appendici, invece, contengono i grafici di corredo più piccoli. 
+
+In generale, tutti i grafici sono racchiusi in \texttt{<div>} con attributo \\ \texttt{class="dataviz-wrapper"}, ad eccezione della mappa dei luoghi, che è gestita a sè da un contenitore dedicato. 
+Tale struttura consente di creare simultaneamente gli \gls{svg} per i grafici di \gls{datavizg} che hanno la stessa dimensione. 
+Nello specifico, si avranno \gls{svg} per i grafici principali di grandi dimensioni, mentre per le appendici si avrà altezza minore. Nel caso siano presenti più grafici affiancati, le dimensioni degli \gls{svg} sono ridotte 
+anche per larghezza.
+Si riporta di seguito il codice utilizzato per tale obiettivo.
+\begin{lstlisting}[style=htmlcssjs]
+d3.selectAll(".section-content > .dataviz-wrapper")
+    .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", `0 0 ${widthBig} ${heightBig}`);
+
+d3.selectAll(".section-appendix > .dataviz-wrapper")
+    .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", `0 0 ${widthBig+margin} ${heightSmall+margin}`);
+
+d3.selectAll(".section-content-gridlike > .dataviz-wrapper")
+    .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", `0 0 ${widthSmall+margin} ${heightSmall+margin}`);
+\end{lstlisting}
+La creazione dei grafici in sè viene poi effettuata selezionando tali \gls{svg} a partire dall'id della sezione di riferimento. 
+
+Questo approccio consente dunque una facile aggiunta e creazione dinamica degli \gls{svg}, che sia coerente con il resto dell'infografica
+e che non comporti ripetizioni inutili di codice.
+
+\paragraph{Elementi interattivi non specifici.}
+Sono presenti alcuni elementi interattivi ricorrenti in più parti dell'infografica, quali:
+\begin{itemize}
+    \item \textbf{Tooltip su testo}, usati per spiegare e/o approfondire alcune parti del testo. Tali \emph{tooltip}
+    sono visibili quando l'utente passa il cursore su parti specifiche indicate da una ``i'' cerchiata.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.3\columnwidth]{applicazione/i-tooltip.png}
+        \caption{Esempio di tooltip su testo}
+        \label{fig:app_i-tooltip}
+    \end{figure}
+    \\Tale funzionalità è implementata tramite una combinazione di \gls{js} e \gls{css}.
+    \item \textbf{Tooltip su grafici}, usati per dettagli aggiuntivi sui dati quando l'utente passa il cursore sui grafici. 
+    Questi \emph{tooltip} sono utili per comprendere meglio le informazioni visualizzate, visionando il valore esatto dei dati.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.3\columnwidth]{applicazione/tooltip.png}
+        \caption{Esempio di tooltip su un grafico}
+        \label{fig:app_tooltip}
+    \end{figure}
+    \\Tale funzionalità è implementata tramite una combinazione di \gls{js} e \gls{css}, utilizzando anche \gls{d3g} per la selezione dell'elemento del grafico in questione.
+    \item \textbf{Contenitori collassabili}, usati per contenere i grafici rappresenanti le opinioni degli studenti sui vari temi. Questi contenitori 
+    possono essere aperti o chiusi tramite apposito pulsante (+ o -), consentendo di visualizzare o nascondere rapidamente queste informazioni extra.
+    Questa funzionalità è particolarmente utile in un'infografica \emph{densa} e lunga come la presente, in quanto permette di rendere la navigazione più fluida e 
+    migliorare così esperienza utente.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\columnwidth]{applicazione/accordion.png}
+        \caption{Esempio di contenitore ``collassato''}
+        \label{fig:app_accordion}
+    \end{figure}
+    \\Tale funzionalità è implementata tramite una combinazione di \gls{js} e \gls{css}.
+    \item \textbf{\emph{Panning} e zoom}, utilizzati per esplorare i grafici principali di ogni sezione. Essi permettono agli utenti di ingrandire e spostare la visualizzazione 
+    per esaminare dettagli specifici oppure per adattare la visualizzazione su schermi di dimensioni più ridotte. 
+    
+    Tali funzionalità sono implementate attraverso \gls{d3g} e, in particolare, tramite \texttt{d3.zoom()}.
+    \item \textbf{Scorrimento orizzontale}, utilizzato per esplorare i grafici di corredo, che hanno un'ampia larghezza e un'altezza non elevata. È necessaria tale funzionalità per poter vedere questi 
+    grafici in dispostivi con schermi piccoli, specie se sviluppati verticalmente come gli smartphone. 
+    
+    Tale funzionalità è implementata tramite una regola \gls{css} e, in particolare, ponendo \texttt{overflow: auto;}.
+\end{itemize}
+Un altro elemento interattivo, non associabile a nessuna sezione specifica, è il pulsante che consente di aprire il \emph{chatbot}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.1\columnwidth]{applicazione/chat-button.png}
+    \caption{Pulsante per l'apertura del chatbot.}
+    \label{fig:app_chatbot-button}
+\end{figure}
+\noindent Questo pulsante si trova in posizione ``galleggiante'' nell'angolo in basso a destra dell'infografica. Tuttavia, è possibile anche spostare tale 
+pulsante, trascinandolo a piacimento all'interno della schermata. Ciò consente di accedere facilmente alla chat in qualsiasi momento e, al contempo, evitare che 
+questo pulsante copra parti importanti del contenuto.
+
+\subsubsection{Struttura dell'infografica per sezione}
+Si riportano di seguito le varie sezioni dell'infografica.
+
+Si segnala che lo sfondo utilizzato nelle sezioni del contenuto principale non è visibile nelle figure qui presentate a causa della strumentazione utilizzata per la loro generazione. 
+Si prega, dunque, di fare riferimento alla figura \ref{fig:app_sfondo_sezione} per visualizzarne i dettagli.
+
+%\paragraph{Introduzione.} La sezione introduttiva dell'infografica è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/intro.png} 
+    \caption{Sezione introduttiva dell'infografica}
+    \label{fig:app_intro}
+\end{figure}
+
+%\paragraph{Requisiti.} La sezione riguardante i requisiti di accesso al corso è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/requisiti.jpeg} 
+    \caption{Sezione dell'infografica sui requisiti del corso}
+    \label{fig:requisiti}
+\end{figure}
+
+%\paragraph{Profilo studenti.} La sezione riguardante il profilo degli studenti è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/profilo_studenti.jpeg} 
+    \caption{Sezione dell'infografica sul profilo degli studenti}
+    \label{fig:app_profilo_stud}
+\end{figure}
+
+%\paragraph{Luoghi di interesse.} La sezione riguardante le strutture universitarie d'interesse è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/luoghi.jpeg} 
+    \caption{Sezione dell'infografica sui luoghi d'interesse}
+    \label{fig:app_luoghi}
+\end{figure}
+
+%\paragraph{Materie di studio.} La sezione riguardante le materie di studio è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/materie.jpeg} 
+    \caption{Sezione dell'infografica sulle materie di studio}
+    \label{fig:app_materie}
+\end{figure}
+
+%\paragraph{Regolarità negli studi ed esiti.} La sezione riguardante il percorso universitario degli studenti (per durata e voto) è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/durata.jpeg} 
+    \caption{Sezione dell'infografica sul percorso universitario per durata e voto}
+    \label{fig:app_durata}
+\end{figure}
+
+%\paragraph{Opportunità post-laurea.} La sezione riguardante i percorsi intrapresi post-laurea (lavorativi o formativi) è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/post-laurea.jpeg} 
+    \caption{Sezione dell'infografica riguardante i percorsi intrapresi post-laurea}
+    \label{fig:app_post-laurea}
+\end{figure}
+
+%\paragraph{Opinioni finali.} La sezione riguardante l'opinione sul corso dei laureati è illustrata nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/opinioni_finali.jpeg} 
+    \caption{Sezione dell'infografica sull'opinione finale dei laureati}
+    \label{fig:opinioni_finali}
+\end{figure}
+
+%\paragraph{Fonti.} Le note a piè di pagina, contenti le fonti, sono illustrate nella figura seguente. 
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=\columnwidth]{applicazione/fonti.png} 
+    \caption{Sezione dell'infografica sulle fonti}
+    \label{fig:app_fonti}
+\end{figure}
 
 \subsubsection{Chatbot}\label{subsubsec:chatbot}
+L'infografica dispone di un \emph{chatbot} progettato per rispondere ai dubbi degli utenti e per facilitare la navigazione all'interno dell'infografica, 
+essendo essa molto lunga e dunque potenzialmente disorientante.
 
+L'accesso al \emph{chatbot} avviene tramite un pulsante (visibile nella figura \ref{fig:app_chatbot-button}), il quale apre una finestra nell'angolo in basso a destra dell'infografica. 
+All'interno di tale finestra gli utenti possono porre domande e ricevere una breve risposta dal \emph{chatbot} per il loro interrogativo. Quest'ultimo, inoltre, rimanda anche alla sezione 
+dell'infografica che tratta l'argomento della domanda per avere delle informazioni più dettagliate.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.35\columnwidth]{applicazione/chat.png} 
+    \caption{Esempio di finestra della chat}
+    \label{fig:app_chat}
+\end{figure}
+
+Dal punto di vista implementativo, gli utenti inseriscono le loro domande in un campo di testo (\texttt{<textarea>}) inserito all'interno di un tag \gls{html} \texttt{<form>}. 
+Quando l'utente invia il messaggio, sia tramite pulsante apposito sia tramite ``Invio'' da tastiera, 
+viene inviato anche il modulo e, di conseguenza, richiamata una funzione \gls{js} che gestisce le funzionalità della chat.
+Nello specifico, tale funzione di occupa di:
+\begin{itemize}
+    \item Cancellare il contenuto del tag \texttt{<textarea>} e riscriverlo, invece, all'interno dell'area della chat in un nuovo \texttt{<div>} rappresentante il 
+    messaggio inviato dall'utente.
+    \item Aggiungere un ulteriore \texttt{<div>} all'area di chat che simula una risposta in arrivo dal \emph{bot}. Contiene infatti tre puntini animati a indicare che il messaggio è in fase 
+    di elaborazione. L'animazione di tali puntini è realizzata attraverso transizioni \gls{css}.
+    \item Richiamare la funzione che genera la risposta al messaggio inviato e inserire tale risposta al posto dei tre puntini.
+\end{itemize}
+Si noti che la creazione dei messaggi all'interno della chat viene effettuata tramite \gls{d3g}, che consente un inserimento e aggiornamento dinamico degli elementi. 
+
+Per quanto riguarda invece la funzione di generazione della risposta, questa varia in base alla versione dell'infografica utilizzata. Nei paragrafi successivi verranno riportati i dettagli specifici del funzionamento di ciascuna versione.
+
+\paragraph{Generazione della risposta nella versione base.}
+
+\paragraph{Generazione della risposta nella versione integrata.}
 
 \subsection{Validazione}
 validazione a/b o chatbot
 cosa non fatte
-
-\section{Uso dell'infografica}

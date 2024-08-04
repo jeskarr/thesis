@@ -310,7 +310,7 @@ se i dati sono ordinati o meno, mentre se si hanno dati univariati numerici non 
 \subsubsection{Individuazione dell'obiettivo}
 Una volta definito il tipo di dato è necessario individuare l'obiettivo della visualizzazione.
 A tal fine, \emph{Chart-chooser} richiede all'utente di fornire una breve descrizione di ciò che vuole rappresentare e comunicare.
-Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo più pertinente tra i nove possibili (definiti e descritti in \ref{subsubsec:obj}). 
+Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo più pertinente tra i nove possibili (definiti e descritti nella sottosezione \nameref{subsubsec:obj}). 
 Come \gls{llm} viene utilizzato \textbf{\gls{llama7bg}} attraverso \textbf{\gls{llamacppg}}, reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
 impostata a 0 per garantire che l'output del modello sia il più predicibile possibile e restituisca solamente il numero dell'obiettivo.
 
