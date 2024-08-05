@@ -40,6 +40,12 @@
 
 \newacronym[description={\glslink{csvg}{comma-separated values}}]
     {csv}{CSV}{comma-separated values}
+
+\newacronym[description={\glslink{rrfg}{Reciprocal rank fusion}}]
+    {rrf}{RRF}{Reciprocal rank fusion}
+
+\newacronym[description={\glslink{dbsfg}{Distribution-Based Score Fusion}}]
+    {dbsf}{DBSF}{Distribution-Based Score Fusion}
     
 % Glossary entries
 \newglossaryentry{datavizg} {
@@ -309,5 +315,45 @@
     description={descrizione}
 }
 
+\newglossaryentry{stopwordsg} {
+    name=stop-words,
+    text=stop-words,
+    sort=stopwords,
+    description={
+        Le \emph{stop-words} sono parole comuni, come ad esempio articoli o congiunzioni, 
+        che non si riferiscono ad un argomento specifico e dunque non contribuiscono al significato del testo.
+        In operazioni di confronto tra testi, tali parole sono spesso rimosse per migliorare l'efficacia di queste operazioni. 
+    }
+}
 
+\newglossaryentry{stemmingg} {
+    name=stemming,
+    text=stemming,
+    sort=stemming,
+    description={
+        Processo che riduce le parole alla loro radice o forma base.
+        In operazioni di confronto tra testi, questo è utile in quanto permette di accorpare varianti di una parola alla stessa radice, 
+        migliorando la precisione in tali confronti.
+    }
+}
 
+\newglossaryentry{rrfg} {
+    name=\glslink{rrf}{RRF},
+    text=Reciprocal rank fusion,
+    sort=rrf,
+    description={descrizione}
+}
+
+\newglossaryentry{dbsfg} {
+    name=\glslink{dbsf}{DBSF},
+    text=Distribution-Based Score Fusion,
+    sort=dbsf,
+    description={descrizione}
+}
+
+\newglossaryentry{bm25g} {
+    name=Ranking BM25,
+    text=Ranking BM25,
+    sort=rankingbm25,
+    description={descrizione}
+}

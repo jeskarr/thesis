@@ -304,6 +304,11 @@ Innanzitutto, è necessario premettere che sono disponibili due versioni dell'in
 \end{itemize}
 Per una descrizione dettagliata delle differenze tra le due versioni si rimanda alla sezione apposita \nameref{subsubsec:chatbot}.
 
+%TODO: inserire vero link repo
+Per una visione completa dell'infografica e per esplorarne le funzionalità interattive, è possibile accedere al prodotto finale attraverso \href{https://www.google.com/}{questo link}.
+A tale link sono disponibili entrambe le versioni su branch diversi.
+
+
 \subsection{Strumenti e tecnologie utilizzati}\label{subsec:tecnologie}
 \subsubsection{Tutte le versioni}
 \paragraph{HTML + CSS + JS.}
@@ -413,9 +418,6 @@ Consente, dunque, di mantenere un'infrastruttura coerente ed evitare l'uso di te
 \subsection{Implementazione}
 Si presentano di seguito i dettagli implementativi dell'infografica. Saranno descritti i vari componenti del prodotto e come essi sono stati realizzati per garantire un'esperienza utente coinvolgente, oltre che informativa.
 
-%TODO: inserire vero link repo
-Per una visione completa dell'infografica e per esplorarne le sue funzionalità interattive, è possibile accedere al prodotto finale attraverso \href{https://www.google.com/}{questo link}.
-
 \subsubsection{Elaborazione e gestione dei dati}
 Per leggere i dati e utilizzarli in \gls{js} si sono utilizzati le seguenti funzioni di \gls{d3g}:
 \begin{itemize}
@@ -508,7 +510,7 @@ d3.selectAll(".section-content-gridlike > .dataviz-wrapper")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", `0 0 ${widthSmall+margin} ${heightSmall+margin}`);
 \end{lstlisting}
-La creazione dei grafici in sè viene poi effettuata selezionando tali \gls{svg} a partire dall'id della sezione di riferimento. 
+La creazione dei grafici in sè viene poi effettuata selezionando tali \gls{svg} a partire dall'\emph{id} della sezione di riferimento. 
 
 Questo approccio consente dunque una facile aggiunta e creazione dinamica degli \gls{svg}, che sia coerente con il resto dell'infografica
 e che non comporti ripetizioni inutili di codice.
@@ -571,77 +573,179 @@ Si riportano di seguito le varie sezioni dell'infografica.
 Si segnala che lo sfondo utilizzato nelle sezioni del contenuto principale non è visibile nelle figure qui presentate a causa della strumentazione utilizzata per la loro generazione. 
 Si prega, dunque, di fare riferimento alla figura \ref{fig:app_sfondo_sezione} per visualizzarne i dettagli.
 
-%\paragraph{Introduzione.} La sezione introduttiva dell'infografica è illustrata nella figura seguente. 
+\paragraph{Introduzione.} La sezione introduttiva dell'infografica è illustrata nella figura seguente \ref{fig:app_intro}.
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/intro.png} 
     \caption{Sezione introduttiva dell'infografica}
     \label{fig:app_intro}
 \end{figure}
+L'elemento principale di tale sezione è il titolo, inserito in un tag \texttt{<h1>} e caratterizzato da dimensioni molto elevate che scalano 
+in base alle dimensioni del dispositivo, mantenendo però il forte impatto visivo.
+La sezione in sè, grazie a specifiche regole \gls{css}, ricopre l'intero schermo, andando così a rafforzare ancora di più l'impatto visivo. 
 
-%\paragraph{Requisiti.} La sezione riguardante i requisiti di accesso al corso è illustrata nella figura seguente. 
+Si è inoltre deciso di utilizzare uno sfondo rosso per questa sezione che, non solo amplifica l'attenzione sul titolo, ma anche la differenzia
+visivamente dal resto del flusso informativo, rispondendo così alle esigenze progettuali.
+ 
+In aggiunta, sono stati inseriti i loghi dell'Università e del dipartimento del corso per conferire autorità e contestualizzare il corso stesso. 
+Tuttavia, questi loghi sono stati posizionati in secondo piano o marginalmente, poiché l'obiettivo principale è valorizzare il corso in sè per le sue caratteristiche e opportunità, 
+piuttosto che per l'affiliazione con l'Università stessa.
+
+\paragraph{Requisiti.} La sezione riguardante i requisiti di accesso al corso è illustrata nella figura seguente \ref{fig:requisiti}.
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/requisiti.jpeg} 
     \caption{Sezione dell'infografica sui requisiti del corso}
     \label{fig:requisiti}
 \end{figure}
+\noindent Si ha semplicemente un \texttt{<div>} con \emph{layout} a griglia che contiene e organizza i singoli contenitori dei requisiti.
+Tale \emph{layout} è progettato per adattarsi automaticamente alle dimensioni dello schermo, disponendo i requisiti verticalmente su schermi 
+più stretti e orizzontalmente su schermi più ampi. Ciò garantisce una leggibilità ottimale e una disposizione 
+chiara dei contenuti in tutte le situazioni.
 
-%\paragraph{Profilo studenti.} La sezione riguardante il profilo degli studenti è illustrata nella figura seguente. 
+\paragraph{Profilo studenti.} La sezione riguardante il profilo degli studenti è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/profilo_studenti.jpeg} 
     \caption{Sezione dell'infografica sul profilo degli studenti}
     \label{fig:app_profilo_stud}
 \end{figure}
+\noindent Questa sezione fornisce una panoramica del profilo degli studenti, in particolare fornisce informazioni riguardanti il voto e l'età media 
+tramite contenitori e dettagli sul sesso e la scuola di provenienza tramite un diagramma di Sankey.
 
-%\paragraph{Luoghi di interesse.} La sezione riguardante le strutture universitarie d'interesse è illustrata nella figura seguente. 
+Tale grafico, oltre agli elementi di interazione generale, ne presenta uno ulteriore: posizionando il cursore sui nodi del diagramma si ha un'animazione 
+che colora gradualmente i flussi derivanti da tale nodo. Ciò consente di rendere più leggibili ed evidenziare ulteriormente i dati che l'utente sta visionando.
+La figura \ref{fig:app_profilo_stud_animated} mostra l'aspetto del diagramma dopo tale animazione.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.6\columnwidth]{applicazione/profilo_studenti_animated.png} 
+    \caption{Diagramma di Sankey sul profilo degli studenti animato}
+    \label{fig:app_profilo_stud_animated}
+\end{figure}
+
+In appendice, su un contenitore collassabile, viene infine riportato un grafico di corredo riguardante l'opinione degli studenti sui rapporti con gli altri studenti.
+
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la parte principale della sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei dati e il diagramma di Sankey vengono posti uno sopra l'altro, piuttosto che affiancati.
+
+\paragraph{Luoghi di interesse.} La sezione riguardante le strutture universitarie d'interesse è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/luoghi.jpeg} 
     \caption{Sezione dell'infografica sui luoghi d'interesse}
     \label{fig:app_luoghi}
 \end{figure}
+\noindent Questa sezione fornisce una panoramica delle strutture dell'Università che potrebbero essere interessanti per un futuro studente del corso.
+In particolare, fornisce informazioni riguardanti le proprietà dell'Università nel loro insieme tramite contenitori e dettagli sulle strutture di interesse 
+tramite una mappa. 
 
-%\paragraph{Materie di studio.} La sezione riguardante le materie di studio è illustrata nella figura seguente. 
+In questa mappa, le strutture vengono evidenziate in rosso per metterle in risalto e visualizzarne più velocemente la dimensione.
+Inoltre, vengono inserite delle puntine che indicano la tipologia di struttura; la cui legenda è riportata al di sopra della mappa.
+Cliccando su tali puntine è possibile vedere i dettagli riguardanti la struttura corrispondente, inclusi nome e tipologia, nonchè eventuali altri dettagli utili. 
+Inoltre, la struttura viene evidenziata in un altro colore che ne enfatizza ulteriormente la selezione.
+Ciò permette di aumentare la leggibilità della mappa e, al contempo, di fornire ulteriori informazioni.
+Se una stessa struttura ha tipologia mista, ovvero ha più usi, vengono poste più puntine sovrapposte. Tuttavia, è possibile vedere individualmente ciascuna puntina 
+cliccando sull'insieme di queste.
+La figura \ref{fig:app_mappa_interazione} mostra l'interazione.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.3\columnwidth]{applicazione/mappa_spiderfier.png} 
+    \includegraphics[width=0.3\columnwidth]{applicazione/mappa_popup.png} 
+    \caption{Mappa dei luoghi dell'Università - visualizzazione individuale delle puntine e popup}
+    \label{fig:app_mappa_interazione}
+\end{figure}
+
+In appendice, su un contenitore collassabile, vengono riportati diversi grafici di corredo riguardanti l'opinione degli studenti sui vari tipi di strutture.
+
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la parte principale della sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei dati e la mappa vengono posti uno sopra l'altro, piuttosto che affiancati.
+
+\paragraph{Materie di studio.} La sezione riguardante le materie di studio è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/materie.jpeg} 
     \caption{Sezione dell'infografica sulle materie di studio}
     \label{fig:app_materie}
 \end{figure}
+\noindent Questa sezione fornisce una panoramica delle materie del corso. In particolare, fornisce delle informazioni riguardanti i progetti pratici e una quantificazione generale di impegno 
+tramite contenitori, mentre utilizza un \emph{Treemap} per visualizzare le materie specifiche e il loro peso sul corso.
 
-%\paragraph{Regolarità negli studi ed esiti.} La sezione riguardante il percorso universitario degli studenti (per durata e voto) è illustrata nella figura seguente. 
+Tale grafico consente una visualizzazione sia per affinità con temi matematici, informatici o altro, sia per anno di offerta.
+Tale configurazione è possibile grazie ad uno \emph{switch} posto al di sopra del grafico.
+
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la parte principale della sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei dati e il \emph{treemap} vengono posti uno sopra l'altro, piuttosto che affiancati.
+
+\paragraph{Regolarità negli studi ed esiti.} La sezione riguardante il percorso universitario degli studenti (per durata e voto) è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/durata.jpeg} 
     \caption{Sezione dell'infografica sul percorso universitario per durata e voto}
     \label{fig:app_durata}
 \end{figure}
+\noindent Questa sezione presenta in maniera molto semplice la riuscita e regolarità del percorso di studio degli studenti. In particolare, si utilizza un grafico a barre 
+per rappresentare la durata del percorso, mostrando le quantità di studenti in corso e fuori corso; mentre, si utilizzano dei contenitori per mostrare le statistiche medie relative 
+a voto e durata complessiva.
 
-%\paragraph{Opportunità post-laurea.} La sezione riguardante i percorsi intrapresi post-laurea (lavorativi o formativi) è illustrata nella figura seguente. 
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la parte principale della sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei dati e il grafico vengono posti uno sopra l'altro, piuttosto che affiancati.
+
+\paragraph{Opportunità post-laurea.} La sezione riguardante i percorsi intrapresi post-laurea (lavorativi o formativi) è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/post-laurea.jpeg} 
     \caption{Sezione dell'infografica riguardante i percorsi intrapresi post-laurea}
     \label{fig:app_post-laurea}
 \end{figure}
+\noindent Questa sezione presenta una panoramica delle possibilità per gli studenti dopo la laurea. In particolare, si utilizza un diagramma di Venn per visualizzare la 
+proporzione tra studenti e lavoratori. 
+Si noti che tale statistica non è mostrata fin da subito, infatti, il diagramma mostra inizialmente solo un cerchio con un'icona di due laureati festeggianti.
+Questa scelta è volta ad attirare l'attenzione dell'utente e fare appello alle sue emozioni, creando una visualizzazione più coinvolgente e accattivante. 
+Le proporzioni sono visibili semplicemente cliccando sul cerchio stesso, ottenendo un diagramma di Venn proporzionale come illustrato nella figura 
+\ref{fig:app_post-laurea_animated}. 
 
-%\paragraph{Opinioni finali.} La sezione riguardante l'opinione sul corso dei laureati è illustrata nella figura seguente. 
+Oltre a tale grafico, sono presenti dei contenitori che descrivono i possibili percorsi, lavorativi o formativi, che i laureati possono intraprendere.
+\begin{figure}[H] 
+    \centering 
+    \includegraphics[width=0.6\columnwidth]{applicazione/post-laurea_animated.png} 
+    \caption{Diagramma di Venn sulla proporzione di studenti e lavoratori dopo l'animazione}
+    \label{fig:app_post-laurea_animated}
+\end{figure}
+
+In appendice, su un contenitore collassabile, vengono infine riportati diversi grafici di corredo riguardanti cosa effettivamente hanno scelto di fare gli studenti in caso 
+di proseguimento con gli studi e/o lavoro.
+
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la parte principale della sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei dati e il diagramma di Venn vengono posti uno sopra l'altro, piuttosto che affiancati.
+
+\paragraph{Opinioni finali.} La sezione riguardante l'opinione sul corso dei laureati è illustrata nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/opinioni_finali.jpeg} 
     \caption{Sezione dell'infografica sull'opinione finale dei laureati}
     \label{fig:opinioni_finali}
 \end{figure}
+Questa sezione presenta in maniera molto semplice le opinioni finali degli studenti sul corso. In particolare, si utilizzano due grafici rispettivamente per visualizzare la soddisfazione 
+generale dei laureati e per indicare se, alla luce della loro esperienza, quest'ultimi sceglierebbero di iscriversi nuovamente al corso.
 
-%\paragraph{Fonti.} Le note a piè di pagina, contenti le fonti, sono illustrate nella figura seguente. 
+\bigskip
+\noindent Si noti che, anche in questo caso, per garantire la leggibilità della sezione anche per schermi di diverse dimensioni, la sezione viene adattata 
+in base al dispostivo utilizzato. Nello specifico, per schermi più stretti, i contenitori dei grafici disposti verticalmente, piuttosto che orizzontalmente
+
+\paragraph{Fonti.} Le note a piè di pagina, contenti le fonti, sono illustrate nella figura seguente. 
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{applicazione/fonti.png} 
     \caption{Sezione dell'infografica sulle fonti}
     \label{fig:app_fonti}
 \end{figure}
+Tale sezione utilizza uno sfondo rosso per segnalarne la distinzione dal normale flusso informativo dell'infografica, similmente a quanto accade per la sezione introduttiva. 
+I link alle fonti sono riportati in giallo per differenziarli dal testo normale e, al contempo, garantirne la leggibilità rispetto al colore di sfondo.
 
 \subsubsection{Chatbot}\label{subsubsec:chatbot}
 L'infografica dispone di un \emph{chatbot} progettato per rispondere ai dubbi degli utenti e per facilitare la navigazione all'interno dell'infografica, 
@@ -672,10 +776,108 @@ Si noti che la creazione dei messaggi all'interno della chat viene effettuata tr
 
 Per quanto riguarda invece la funzione di generazione della risposta, questa varia in base alla versione dell'infografica utilizzata. Nei paragrafi successivi verranno riportati i dettagli specifici del funzionamento di ciascuna versione.
 
-\paragraph{Generazione della risposta nella versione base.}
+\paragraph{Generazione della risposta nella versione base.} Viene richiamata la funzione \texttt{answer(q)} passando il messaggio dell'utente come parametro. Tale funzione viene eseguita all'interno di \texttt{setTimeout()} per simulare un'elaborazione 
+del messaggio, consentendo anche la visualizzazione dei tre puntini di caricamento anziché mostrare immediatamente la risposta. Ciò consente di fornire l'interazione più naturale e dunque migliorare l'esperienza utente.
+\texttt{answer(q)} viene definita come segue:
+\begin{lstlisting}[style=htmlcssjs]
+function answer(q) {   
+    // Remove stop-words of user question
+    let filteredUserQ = removeStopWords(q);
 
-\paragraph{Generazione della risposta nella versione integrata.}
+    // Remove stop-words from faq questions
+    let filteredQs = faq.map(el => 
+        removeStopWords(el.question)
+    );
+
+    // Stemming of user question
+    var stem = PorterStemmerIt.newStemmer('italian').stem;
+    filteredUserQ = filteredUserQ.map(el => stem(el));
+
+    // Stemming of faq questions
+    filteredQs = filteredQs.map(el => el =
+        el.map(item => stem(item))
+    );
+
+    // Indexing: for each word in filteredUserQ returns indexes of filteredQs that has that word
+    let invertedIndex = Array.from({ length: filteredUserQ.length }, () => []);
+    filteredQs.forEach((q, q_index) => {
+        filteredUserQ.forEach((word, i_word) => {
+            if(q.includes(word)) {
+                invertedIndex[i_word].push(q_index);
+            }
+        })
+    });
+
+    const qsIndexes = getQsIndexCorrespondence(invertedIndex);      // sorted array of elements [q_index, terms_count_in_q_index_question]
+
+    if (qsIndexes.length > 0) {
+        const highestCorr = faq[parseInt(qsIndexes[0][0])];
+        return highestCorr.answer + `<br /><br /> Per maggiori informazioni si consulti <a href="${highestCorr.section}">questa sezione</a> dell'infografica.`;
+    }
+    else {
+        return "Spiacente, non sembra esserci questa informazione nell'infografica. &#128542;";
+    }
+}
+\end{lstlisting}
+dove \texttt{faq} è una variabile contenente un array di oggetti nel formato \texttt{[{question: "string", answer: "string", section: "string"}]}, che rappresenta una serie di domande frequenti che l'utente potrebbe fare, 
+assieme alle relative risposte e all'\emph{id} della sezione corrispondente nel documento \gls{html}. Tale array è ricavato da un file \gls{jsong} tramite la funzione \texttt{d3.json()} fornita da \gls{d3g}. 
+È importante notare che il \emph{chatbot} diventa utilizzabile solo dopo che questo file è stato completamente caricato.
+
+\noindent Per quanto riguarda invece le altre funzioni richiamate, si hanno:
+\begin{itemize}
+    \item \texttt{removeStopWords(text)}, implementata dallo stagista, che serve a rimuovere le \gls{stopwordsg} dal testo. 
+    Tali parole sono rimosse per migliorare l'efficacia della ricerca. A tal fine, il testo viene anche ``normalizzato'', ovvero viene
+    tolta la punteggiatura e la stringa viene trasformata tutta in minuscolo.
+    Alla fine del processo, \texttt{removeStopWords(text)} restituisce un array contenente le parole rimaste dopo le suddette operazioni.
+    \item \texttt{stem(word)}, fornita da una libreria esterna, che serve a effettuare lo \gls{stemmingg} della parola.
+    \item \texttt{getQsIndexCorrespondence(indexPerWord)}, implementata dallo stagista, dove \texttt{indexPerWord} è un array in cui ogni elemento rappresenta 
+    una parola della frase da confrontare, nel caso specifico una parola della domanda dell'utente. Ciascuno di questi elementi è costituito da un array 
+    che contiene gli indici dei documenti - nel caso specifico gli indici delle domande in \texttt{faq} - in cui la suddetta parola è presente.
+    La funzione conta quante volte uno stesso indice di documento appare e ordina i risultati in base al numero di occorrenze. Si ottiene dunque, nel caso specifico, 
+    un array ordinato del tipo \texttt{[[indice domanda FAQ, numero di occorrenze di parole del messaggio dell'utente nella domanda]]}. 
+\end{itemize}
+La funzione \texttt{answer(q)} si occupa dunque di:
+\begin{itemize}
+    \item Rimuovere le \gls{stopwordsg} sia dalla domanda dell'utente che dalle domande frequenti.
+    \item Applicare il processo di \gls{stemmingg} sempre a entrambi.
+    \item Cercare nelle domande frequenti così ottenute quelle che contengono le parole dell'utente risultanti dalle operazioni sopra.
+    \item Contare le occorrenze di queste parole nelle domande e determinare quale domanda ha il maggior numero di corrispondenze.
+    \item Ritornare il contenuto della risposta (sotto forma di \gls{html}), comprendente \texttt{answer} di \texttt{faq} relativa 
+    alla domanda individuata e un paragrafo aggiuntivo con il collegamento alla sezione dell'infografica relativa (preso da \texttt{section} di \texttt{faq}).
+    Nel caso non ci siano corrispondenze in nessuna domanda del \texttt{faq}, viene restituito un messaggio di scuse.
+\end{itemize}
+
+\paragraph{Generazione della risposta nella versione integrata.} Innanzitutto, si precisa che, prima di utilizzare questa versione, è necessario aver configurato correttamente il database con il file contenente le informazioni e 
+le sezioni. Questo passaggio è fondamentale per assicurare che il sistema possa accedere e recuperare i dati necessari a generare risposte pertinenti.
+
+Per quanto riguarda la generazione della risposta in sè, si effettua una richiesta tramite \texttt{fetch} all'\emph{endpoint} fornito da un server Flask, passando il messaggio dell'utente come corpo della richiesta. 
+La risposta al messaggio viene quindi elaborata dal server tramite la funzione \gls{pythong} \texttt{response\_generator} (implementata dal collega Fabio Meneghini) e restituita, poi, in risposta alla richiesta 
+nello stesso formato fornito da \texttt{answer(q)} nella versione base.
+Si noti che, essendo \texttt{fetch()} asincrona, non è necessaria alcuna simulazione del tempo di elaborazione. Infatti, mentre il server elabora la richiesta, viene correttamente 
+mostrato il messaggio con i tre puntini di caricamento e, solo una volta ricevuta la risposta, essa viene inserita come messaggio nella chat.
+
+Per quanto riguarda il funzionamento specifico della funzione \texttt{response\_generator}, essa utilizza un modello di \gls{embeddingsg} e il metodo \gls{bm25g} per cercare informazioni 
+nel database. 
+Si noti che quest'ultimo viene implementato tramite \emph{query} \gls{sql}, la quale utilizza una funzione nativa di Postgres che realizza anche la rimozione delle \gls{stopwordsg} e lo \gls{stemmingg}.
+
+Successivamente, \texttt{response\_generator} combina i risultati ottenuti dalle suddette tecniche utilizzando un algoritmo. A tal proposito, sono disponibili due diverse opzioni: \gls{rrf} o \gls{dbsf}.
+Sebbene sia possibile usare entrambi gli algoritmi, per questo caso specifico si consiglia di utilizzare \gls{rrf}, poiché più veloce e, considerando la brevità dei testi forniti, 
+l'uso di \gls{dbsf} non presenterebbe differenze significative in termini di qualità dei risultati.
+Ciò permette di realizzare una ricerca ibrida, che combina la ricerca semantica, realizzata grazie all'elaborazione e analisi degli \gls{embeddingsg}, con un approccio \emph{term-based}, che considera la frequenza e 
+rilevanza delle parole usate dall'utente, attraverso il \gls{bm25g}.   
+
 
 \subsection{Validazione}
-validazione a/b o chatbot
-cosa non fatte
+Non è stato possibile implementare alcun metodo di validazione dell'infografica. Tuttavia, per eventuali future implementazioni, sono stati individuati i seguenti metodi:
+\begin{itemize}
+    \item \textbf{Validazione A/B}: questo metodo prevede la creazione di due versioni dell'infografica, a partire dagli stessi dati, ma con lievi variazioni nel design o nei contenuti.
+    Tali versioni sono visualizzate da due diversi gruppi di utenti, i quali forniscono un \emph{feedback} su ciascuna versione. 
+    Questo approccio consente, dunque, di determinare quale sia il design più efficace tramite un riscontro immediato, ottimizzando così l'usabilità dell'infografica. 
+    Attualmente, questo metodo potrebbe essere applicato per testare e confrontare la performance e usabilità del \emph{chatbot}, essendone disponibili due versioni.
+    \item \textbf{Integrazione di un \emph{mouse tracker}}: questo metodo prevede l'utilizzo di un \emph{mouse tracker}, ovvero uno strumento che consente di memorizzare i movimenti del cursore degli utenti 
+    sull'infografica. Ciò consentirebbe di ottenere dei dati su come gli utenti interagiscono con l'infografica, i quali potrebbero essere analizzati per determinare le parti più coinvolgenti o problematiche dell'infografica. 
+    Una volta rilevati tali elementi, diventa dunque possibile migliorare l'infografica a partire proprio dal comportamento reale degli utenti.
+    \item \textbf{Memorizzazione le domande degli utenti}: questo metodo preve l'integrazione al \emph{chatbot} di un sistema che registri le domande poste dagli utenti.
+    Grazie a tale strumento sarebbe, infatti, possibile raccogliere e analizzare le informazioni su quali siano le parti dell'infografica meno chiare o che necessitano di ulteriori dettagli. 
+    Tale approccio permetterebbe dunque di apportare delle modifiche puntuali all'infografica, migliorandone la chiarezza e completezza generale, rispondendo direttamente alle esigenze degli utenti.
+\end{itemize}
