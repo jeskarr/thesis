@@ -153,7 +153,7 @@ effetti speciali o decorazioni siano inseriti solo se se ne presenta l'opportuni
 
 
 \subsection{Linee guida}
-%TODO: aggiungere che qanto scritto è preso da tufte
+%TODO: aggiungere che quanto scritto è preso da tufte
 %“The visual Display of Quantitative Information” di Edward R. Tufte
 %CAP 1: Graphical Integrity
 Nel visualizzare dati è necessario garantire che le informazioni siano rappresentate accuratamente e senza distorsioni.
@@ -311,7 +311,7 @@ se i dati sono ordinati o meno, mentre se si hanno dati univariati numerici non 
 Una volta definito il tipo di dato è necessario individuare l'obiettivo della visualizzazione.
 A tal fine, \emph{Chart-chooser} richiede all'utente di fornire una breve descrizione di ciò che vuole rappresentare e comunicare.
 Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo più pertinente tra i nove possibili (definiti e descritti nella sottosezione \nameref{subsubsec:obj}). 
-Come \gls{llm} viene utilizzato \textbf{\gls{llama7bg}} attraverso \textbf{\gls{llamacppg}}, reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
+Come \gls{llm} viene utilizzato un modello a 7 miliardi di parametri, utilizzato attraverso \textbf{\gls{llamacppg}} e reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
 impostata a 0 per garantire che l'output del modello sia il più predicibile possibile e restituisca solamente il numero dell'obiettivo.
 
 \bigskip
@@ -342,14 +342,14 @@ Llama:
 % TODO: rivedere prompt su chart-chooser e inserire modello usato corretto (7b?)
 
 \subsubsection{Implementazione del sistema di regole}\label{subsubsec:rules}
-Le informazioni raccolte sono utilizzate da un \gls{motoreregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
+Le informazioni raccolte sono utilizzate da un \gls{sistemadiregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
 Si precisa, infatti, che non per tutti gli obiettivi sono presenti tutti i tipi di dato. Pertanto, la combinazione potrebbe portare a un risultato nullo.
 
-Il \gls{motoreregoleg} scelto è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture \gls{jsong}, 
+La tecnologia del \gls{sistemadiregoleg} scelta è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture \gls{jsong}, 
 il che le rende più leggibili dall'uomo e facili da mantenere.
 
 \bigskip
-\noindent Gli elementi principali che caratterizzano tale sistema sono:
+\noindent Gli elementi principali che caratterizzano un sistema di questo tipo sono:
 \begin{itemize}
     \item I \emph{fatti}, ovvero dei valori costanti o funzioni pure.
     \item Le \emph{regole}, ovvero delle strutture composte da:
@@ -359,7 +359,7 @@ il che le rende più leggibili dall'uomo e facili da mantenere.
         indicato risulta vera. Si precisa, inoltre, che possono essere creati insiemi di queste \emph{condizioni} attraverso l'uso di operatori booleani.
         \item \emph{Eventi}, ovvero delle operazioni che il \emph{motore} esegue in base al soddisfacimento o meno delle \emph{condizioni}. 
     \end{itemize}
-    \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del \gls{motoreregoleg} in quanto si occupa di valutare
+    \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del \gls{sistemadiregoleg} in quanto si occupa di valutare
     le \emph{regole} basandosi sui \emph{fatti} forniti, innescando \emph{eventi} a seguito del soddisfacimento o meno delle \emph{condizioni}.
 \end{itemize}
 %TODO: inserire codice esempio cose
