@@ -1,3 +1,623 @@
-\chapter{Appendice A}
+\chapter{Appendice A}\label{cap:appendix}
 
-\epigraph{Citazione}{Autore della citazione}
+\section{Grafici risultanti da Chart-chooser}
+Di seguito si riporta una tabella contenente tutti i grafici possibili individuati, insieme ad un breve consiglio 
+di utilizzo e alle \emph{regole} del \gls{sistemadiregoleg} di \emph{Chart-chooser} che possono portare all'uso 
+di tale grafico. 
+
+Si precisa che i grafici identificati sono frutto dell'analisi di diverse risorse, principalmente \cite{site:data-to-viz} e \cite{site:vis_vocabulary}.
+
+\begin{xltabular}{0.98\columnwidth}{|p{0.2\columnwidth}|X|X|}
+    \hline
+    \rowcolor{gray!20}
+    \textbf{Nome} & \textbf{Regole} & \textbf{Consiglio d'uso} \\
+    \endhead
+    \hline
+    Diverging Bar & deviationNumUniv & Quando la precisione dei valori è importante, quando i valori sono discreti, quando il numero dei valori non è troppo elevato. \\
+    \hline
+    Diverging Area Chart & deviationNumUniv & Quando si vuole evidenziare un trend, con valori continui o serie temporali. \\
+    \hline
+    Diverging Stacked Bar & deviationNumMultiOrd, deviationMixMultiNumOneObs & Quando si vuole evidenziare la divergenza per componenti di un gruppo, quando il numero delle variabili non è elevato. \\
+    \hline
+    Butterfly Chart & deviationNumMultiOrd & Quando si hanno due variabili numeriche rappresentanti gruppi contrastanti. \\
+    \hline
+    Connected Scatterplot & correlationNumMultiOrd, correlationMixMultiNumOrd, timeNumMultiOrd, timeMixMultiNumOrd & Quando l'ordine dei punti è importante, quando si vogliono mostrare come si evolvono le relazioni tra un punto e l'altro. \\
+    \hline
+    Scatterplot & correlationNumTwoVarUnord & Quando si vogliono identificare anomalie, si vuole visualizzare la distribuzione dei punti. \\
+    \hline
+    Correlogram & correlationNumLotsVarUnord, correlationMixMultiNumUnord & Quando si vuole esaminare correlazioni a coppie tra molte variabili. \\
+    \hline
+    Bubble Chart & correlationNumThreeVarUnord, rankingNumThreeVarUnord, magnitudeNumThreeVarUnord & Quando si vuole mostrare la correlazione tra tre variabili simultaneamente. \\
+    \hline
+    Line+Column Chart & correlationNumLotsVarUnord, timeNumMultiOrd & Quando si vuole mostrare evoluzioni della relazioni tra dati con due diverse unità di misura. \\
+    \hline
+    Ordered Bar & rankingCatUniv, rankingMixUnivOneObs & Quando si hanno tante categorie. \\
+    \hline
+    Ordered Column & rankingCatUniv, rankingMixUnivOneObs & Quando si hanno poche categorie. \\
+    \hline
+    Lollipop Chart & rankingCatUniv, rankingMixUnivOneObs, timeNumMultiOrd, magnitudeCatUniv, magnitudeMixUnivOneObs & Da usare come alternativa all'\"Ordered Bar\" o all'\"Ordered Column\". \\
+    \hline
+    Slope Chart & rankingCatMultiInd, rankingMixMultiNumOneObs, timeCatMultiInd, timeMixMultiNumOneObs & Quando si vogliono visualizzare dei cambiamenti discreti nel tempo, quando si hanno poche categorie. \\
+    \hline
+    Dot Strip Plot & rankingMixUnivMoreObs, distributionNumLotsVarUnord & Quando si vogliono visualizzare ranking e distribuzione di dataset ampi. \\
+    \hline
+    Histogram & distributionNumUniv, distributionNumTwoVarUnord, distributionMixUnivMoreObs, distributionMixUnivOneObs & Quando si vuole visulizzare frequenze su intervalli, quando si hanno pochi punti, quando si vuole una rappresentazione semplice adatta a tutti. \\
+    \hline
+    Density Plot & distributionMixUnivMoreObs, distributionNumUniv & Quando si ha una distribuzione non categorizzata in bin, quando si vuole mostrare la \"forma\" dei dati. \\
+    \hline
+    Cumulative curve & distributionNumUniv, distributionMixUnivMoreObs & Quando si vuole mostrare le proporzioni dei dati e le loro tendenze. \\
+    \hline
+    Boxplot & distributionNumLotsVarUnord, distributionMixUnivMoreObs, distributionMixMultiNumUnord, distributionMixMultiCatNestMoreObs, distributionMixMultiCatSubMoreObs & Quando si hanno pochi punti, quando si vogliono mostrare statistiche come mediana, quartili e casi anomali. \\
+    \hline
+    Violin Plot & distributionNumLotsVarUnord, distributionMixUnivMoreObs, distributionMixMultiNumUnord, distributionMixMultiCatNestMoreObs, distributionMixMultiCatSubMoreObs & Quando si hanno tanti punti, quando si vuole combinare \"Boxplot\" con \"Density Plot\". \\
+    \hline
+    2D Density Plot & distributionNumTwoVarUnord, distributionMixMultiNumUnord & Quando si hanno tanti punti, quando si ha un dataset ampio. \\
+    \hline
+    Ridgeline & distributionNumLotsVarUnord, distributionMixUnivMoreObs & Quando si hanno tanti punti, quando si vogliono visualizzare più distribuzioni. \\
+    \hline
+    Calendar Heatmap & timeNumUniv & Quando si hanno dati giornalieri e si vogliono visulizzare pattern che si ripetono. \\
+    \hline
+    Seismogram & timeNumUniv & Quando si vogliono mostrare oscillazioni o cambiamenti repentini o alti nel tempo. \\
+    \hline
+    Line Chart & timeNumMultiOrd, timeMixMultiNumOrd & Quando si vogliono mostrare dei trend continui nel tempo. \\
+    \hline
+    Area Chart & timeNumMultiOrd & Quando si vogliono mostrare cambiamenti cumulativi nel tempo. \\
+    \hline
+    Fan Chart & timeNumMultiOrd, timeMixMultiNumOrd & Quando si hanno dati predittivi e si vuole rappresentare incertezza o un range di possibili risultati. \\
+    \hline
+    Priestley Timeline & timeCatUniv & Quando si vuole mostrare una sequenza di eventi nel tempo. \\
+    \hline
+    Circle Timeline & timeMixUnivMoreObs & Quando si vuole mostrare la grandezza di valori discreti che cambiano nel tempo. \\
+    \hline
+    Stacked Area Chart & timeMixMultiNumOrd & Quando si vogliono mostrare cambiamenti cumulativi nel tempo enfatizzandole la grandezza, quando si hanno poche categorie. \\
+    \hline
+    Stream Graph & timeMixMultiNumOrd & Alternativa a \"Stacked Area Chart\" che enfatizza il flusso di cambiamenti cumulativi nel tempo, quando si hanno poche categorie. \\
+    \hline
+    Pie Chart & compositionCatUniv, compositionMixUnivOneObs & Quando si ha un dataset piccolo, quando si vogliono evidenziare le proporzioni. \\
+    \hline
+    Donut Chart & compositionCatUniv, compositionMixUnivOneObs & Alternativa a \"Pie Chart\", quando si ha un dataset piccolo, quando si vogliono evidenziare le proporzioni. \\
+    \hline
+    Waterfall & compositionCatUniv, compositionMixUnivOneObs, flowCatUniv & Quando si vogliono mostrare come i valori influiscono nel totale. \\
+    \hline
+    Waffle Chart & compositionCatUniv, compositionMixUnivOneObs & Quando si vuole mostrare la composizione di una categoria in griglia. \\
+    \hline
+    Venn Diagram & compositionCatMultiInd & Quando si vogliono mostrare le parti che si sovrappongono tra diverse categorie. \\
+    \hline
+    Treemap & compositionCatMultiNest, compositionMixMultiCatNestOneObs & Quando si vogliono mostrare dati gerarchici, quando si vogliono mostrare tanti valori in uno spazio compatto. \\
+    \hline
+    Sunburst & compositionCatMultiNest, compositionMixMultiCatNestOneObs & Quando si vogliono mostrare dati gerarchici. \\
+    \hline
+    Icicle & compositionCatMultiNest, compositionMixMultiCatNestOneObs & Alternativa al Sunburst, quando si vogliono mostrare dati gerarchici con settori rettangolari. \\
+    \hline
+    Stacked Column Chart & compositionCatMultiSub, compositionMixMultiCatSubOneObs & Quando si vuole mostrare la composizione di diverse categorie o su periodi di tempo. \\
+    \hline
+    Stacked Bar Chart & compositionCatMultiSub, compositionMixMultiCatSubOneObs, magnitudeMixMultiCatSubOneObs & Quando si vuole mostrare la composizione di diverse categorie. \\
+    \hline
+    Proportional Stacked Bar & compositionCatMultiSub, compositionMixUnivOneObs, compositionCatMultiSub, magnitudeMixUnivOneObs & Quando si vuole mostrare la contribuzione relativa delle categorie sul totale. \\
+    \hline
+    Dendogram & compositionCatMultiNest, compositionMixMultiCatNestOneObs & Quando si vuole rappresentare una composizione gerarchica. \\
+    \hline
+    Circular Packing & compositionCatMultiNest, compositionMixMultiCatNestOneObs & Quando si vuole rappresentare una composizione gerarchica enfatizzando la grandezza della categoria. \\
+    \hline
+    Pictogram & magnitudeCatUniv, magnitudeMixUnivOneObs & Quando si vuole rappresentare quantità con simboli. \\
+    \hline
+    Grouped Barplot & compositionCatMultiSub, magnitudeMixMultiNumOneObs, magnitudeMixMultiCatSubOneObs & Quando si vuole comparare la grandezza di gruppi tra loro collegati, quando si hanno pochi gruppi. \\
+    \hline
+    Radar Chart & magnitudeMixMultiNumOneObs & Quando si vuole comparare multiple variabili per diverse categorie. \\
+    \hline
+    Dot Density & spatialNumTwoVarUnord & Quando si vogliono visualizzare punti su una mappa, quando si vuole mostrare la densità in diverse regioni. \\
+    \hline
+    Proportional Symbol & spatialNumThreeVarUnord & Quando si vuole mostrare la magnitudine del dato su una mappa. \\
+    \hline
+    Flow Map & spatialNumFourFiveVarUnord, spatialCatTwoVarInd, spatialMixTwoCatInd & Quando si vogliono visualizzare un flusso tra diversi punti sulla mappa. \\
+    \hline
+    Basic Choropleth & spatialCatUniv, spatialMixUnivOneObs & Quando si vuole mostrare la distribuzione di una variabile tra diverse regioni geografiche. \\
+    \hline
+    Equalized Cartogram & spatialCatUniv, spatialMixUnivOneObs & Quando si vuole mostrare la distribuzione di una variabile tra diverse regioni geografiche in maniera uniforme. \\
+    \hline
+    Contour Map & spatialCatUniv, spatialMixUnivOneObs & Quando si vuole mostrare la divergenza di variabili continue su un'area geografica. \\
+    \hline
+    Scaled Cartogram & spatialCatUniv, spatialMixUnivOneObs & Quando si vuole rappresentare la magnitudine di una variabile su una mappa. \\
+    \hline
+    Heatmap & flowCatMultiInd, flowCatMultiSub, flowMixMultiCatSubOneObs, flowMixMultiCatInd & Quando si vuole visualizzare l'intensità di flussi in forma tabulare. \\
+    \hline
+    Sankey Diagram & flowCatMultiInd, flowCatMultiSub, flowMixMultiNumOneOb, flowMixMultiCatSubOneObs, flowMixMultiCatInd & Quando si vuole visualizzare la struttura del flusso, quando si vuole mostrare la distribuzione proporzionale del flusso. \\
+    \hline
+    Network Diagram & flowCatMultiInd, flowMixMultiCatInd & Quando si vogliono mostrare connessioni tra più entità enfatizzando comunità e intensità dei flussi. \\
+    \hline
+    Chord Diagram & flowCatMultiInd, flowMixMultiCatInd & Quando si vogliono visualizzare connessioni tra più entità enfatizzando l'intensità tra le connessioni. \\
+    \hline
+    Arc Diagram & flowCatMultiInd, flowMixMultiCatInd & Quando si vogliono visualizzare connessioni tra più entità enfatizzando l'intensità tra le connessioni. \\
+    \hline
+    \caption{Grafici risultanti da Chart-chooser}
+    \label{tab:grafici_chart_chooser}
+\end{xltabular}
+
+
+
+
+\begin{xltabular}{\columnwidth}{|p{0.15\columnwidth}|X|p{0.27\columnwidth}|}
+    \hline
+    \rowcolor{gray!20}
+    \textbf{Nome} & \textbf{Regole} & \textbf{Consiglio d'uso} \\
+    \endhead
+    \hline
+    Diverging Bar & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item deviationNumUniv
+    \end{itemize} & 
+    Quando la precisione dei valori è importante, quando i valori sono discreti, quando il numero dei valori non è troppo elevato. \\
+    \hline
+    Diverging Area Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item deviationNumUniv
+    \end{itemize} & 
+    Quando si vuole evidenziare un trend, con valori continui o serie temporali. \\
+    \hline
+    Diverging Stacked Bar & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item deviationNumMultiOrd
+        \item deviationMixMultiNumOneObs
+    \end{itemize} & 
+    Quando si vuole evidenziare la divergenza per componenti di un gruppo, quando il numero delle variabili non è elevato. \\
+    \hline
+    Butterfly Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item deviationNumMultiOrd
+    \end{itemize} & 
+    Quando si hanno due variabili numeriche rappresentanti gruppi contrastanti. \\
+    \hline
+    Connected Scatterplot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item correlationNumMultiOrd
+        \item correlationMixMultiNumOrd
+        \item timeNumMultiOrd
+        \item timeMixMultiNumOrd
+    \end{itemize} & 
+    Quando l'ordine dei punti è importante, quando si vogliono mostrare come si evolvono le relazioni tra un punto e l'altro. \\
+    \hline
+    Scatterplot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item correlationNumTwoVarUnord
+    \end{itemize} & 
+    Quando si vogliono identificare anomalie, si vuole visualizzare la distribuzione dei punti. \\
+    \hline
+    Correlogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item correlationNumLotsVarUnord
+        \item correlationMixMultiNumUnord
+    \end{itemize} & 
+    Quando si vuole esaminare correlazioni a coppie tra molte variabili. \\
+    \hline
+    Bubble Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item correlationNumThreeVarUnord
+        \item rankingNumThreeVarUnord
+        \item magnitudeNumThreeVarUnord
+    \end{itemize} & 
+    Quando si vuole mostrare la correlazione tra tre variabili simultaneamente. \\
+    \hline
+    Line+Column Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item correlationNumLotsVarUnord
+        \item timeNumMultiOrd
+    \end{itemize} & 
+    Quando si vuole mostrare evoluzioni della relazioni tra dati con due diverse unità di misura. \\
+    \hline
+    Ordered Bar & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item rankingCatUniv
+        \item rankingMixUnivOneObs
+    \end{itemize} & 
+    Quando si hanno tante categorie. \\
+    \hline
+    Ordered Column & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item rankingCatUniv
+        \item rankingMixUnivOneObs
+    \end{itemize} & 
+    Quando si hanno poche categorie. \\
+    \hline
+    Lollipop Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item rankingCatUniv
+        \item rankingMixUnivOneObs
+        \item timeNumMultiOrd
+        \item magnitudeCatUniv
+        \item magnitudeMixUnivOneObs
+    \end{itemize} & 
+    Da usare come alternativa all'\emph{Ordered Bar} o all'\emph{Ordered Column}. \\
+    \hline
+    Slope Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item rankingCatMultiInd
+        \item rankingMixMultiNumOneObs
+        \item timeCatMultiInd
+        \item timeMixMultiNumOneObs
+    \end{itemize} & 
+    Quando si vogliono visualizzare dei cambiamenti discreti nel tempo, quando si hanno poche categorie. \\
+    \hline
+    Dot Strip Plot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item rankingMixUnivMoreObs
+        \item distributionNumLotsVarUnord
+    \end{itemize} & 
+    Quando si vogliono visualizzare ranking e distribuzione di dataset ampi. \\
+    \hline
+    Histogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumUniv
+        \item distributionNumTwoVarUnord
+        \item distributionMixUnivMoreObs
+        \item distributionMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole visulizzare frequenze su intervalli, quando si hanno pochi punti, quando si vuole una rappresentazione semplice adatta a tutti. \\
+    \hline
+    Density Plot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionMixUnivMoreObs
+        \item distributionNumUniv
+    \end{itemize} & 
+    Quando si ha una distribuzione non categorizzata in bin, quando si vuole mostrare la ``forma'' dei dati. \\
+    \hline
+    Cumulative curve & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumUniv
+        \item distributionMixUnivMoreObs
+    \end{itemize} & 
+    Quando si vuole mostrare le proporzioni dei dati e le loro tendenze. \\
+    \hline
+    Boxplot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumLotsVarUnord
+        \item distributionMixUnivMoreObs
+        \item distributionMixMultiNumUnord
+        \item distributionMixMultiCatNestMoreObs
+        \item distributionMixMultiCatSubMoreObs
+    \end{itemize} & 
+    Quando si hanno pochi punti, quando si vogliono mostrare statistiche come mediana, quartili e casi anomali. \\
+    \hline
+    Violin Plot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumLotsVarUnord
+        \item distributionMixUnivMoreObs
+        \item distributionMixMultiNumUnord
+        \item distributionMixMultiCatNestMoreObs
+        \item distributionMixMultiCatSubMoreObs
+    \end{itemize} & 
+    Quando si hanno tanti punti, quando si vuole combinare \emph{Boxplot} con \emph{Density Plot}. \\
+    \hline
+    2D Density Plot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumTwoVarUnord
+        \item distributionMixMultiNumUnord
+    \end{itemize} & 
+    Quando si hanno tanti punti, quando si ha un dataset ampio. \\
+    \hline
+    Ridgeline & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item distributionNumLotsVarUnord
+        \item distributionMixUnivMoreObs
+    \end{itemize} & 
+    Quando si hanno tanti punti, quando si vogliono visualizzare più distribuzioni. \\
+    \hline
+    Calendar Heatmap & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeNumUniv
+    \end{itemize} & 
+    Quando si hanno dati giornalieri e si vogliono visulizzare pattern che si ripetono. \\
+    \hline
+    Seismogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeNumUniv
+    \end{itemize} & 
+    Quando si vogliono mostrare oscillazioni o cambiamenti repentini o alti nel tempo. \\
+    \hline
+    Line Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeNumMultiOrd
+        \item timeMixMultiNumOrd
+    \end{itemize} & 
+    Quando si vogliono mostrare dei trend continui nel tempo. \\
+    \hline
+    Area Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeNumMultiOrd
+    \end{itemize} & 
+    Quando si vogliono mostrare cambiamenti cumulativi nel tempo. \\
+    \hline
+    Fan Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeNumMultiOrd
+        \item timeMixMultiNumOrd
+    \end{itemize} & 
+    Quando si hanno dati predittivi e si vuole rappresentare incertezza o un range di possibili risultati. \\
+    \hline
+    Priestley Timeline & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeCatUniv
+    \end{itemize} & 
+    Quando si vuole mostrare una sequenza di eventi nel tempo. \\
+    \hline
+    Circle Timeline & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeMixUnivMoreObs
+    \end{itemize} & 
+    Quando si vuole mostrare la grandezza di valori discreti che cambiano nel tempo. \\
+    \hline
+    Stacked Area Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeMixMultiNumOrd
+    \end{itemize} & 
+    Quando si vogliono mostrare cambiamenti cumulativi nel tempo enfatizzandole la grandezza, quando si hanno poche categorie. \\
+    \hline
+    Stream Graph & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item timeMixMultiNumOrd
+    \end{itemize} & 
+    Alternativa a \emph{Stacked Area Chart} che enfatizza il flusso di cambiamenti cumulativi nel tempo, quando si hanno poche categorie. \\
+    \hline
+    Pie Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatUniv
+        \item compositionMixUnivOneObs
+    \end{itemize} & 
+    Quando si ha un dataset piccolo, quando si vogliono evidenziare le proporzioni. \\
+    \hline
+    Donut Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatUniv
+        \item compositionMixUnivOneObs
+    \end{itemize} & 
+    Alternativa a \emph{Pie Chart}, quando si ha un dataset piccolo, quando si vogliono evidenziare le proporzioni. \\
+    \hline
+    Waterfall & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatUniv
+        \item compositionMixUnivOneObs
+        \item flowCatUniv
+    \end{itemize} & 
+    Quando si vogliono mostrare come i valori influiscono nel totale. \\
+    \hline
+    Waffle Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatUniv
+        \item compositionMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la composizione di una categoria in griglia. \\
+    \hline
+    Venn Diagram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiInd
+    \end{itemize} & 
+    Quando si vogliono mostrare le parti che si sovrappongono tra diverse categorie. \\
+    \hline
+    Treemap & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiNest
+        \item compositionMixMultiCatNestOneObs
+    \end{itemize} & 
+    Quando si vogliono mostrare dati gerarchici, quando si vogliono mostrare tanti valori in uno spazio compatto. \\
+    \hline
+    Sunburst & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiNest
+        \item compositionMixMultiCatNestOneObs
+    \end{itemize} & 
+    Quando si vogliono mostrare dati gerarchici. \\
+    \hline
+    Icicle & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiNest
+        \item compositionMixMultiCatNestOneObs
+    \end{itemize} & 
+    Alternativa al Sunburst, quando si vogliono mostrare dati gerarchici con settori rettangolari. \\
+    \hline
+    Stacked Column Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiSub
+        \item compositionMixMultiCatSubOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la composizione di diverse categorie o su periodi di tempo. \\
+    \hline
+    Stacked Bar Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiSub
+        \item compositionMixMultiCatSubOneObs
+        \item magnitudeMixMultiCatSubOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la composizione di diverse categorie. \\
+    \hline
+    Proportional Stacked Bar & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiSub
+        \item compositionMixUnivOneObs
+        \item compositionCatMultiSub
+        \item magnitudeMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la contribuzione relativa delle categorie sul totale. \\
+    \hline
+    Dendogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiNest
+        \item compositionMixMultiCatNestOneObs
+    \end{itemize} & 
+    Quando si vuole rappresentare una composizione gerarchica. \\
+    \hline
+    Circular Packing & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiNest
+        \item compositionMixMultiCatNestOneObs
+    \end{itemize} & 
+    Quando si vuole rappresentare una composizione gerarchica enfatizzando la grandezza della categoria. \\
+    \hline
+    Pictogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item magnitudeCatUniv
+        \item magnitudeMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole rappresentare quantità con simboli. \\
+    \hline
+    Grouped Barplot & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item compositionCatMultiSub
+        \item magnitudeMixMultiNumOneObs
+        \item magnitudeMixMultiCatSubOneObs
+    \end{itemize} & 
+    Quando si vuole comparare la grandezza di gruppi tra loro collegati, quando si hanno pochi gruppi. \\
+    \hline
+    Radar Chart & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item magnitudeMixMultiNumOneObs
+    \end{itemize} & 
+    Quando si vuole comparare multiple variabili per diverse categorie. \\
+    \hline
+    Dot Density & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialNumTwoVarUnord
+    \end{itemize} & 
+    Quando si vogliono visualizzare punti su una mappa, quando si vuole mostrare la densità in diverse regioni. \\
+    \hline
+    Proportional Symbol & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialNumThreeVarUnord
+    \end{itemize} & 
+    Quando si vuole mostrare la magnitudine del dato su una mappa. \\
+    \hline
+    Flow Map & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialNumFourFiveVarUnord
+        \item spatialCatTwoVarInd
+        \item spatialMixTwoCatInd
+    \end{itemize} & 
+    Quando si vogliono visualizzare un flusso tra diversi punti sulla mappa. \\
+    \hline
+    Basic Choropleth & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialCatUniv
+        \item spatialMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la distribuzione di una variabile tra diverse regioni geografiche. \\
+    \hline
+    Equalized Cartogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialCatUniv
+        \item spatialMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la distribuzione di una variabile tra diverse regioni geografiche in maniera uniforme. \\
+    \hline
+    Contour Map & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialCatUniv
+        \item spatialMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole mostrare la divergenza di variabili continue su un'area geografica. \\
+    \hline
+    Scaled Cartogram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item spatialCatUniv
+        \item spatialMixUnivOneObs
+    \end{itemize} & 
+    Quando si vuole rappresentare la magnitudine di una variabile su una mappa. \\
+    \hline
+    Heatmap & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item flowCatMultiInd
+        \item flowCatMultiSub
+        \item flowMixMultiCatSubOneObs
+        \item flowMixMultiCatInd
+    \end{itemize} & 
+    Quando si vuole visualizzare l'intensità di flussi in forma tabulare. \\
+    \hline
+    Sankey Diagram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item flowCatMultiInd
+        \item flowCatMultiSub
+        \item flowMixMultiNumOneOb
+        \item flowMixMultiCatSubOneObs
+        \item flowMixMultiCatInd
+    \end{itemize} & 
+    Quando si vuole visualizzare la struttura del flusso, quando si vuole mostrare la distribuzione proporzionale del flusso. \\
+    \hline
+    Network Diagram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item flowCatMultiInd
+        \item flowMixMultiCatInd
+    \end{itemize} & 
+    Quando si vogliono mostrare connessioni tra più entità enfatizzando comunità e intensità dei flussi. \\
+    \hline
+    Chord Diagram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item flowCatMultiInd
+        \item flowMixMultiCatInd
+    \end{itemize} & 
+    Quando si vogliono visualizzare connessioni tra più entità enfatizzando l'intensità tra le connessioni. \\
+    \hline
+    Arc Diagram & 
+    \vspace{-3.5mm}
+    \begin{itemize}[noitemsep,topsep=0pt, left=0pt]
+        \item flowCatMultiInd
+        \item flowMixMultiCatInd
+    \end{itemize} & 
+    Quando si vogliono visualizzare connessioni tra più entità enfatizzando l'intensità tra le connessioni. \\
+    \hline
+    \caption{Grafici risultanti da Chart-chooser}
+    \label{tab:grafici}
+\end{xltabular}

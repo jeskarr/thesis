@@ -6,7 +6,6 @@ loro struttura e output visivo.}\\
 
 \section{Definizione e applicazioni}
 \subsection{Cos'è un infografica e in cosa si distingue dalla data visualization}
-%cap1: Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
 Analogamente alla \gls{datavizg}, le infografiche si occupano di rappresentare visivamente i dati al fine di comunicarli in maniera più semplice e accessibile.
 Esse trasformano i dati in idee chiare, permettendo di inquadrare facilmente un fenomeno, una situazione o un processo, coadiuvando così la presa di decisioni ponderate sul tema presentato.
 Queste idee sono generate a partire dall'interpretazione, formalizzazione e contestualizzazione dei dati, che spesso sono disomogenei per formato, tipo di contenuto e origine. Tale interpretazione ha il compito di 
@@ -14,19 +13,16 @@ svelare il significato nascosto nel \emph{dataset} e selezionare le connessioni 
 In altre parole, l'infografica non si limita a mostrare i dati, ma li organizza e li presenta in un modo da renderne più evidente significato e importanza.
 
 Per raggiungere questo obiettivo, le infografiche combinano elementi testuali e grafici per presentare le informazioni; usando le parole di E. Tufte ``un'infografica mostra visivamente grandezze misurate mediante 
-l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore''. Pertanto, le infografiche rigettano la tradizione di ``purezza grafica'' (i.e. rappresentazione dei dati 
+l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore''\footcite{tufte:vis_display}. Pertanto, le infografiche rigettano la tradizione di ``purezza grafica'' (i.e. rappresentazione dei dati 
 basata solo su grafici, diagrammi e mappe) imposta alla \gls{datavizg} e abbracciano, invece, un insieme molto più amplio di tecniche di comunicazione visiva, come illustrazioni, immagini, etc.
-% TODO: aggiungere citazione come footnote The visual display of quantitative information, Edward Tufte [2001], Introduction, p.10
 Inoltre, il focus dell'infografica non è solamente l'oggetto da rappresentare, come invece accade con la \gls{datavizg}. Infatti, le infografiche
 prendono in considerazione anche il destinatario della comunicazione, scegliendo e disponendo gli elementi per costruire una narrazione.
 Possiamo infatti pensare all'infografica come a una forma di racconto, di lettura che non è di per sé né imparziale né completa, ma si limita a fare luce ed esporre i punti salienti individuati nel \emph{dataset}.
-%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 In realtà, tale caratteristica delle infografiche è proprio ciò che maggiormente le distingue dalla \gls{datavizg}. Infatti, mentre le prime sono progettate per presentare i dati raccontandoli attraverso storie specifiche, guidando il lettore con una narrazione, la seconda
 è più orientata verso l'esplorazione autonoma delle informazioni da parte del fruitore, che deve analizzare e scoprire i dati per conto proprio. 
 Questa differenza nel livello di analisi richiesto si ripercuote anche sul tipo di pubblico di ciascun tipo di rappresentazione. Nello specifico, le infografiche, grazie alla loro capacità di semplificare e contestualizzare i dati, sono accessibili anche a coloro
 che non possiedono capacità analitiche avanzate e, pertanto, hanno un pubblico più ampio. 
 
-%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
 Nonostante queste differenze, infografiche e \gls{datavizg} sono strettamente connesse e complementari. Le infografiche, pur essendo maggiormente orientate alla narrazione, 
 possono includere elementi che stimolano l'esplorazione autonoma dei dati. Allo stesso modo, le \emph{visualizzazioni dei dati} possono contenere aspetti narrativi che facilitano 
 l'interpretazione.
@@ -36,7 +32,6 @@ l'interpretazione.
 Le infografiche sono strumenti versatili che vengono utilizzati in una vasta gamma di settori e contesti, in particolare al fine 
 di analizzare o presentare dati. Offrono infatti vantaggi significativi che le rendono particolarmente adatte a questi scopi.
 
-%Infographics: The New Communication Tools in Digital Age, Waralak V. Siricharoen
 Per quanto riguarda l'\textbf{analisi dei dati}, le infografiche sono utili per la cosiddetta \gls{expdataanalysisg}, dove il fruitore non ha una domanda precisa a cui sta cercando risposta, bensì 
 vuole semplicemente scoprire cosa emerge di interessante dal \emph{dataset}.
 
@@ -55,7 +50,6 @@ e abbracciare in tal modo un pubblico molto amplio.
 
 \section{Classificare le infografiche}
 \subsection{Metodi di classificazione}\label{subsec:info_classifica}
-% file criteri_scelta_infografica_v0.1.0
 Una prima classificazione delle infografiche può essere fatta \textbf{in base all'output visivo}. Nello specifico, si hanno:
 \begin{itemize}
     \item \textbf{Infografiche statiche}, in cui le informazioni sono rappresentate e visibili tutte in un'unica volta, avendo così un impatto più
@@ -94,8 +88,9 @@ Una prima classificazione delle infografiche può essere fatta \textbf{in base a
 Come accennato in precedenza, l'infografica è una forma di racconto e, pertanto, la scelta e scrittura della storia da comunicare sono centrali nella sua costruzione.
 Nel corso dello stage si è dunque voluto sviluppare uno strumento prototipale, \emph{Infographic-helper}, che potesse aiutare il ``narratore'' in tale compito.
 Nello specifico, questo strumento consente di validare tale narrativa, oltre a individuarne le parti e l'obiettivo principale.
+Per quanto riguarda il linguaggio di programmazione utilizzato, l'intero strumento è implementato usando \gls{js}.
 
-Lo strumento è disponibile a \href{http://www.overleaf.com}{questo link}.
+Lo strumento è disponibile a \href{https://github.com/jeskarr/progetto_stage/tree/main/infographic-helper}{questo link}.
 
 \subsubsection{Validazione della narrativa}
 Uno degli obiettivi di \emph{Infographic-helper} è garantire che la narrativa dell'infografica sia persuasiva e venga recepita efficacemente dal pubblico. 
@@ -141,7 +136,6 @@ Domande:
 
 [...continua...]
 \end{lstlisting}
-% TODO: inserire modello usato corretto (7b?) e llama.cpp
 dove \texttt{\$target} rappresenta il pubblico di destinazione dell'infografica e \texttt{\$ethos} rappresenta il ruolo di chi espone la storia, inseriti per una maggiore contestualizzazione della storia poi riportata (inserita al posto di \texttt{{\$storia}}).
 
 \subsubsection{Ricerca del layout da utilizzare}
@@ -185,14 +179,12 @@ Lo strumento, inoltre, non è capace di valutare la veridicità del contenuto de
 assicurarsi che quanto scritto corrisponda a verità.
 
 Ciononostante, \emph{Infographic-helper} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva.
-%TODO: aggiungere che fa schifo ?, aggiungere parti test ?
 
 
 
 \section{Design delle infografiche}
 \subsection{I fattori che influenzano il design}
-Possiamo ordinare gerarchicamente i fattori che influenzano la struttura del design delle infografiche. Tale gerarchia è suddivisa in sei livelli come segue:
-%TODO: inserire da dove presa img, optimization of ....
+Studi\footcite{tymchenko:design_factor} hanno permesso di ordinare gerarchicamente i fattori che influenzano la struttura del design delle infografiche. Tale gerarchia è suddivisa in sei livelli come segue:
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{infografiche/fattori_design_info.png} 
@@ -202,30 +194,28 @@ Possiamo ordinare gerarchicamente i fattori che influenzano la struttura del des
 \noindent Vediamo dunque come applicare al meglio tali fattori nella costruzione del design di un'infografica.
 
 \subsubsection{I colori}
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-%CAP 16: Il colore
 Il colore è un elemento cruciale nel design delle infografiche e, pertanto, è da utilizzare con cura. 
 Esso infatti, se scelto in maniera appropriata, può migliorare la leggibilità e facilitare la comprensione e memorizzazione dell'informazione.
 
-Generalmente, si utilizza il colore per catturare l'attenzione, evidenziare dati specifici e per rafforzare il messaggio narrativo. Quest'ultimo punto, in particolare, è possibile in quanto ogni colore porta con sé un 
-significato simbolico influenzato dalla cultura e dalla geografia che permette di evocare sensazioni e valori specifici nel pubblico.
+Generalmente, si utilizza il colore per catturare l'attenzione, evidenziare dati specifici e per rafforzare il messaggio narrativo. Quest'ultimo punto, in particolare, è possibile 
+in quanto ogni colore porta con sé un significato simbolico, influenzato da cultura e geografia, che permette di evocare sensazioni e valori specifici nel pubblico.
 Di seguito sono riportati i valori più spesso associati ai colori, con riferimento alla cultura dell'Occidente:
 \begin{itemize}
     \item Colori caldi:
     \begin{itemize}
         \item \textbf{Rosso}:
         \begin{itemize}
-            \item Valori: emozioni forti come amore o aggressività.
+            \item Valori: energia, temperamento forte, passione.
             \item In linea con tali valori, viene utilizzato principalmente per attirare l'attenzione.
         \end{itemize}
         \item \textbf{Arancione}:
         \begin{itemize}
-            \item Valori: ottimismo, vitalità.
+            \item Valori: ottimismo, vitalità, energia.
             \item In linea con tali valori, viene generalmente utilizzato per temi giovanili e/o dinamici.
         \end{itemize}
         \item \textbf{Giallo}:
         \begin{itemize}
-            \item Valori: energia, allegria, felicità.
+            \item Valori: leggerezza, felicità, vitalità.
             \item In linea con tali valori, viene anch'esso utilizzato principalmente per attirare l'attenzione, specie per temi innovativi.
         \end{itemize}
     \end{itemize}
@@ -238,7 +228,7 @@ Di seguito sono riportati i valori più spesso associati ai colori, con riferime
         \end{itemize}
         \item \textbf{Blu}:
         \begin{itemize}
-            \item Valori: affidabilità, sicurezza, stabilità.
+            \item Valori: calma, stabilità.
             \item In linea con tali valori, viene utilizzato ad esempio da banche o compagnie assicurative.
         \end{itemize}
         \item \textbf{Viola}:
@@ -279,7 +269,6 @@ complementari per trasmettere sensazioni di calma oppure combinazioni di colori 
 Si aggiunge infine che, come per la \gls{datavizg}, anche in questo caso, è importante scegliere una gamma di colori che sia accessibile anche a persone daltoniche o \emph{color-deficient}.
 
 \subsubsection{I layout}\label{subsec:info_layout}
-% “Visual doing” di Willemien Brand 
 Gli elementi di un'infografica possono essere disposti in un massimo di sei livelli:
 \begin{itemize}
     \item Il \textbf{titolo principale};
@@ -291,7 +280,6 @@ Gli elementi di un'infografica possono essere disposti in un massimo di sei live
 \end{itemize}
 
 \bigskip
-% Acquired Codes of Meaning in Data Visualization and Infographics: Beyond Perceptual Primitives, Lydia Byrne, Daniel Angus, and Janet Wiles
 \noindent Per quanto riguarda nello specifico la struttura del contenuto principale e secondario, le infografiche sono solite
 utilizzare una ``composizione a \emph{panel}'', ovvero si hanno diverse componenti grafiche, dette \emph{gruppi visivi}, leggibili in sequenza.
 Questo approccio differisce notevolmente dalle pratiche comunemente usate nella \gls{datavizg}, dove tutte le sfaccettature del tema d'interesse sono presentate 
@@ -302,9 +290,8 @@ storia che si vuole raccontare. Infatti, per trasmettere efficacemente le inform
 che collega i \emph{gruppi visivi} in una determinata maniera dipendente dal messaggio. Questa struttura è detta \gls{vif}, letteralmente ``flusso delle informazioni visive''.
 Tale flusso è spesso rimarcato ed evidenziato tramite l'uso di ``suggerimenti narrativi'', che possono essere espliciti, come frecce o descrizione testuali, oppure impliciti, se 
 provengono da vari principi di design come ad esempio i principi di \emph{Gestalt} (approfonditi alla sezione \ref{subsec:gestalt}).
-%TODO: studi di ... che analizzano vif nei vari hanno permesso di individuare pattern
 
-Sono individuati i seguenti \emph{pattern} principali di \gls{vif}, distinti in base alla loro \emph{backbone shape}, ovvero da una diversa forma della linea lungo cui la 
+Alcuni studi\footcite{lu:vif} hanno permesso di inviduare i seguenti \emph{pattern} principali di \gls{vif}, distinti in base alla loro \emph{backbone shape}, ovvero da una diversa forma della linea lungo cui la 
 maggior parte dei \emph{gruppi visivi} è allineata nella narrazione.
 \begin{table}[H]
     \centering
@@ -336,7 +323,6 @@ maggior parte dei \emph{gruppi visivi} è allineata nella narrazione.
 Per la definizione degli obiettivi si rimanda alla sezione \ref{subsec:info_classifica}.
 
 Nello specifico, vengono definite le seguenti disposizioni generali a cui si possono facilmente far corrispondere i diversi \emph{pattern} di \gls{vif} sopraelencati. 
-% “Visual thinking” di Willemien Brand 
 \begin{itemize}
     \item Disposizione \textbf{a lista}:
     \begin{itemize}
@@ -432,8 +418,6 @@ Tale equilibrio può essere raggiunto in due diversi modi:
 Oltre a grafici, diagrammi ed elementi testuali, l'infografica può contenere anche altre tecniche di comunicazione visiva. Tra queste, ad esempio, vengono spesso utilizzati
 illustrazioni, icone e simboli.
 
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-%CAP 18: Le immagini
 Tali tecniche consentono di facilitare la memorizzazione, grazie alla loro potenza evocativa e alla loro capacità di richiamare oggetti facilmente riconoscibili dall'uomo.
 
 \bigskip
@@ -468,15 +452,13 @@ A tal fine, i titoli sono generalmente formulati in uno dei seguenti modi:
 \end{itemize}
 
 \subsubsection{I caratteri tipografici}
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-%CAP 17: I caratteri
 L'elemento più importante nel design di un'infografica è la scelta del carattere tipografico, il quale influisce pesantemente sulla leggibilità e comprensibilità dell'infografica. 
 Nello specifico, la gamma di caratteri utilizzati non deve essere troppo amplia (max. 3 o 4); bisogna invece concentrarsi sulla scelta del tipo di carattere, il quale
 può avere un impatto significativo sul design complessivo dell'infografica.
 
 A tal fine, si possono applicare le seguenti regole:
 \begin{itemize}
-    \item Per quanto riguarda l'uso di \textbf{caratteri graziati} (\emph{serif}), essi sono da utilizzare quando si vuole conferire serietà e autorevolezza al testo; sono infatti impiegati tipicamente in saggi e quotidiani. 
+    \item Per quanto riguarda l'uso di \textbf{caratteri graziati} (\emph{serif}), essi sono da utilizzare quando si vuole conferire serietà e autorevolezza al testo. 
     Tuttavia, possono risultare meno leggibili su schermo.
     \begin{itemize}
         \item Esempio: Times New Roman.
@@ -505,11 +487,8 @@ Sempre con riferimento ai caratteri, è importante seguire anche le seguenti reg
 
 
 \subsection{Interattività}
-%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 9
-%TODO: footnote Principio delle informazioni visive di Ben Schneiderman
-Per quanto riguarda la navigazione ed esplorazione delle infografiche si applica generalmente il cosiddetto \textbf{principio delle informazioni visive}, che afferma:
-``prima panoramica, zoom e filtri, poi dettagli su richiesta''. Si devono dunque presentare i punti salienti e più rilevanti, mentre ulteriori informazioni sono fornite agli utenti solo con il loro addentrarsi ed esplorazione
+Per quanto riguarda la navigazione ed esplorazione delle infografiche si applica generalmente il cosiddetto \textbf{principio delle informazioni visive} (postulato dall'informatico statunitense 
+Ben Shneiderman), che afferma: ``prima panoramica, zoom e filtri, poi dettagli su richiesta''. Si devono dunque presentare i punti salienti e più rilevanti, mentre ulteriori informazioni sono fornite agli utenti solo con il loro addentrarsi ed esplorazione
 minuziosa dell'infografica. 
 
 Le tecniche di esplorazione e navigazione possibili sono le seguenti:
@@ -522,18 +501,16 @@ Le tecniche di esplorazione e navigazione possibili sono le seguenti:
 \end{itemize}
 L'utente può impiegare tali tecniche interagendo con l'interfaccia nei seguenti modi:
 \begin{itemize}
-    \item \textbf{Tramite istruzioni}, l'utente dà un input diretto all'infografica (e.g. cliccando un pulsante), la quale si adatta di conseguenza;
-    \item \textbf{Tramite dialogo}, l'utente ``dialoga'' con la presentazione (e.g. ad esempio tramite finestre di dialogo) e ne cambia, in tal modo, i parametri;
-    \item \textbf{Manipolazione}, l'utente cambia la struttura o l'aspetto della visualizzazione (e.g. tramite filtraggio dei dati rappresentati);
-    \item \textbf{Esplorazione}, l'utente ha la sensazione di star dirigendo in prima persona l'azione (e.g. muovendosi all'interno di modelli 3D).
+    \item \textbf{Tramite input diretti}, l'utente dà un input diretto, ad esempio clicca un pulsante, e l'infograficala si adatta di conseguenza;
+    \item \textbf{Tramite richieste}, l'utente ``dialoga'' tramite apposite finestre con la presentazione e ne cambia, in tal modo, i parametri;
+    \item \textbf{Tramite manipolazione}, l'utente cambia la struttura o l'aspetto della visualizzazione, ad esempio tramite il filtraggio dei dati rappresentati;
+    \item \textbf{Tramite esplorazione}, l'utente visualizza l'infografica secondo un suo percorso, ad esempio muovendosi a piacimento all'interno di modelli 3D.
 \end{itemize}
 
 \bigskip
 \noindent Applicare queste tecniche aiuta a rendere la presentazione dei dati più coinvolgente e chiara, contribuendo così a raggiungere meglio gli obiettivi delle infografiche.
 Tuttavia, per un loro giusto impiego, è necessario seguire questi principi:
-%TODO: citazione “The design of everyday things” di Donald A. Norman ? che tratta di come ci rapportiamo a oggetti comuni. 
-% Priorità è sui bisogni dell'utente rispetto alle preoccupazioni estetiche dei designer
-\begin{itemize}
+ \begin{itemize}
     \item \textbf{Visibilità}, ossia rendere il più visibile la funzionalità di un oggetto in modo che sia più facile per gli utenti riconoscerlo e capirne la funzionalità. Tale norma può
     essere implementata tramite la forma dell'oggetto, che spesso suggerisce visivamente la funzionalità che esso permette (e.g. pulsante sul web che somigli a uno reale), oppure semplicemente tramite
     la mera organizzazione degli elementi visivi. Infatti, se un'informazione è fondamentale per la comprensione dell'intera infografica, essa dovrebbe essere sempre visibile e non nascosta da uno strato di interattività.
@@ -544,16 +521,10 @@ Tuttavia, per un loro giusto impiego, è necessario seguire questi principi:
 
 
 \subsection{Principi di Gestalt}\label{subsec:gestalt}
-%intro: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 6
 La \emph{Gestalt} (letteralmente ``forma'' o ``schema'' in tedesco) è una corrente psicologica che analizza e studia il funzionamento del cervello umano per cercare di prevedere come questo percepisce e organizza le informazioni visive. 
 Nello specifico, i principi definiti da questa psicologia si basano sulla capacità del cervello di riconoscere schemi e classificare elementi visivi basandosi su differenze e somiglianze, anche prima che venga prestata attenzione consapevole ai dettagli specifici (si parla, infatti, di ``percezione pre-attentiva''). 
 Per tali motivi, incorporare questi concetti nella progettazione delle infografiche potrebbe migliorare l'efficacia comunicativa e, al contempo, rendere l'interfaccia grafica più intuitiva per l'utente.
 
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
-%CAP 15: Gestalt (parte di design) 
-%Design is storytelling” di Ellen Lupton
-%atto 3
 Vediamo dunque come applicare le leggi di \emph{Gestalt} al caso specifico del design di infografiche:
 \begin{itemize}
     \item \textbf{Legge di pregnanza}, siccome il cervello umano tende a elaborare i \emph{pattern} regolari e ordinati più velocemente, si organizzino i dati logicamente e in maniera semplice. 
@@ -569,12 +540,9 @@ Vediamo dunque come applicare le leggi di \emph{Gestalt} al caso specifico del d
 
 
 
-\section{Come costruire un'infografica}
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
+\section{Come costruire un'infografica} 
 \subsection{L'Infomodel}
-%CAP 6: Uno sguardo sul piano di lavoro (INFOMODEL)
-%TODO: inserire footnote fonte
-Per garantire un prodotto finale di comunicazione efficace, la progettazione di un'infografica deve seguire un preciso schema, detto \emph{Infomodel}. 
+Per garantire un prodotto finale di comunicazione efficace, la progettazione di un'infografica deve seguire un preciso schema, detto \emph{Infomodel}\footcite{bottazzini:design_mente}. 
 Nello specifico, questo modello si compone di una serie ordinata di passaggi:
 \begin{enumerate}
     \item \textbf{Identificazione degli interlocutori};
@@ -586,12 +554,8 @@ Nello specifico, questo modello si compone di una serie ordinata di passaggi:
 Si approfondiscono tali passaggi nei paragrafi successivi.
 
 \subsubsection{Identificazione degli interlocutori}
-%CAP 7: Identificare il tipo di pubblico (infomodel 1)
 L'obiettivo dell'infografica è rappresentare l'argomento secondo le preferenze degli interlocutori. Nello specifico, si vogliono presentare le informazioni 
 rispecchiando le inclinazioni cognitive e decisionali della maggior parte del pubblico sul tema.
-
-A tal fine, è possibile formulare un modello di classificazione decisionale che ha come obiettivo l'adeguamento al pubblico della narrazione sul piano pragmatico,
-che consideri dunque le persuasioni e azioni che l'enunciazione delle frasi comporta. 
 
 \paragraph{Inclinazioni cognitive.}
 Quando parliamo di ``inclinazioni cognitive'' intendiamo, generalmente, le modalità di comprensione e di analisi dei fenomeni.
@@ -610,7 +574,6 @@ opposti. Tali coppie sono:
 Ogni individuo tende a preferire uno dei due valori di ciascuna coppia. La combinazione di queste preferenze corrisponde a un tipo di personalità, il quale influenza l'approccio
 dell'individuo alla comprensione e all'analisi delle informazioni. Infatti, ciascun diverso tipo si comporta diversamente e ha differenti interessi, opinioni e motivazioni. 
 Pertanto, la consapevolezza delle differenze tra i tipi può aiutare a strutturare l'infografica in modo più efficace.
-%TODO: inserire immagine?
 
 \paragraph{Inclinazioni decisionali.}
 Quando parliamo invece di ``inclinazioni decisionali'' intendiamo le modalità di apprendimento con cui un individuo riesce ad arrivare più facilmente alla \emph{saggezza}. 
@@ -648,7 +611,6 @@ Questi stili sono:
         \item Tipo di narrazione: una storia che esplora e incorpora tutte le opzioni e possibilità derivanti dalle scelte presentate.
     \end{itemize}
 \end{enumerate}
-%TODO: inserire immagine?
 Per un apprendimento accessibile a tutti, il \emph{4MAT} prevede la combinazione di questi stili nell'ordine presentato sopra. Nello specifico, si dovrebbe iniziare con una spiegazione del perché l'argomento è rilevante e perché il pubblico dovrebbe
 essere interessato ad ascoltarlo, seguito da una descrizione dettagliata e oggettiva dei dati e delle informazioni in merito, proseguendo con un'esplorazione dei risvolti pratici di quanto specificato e concludendo con una panoramica delle possibili 
 conseguenze e cambiamenti futuri. 
@@ -658,7 +620,6 @@ Ciò consente di raggiungere una maggiore efficacia del messaggio e facilitarne 
 
 \subsubsection{Identificazione della storia e dei suoi effetti}
 \paragraph{Formulare una storia.}
-%CAP 8: Formulare la storia (infomodel 2)
 Essenziale per una buona infografica è l'individuazione di una narrativa coinvolgente.
 A tal fine, si utilizza la struttura classica del racconto, ovvero un arco narrativo sviluppato in tre atti come segue:
 \begin{itemize}
@@ -671,8 +632,6 @@ A tal fine, si utilizza la struttura classica del racconto, ovvero un arco narra
 \end{itemize} 
 
 \bigskip
-%Design is storytelling” di Ellen Lupton
-%ATTO 1: \emph{pattern} storie (pianificazione dello scenario)
 \noindent Da tale descrizione, possiamo dunque identificare i principali elementi di una storia in agenti e azioni. Gli agenti sono i soggetti o le forze che influiscono o vengono influenzati dai dati, mentre 
 le azioni sono gli eventi o le decisioni che modellano la storia stessa. Si noti, inoltre, che quest'ultime devono seguire i seguenti criteri:
 \begin{itemize}
@@ -683,7 +642,6 @@ le azioni sono gli eventi o le decisioni che modellano la storia stessa. Si noti
 \end{itemize}
 
 \paragraph{Gli effetti della storia.} 
-%ATTO 2: esprimere emozioni
 È cruciale considerare non solo l'esperienza utente dell'infografica al momento dell'interazione, ma anche come tale esperienza sarà ricordata dall'utente in futuro.
 Diventa dunque necessario empatizzare con i valori e le aspirazioni del pubblico per poter realizzare un design che provochi reazioni istantanee, siano esse viscerali (come risposta a colori, materiali etc.) o fisiche (e.g. cliccare un pulsante), e che al contempo
 innesti memorie e associazioni permanenti relative all'infografica.
@@ -694,20 +652,11 @@ A tal fine, si noti che è particolarmente importante ricostruire quale siano st
 quale siano le singole azioni effettuate.
 
 \subsubsection{Identificazione del dataset}
-%CAP 9: Individuare il dataset (infomodel 3)
 Si scelgono dei \emph{dataset} in base ai punti precedenti e facendo attenzione all'autorevolezza delle fonti e alla rappresentatività del campione.
 Successivamente, è necessario pulire i dati per renderli coerenti con le convenzioni adottate globalmente e per sostituire eventuali incoerenze di notazione con le corrette.
 
-A seconda dei dati disponibili scelti, si possono rivelare e mettere in luce diversi aspetti dei dati stessi, quali:
-\begin{itemize}
-    \item \textbf{proporzioni}, confrontando i dati con grandezze note (e.g. il fatturato di un'azienda messo in relazione al PIL nazionale);
-    \item \textbf{comparazioni interne}, evidenziano le strategie che governano il fenomeno sulla base dell'importanza e peso delle risorse usate;
-    \item \textbf{comparazioni esterne}, confrontando le strategie riferite a risorse interne rispetto all'uso consueto;
-    \item \textbf{cambiamenti nel corso del tempo};
-    \item \textbf{classifiche};
-    \item \textbf{analisi per categoria};
-    \item \textbf{associazioni}.
-\end{itemize}	
+A seconda dei dati disponibili scelti, si possono rivelare e mettere in luce diversi aspetti dei dati stessi. Tali aspetti identificano gli obiettivi di visualizzazione, 
+come definiti alla sezione \nameref{subsubsec:obj}.
 
 \subsubsection{Analisi dei dati e rappresentazione della storia}
 %CAP 10: Raccontare la storia con i dati (infomodel 4 e 5)
@@ -729,26 +678,21 @@ Tali tecniche comprendono, ad esempio, metafore narrative e strutture retoriche,
 
 \subsection{Principi e linee guida}
 \subsubsection{Linee guida generali}
-%“Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo 
-%CAP 2: Regole della creatività (3 per chartjunk)
-%TODO: footnote da dove preso?  (però è di tufte)
-L'infografica deve:
+Alcuni studi\footcite{tufte:vis_display} identificano dei principi che le infografiche, come strumenti di visualizzazione delle informazioni, dovrebbero seguire:
 \begin{itemize}
-    \item \textbf{Mostrare i dati in modo coerente}, ciò è molto importante specie per grandi quantità di dati di diverse tipologie.
-    \item \textbf{Focalizzarsi sul contenuto}, si vuole indurre l'utente a pensare alla sostanza piuttosto che alla metodologia grafica con cui questa è rappresentata.
-    \item \textbf{Evitare distorsioni}, bisogna assicurarsi che i dati rappresentati non siano distorti per dare ragione al presentatore.
-    \item \textbf{Favorire il confronto} tra diverse classi di dati;
-    \item \textbf{Rivelare i dati con diversi livelli di dettaglio}, si deve infatti avere una narrazione su più piani, che permetta un approfondimento di questa se il lettore lo desidera.
-    \item \textbf{Seguire uno scopo chiaro} sia esplicativo che decorativo, che metta in primo piano la trasparenza dei dati e solo successivamente il design con cui vengono presentati.
+    \item \textbf{Mostrare i dati in modo coerente e favorirne il confronto};
+    \item \textbf{Focalizzarsi sul contenuto} piuttosto che sulla metodologia grafica con cui questo è rappresentato;
+    \item \textbf{Evitare di distorcere i dati} per confermare le proprie tesi;
+    \item \textbf{Sviluppare la narrazione su diversi livelli di dettaglio}, per permettere un approfondimento di questa solo se il lettore lo desidera;
+    \item \textbf{Seguire uno scopo}, che deve essere riflesso sia a livello informativo che decorativo;
     \item \textbf{Integrare descrizioni statistiche e verbali} per avere un quadro completo del contesto nel quale i dati presentati si inseriscono.
 \end{itemize}
 Grazie al soddisfacimento di tali requisiti è possibile creare uno strumento di comunicazione che permetta di esporre efficientemente ed efficacemente idee complesse in maniera chiara e semplice.
 
 \subsubsection{Decidere la complessità dell'infografica}
-%"L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 3
 Quando si sviluppa un'infografica è fondamentale adattarne la complessità al lettore medio.
-Nello specifico, si cerca di trovare un equilibrio tra le seguenti coppie di caratteristiche (descritte nella forma [\emph{più complesso, ma approfondito - più semplice, ma superficiale}]):
+A tal fine, alcuni studi\footcite{cairo:arte_funz} identificano una serie di coppie di caratteristiche (descritte nella forma [\emph{più complesso, ma approfondito - più semplice, ma superficiale}]) da bilanciare per trovare 
+un equilibrio di complessità:
 \begin{itemize}
     \item \textbf{Astrazione - Raffigurazione}: si ha un'infografica figurativa quando si utilizzano immagini o fotografie che mostrano il soggetto in modo dettagliato e mimetico. Se, invece, si utilizzano
     pittogrammi o simboli, che richiedono dunque un'ulteriore elaborazione per essere interpretati, si avrà un'infografica più vicina al lato dell'astrazione e dunque più complessa. 
@@ -763,14 +707,13 @@ Nello specifico, si cerca di trovare un equilibrio tra le seguenti coppie di car
 \end{itemize}
 
 \bigskip
-% cap 4
-\noindent Nello specifico, tali caratteristiche sono valutate nel seguente modo:
+\noindent Nello specifico, tali caratteristiche sono da valutare nel seguente modo:
 \begin{enumerate}
     \item Innanzitutto, si pensa a \emph{densità - leggerezza} e \emph{multidimensionalità - unidimensionalità}, cercando di non sottostimare la capacità di comprensione dei lettori.
     Nello specifico, si organizza l'infografica in più livelli sistemati in ordine logico, includendo solo i sottostrati necessari per raggiungere l'obiettivo narrativo preposto.
     Il livello più esterno deve fungere da punto di ingresso dell'infografica, fornendo una sintesi chiara e concisa delle informazioni presentate, comprese introduzione e punti salienti.
     \item Una volta determinate tali caratteristiche, si pensa a \emph{funzionalità - decorazione} e \emph{astrazione - raffigurazione}, definendo dapprima struttura e organizzazione dei dati e successivamente la loro rappresentazione. 
-    Solo in un secondo momento si scelgono eventuali elementi decorativi aggiuntivi
+    Solo in un secondo momento si scelgono eventuali elementi decorativi aggiuntivi.
     \item Infine, si pensa a \emph{Originalità - familiarità} e \emph{novità - ridondanza}, cercando di garantire la comprensione dei concetti esposti ma anche di evitare la noia che la ripetizione di questi potrebbe portare.
     In linea generale, meno comune è la forma grafica scelta più ridondanze dovranno essere inserite.
 \end{enumerate}

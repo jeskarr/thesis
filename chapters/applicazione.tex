@@ -21,7 +21,6 @@ Si riportano di seguito le varie scelte progettuali effettuate per ciascuna fase
 Il target di riferimento dell'infografica sono principalmente gli individui che desiderano proseguire la loro formazione con un percorso universitario e sono interessati
 in particolare all'ambito informatico. 
 Inoltre, l'infografica potrebbe anche attrarre studenti che già frequentano il corso, i quali potrebbero essere interessati a visualizzare e analizzare le statistiche relative al loro programma di studi. 
-%TODO: Sono dunque definiti i seguenti attori che interagiscono con l'infografica:
 
 \subsubsection{Scelte individuate a partire dalle inclinazioni cognitive}
 Per quanto riguarda le loro inclinazioni cognitive, possiamo ragionevolmente supporre che la maggior parte degli interlocutori tendano maggiormente al \emph{ragionamento} piuttosto che al \emph{sentimento}. 
@@ -144,12 +143,11 @@ La storia viene formulata a partire dalle risposte alle domande definite nella s
         }
     \end{itemize}
 \end{itemize}
-
-%TODO: Tale storia è stata anche data in input a \emph{Infographic-helper} il quale ha fornito elementi di \emph{pathos}, \emph{ethos} e \emph{logos} da aggiungere.
-% con parametri???
-% INSERIRE IL FATTO CHE STORIA GIA DIVISA IN SEZIONE
-
-%TODO: \subsubsection{Effetti della storia} -> archetipi utenti
+Tale storia è stata anche data in input a \emph{Infographic-helper} il quale ha fornito elementi di \emph{pathos}, \emph{ethos} e \emph{logos} da integrare.
+Ciò ha portato al contenuto presentato sopra.
+Lo strumento ha inoltre permesso la suddivisione in sezioni, sopra anticipate da un titoletto in grassetto per una maggiore visibilità.
+Per quanto riguarda l'obiettivo, \emph{Infographic-helper}, ha classificato la storia come ``informazioni correlate''; tuttavia, si può individuare un ``processo ordinato'' 
+che è l'obiettivo di visualizzazione che viene effettivamente perseguito.
 
 
 \subsection{Identificazione del dataset}
@@ -162,11 +160,13 @@ Altri dati, riguardanti ad esempio le materie, sono stati ricavati manualmente d
 Per quanto riguarda i luoghi di studio, sono stati anch'essi ricavati manualmente a partire dall'esperienza personale dello stagista-studente e dei colleghi, cercando di inserire tutte le strutture utili presenti nelle vicinanze.
 
 \bigskip
-\noindent In base ai diversi dataset disponibili, si identificano i diversi aspetti di questi che si vogliono mettere in luce con la visualizzazione:
+\noindent In base ai diversi dataset disponibili, grazie allo strumento \emph{Chart-chooser} si identificano i diversi aspetti di questi che si vogliono mettere in luce con la visualizzazione:
 \begin{itemize}
-    \item \emph{Analisi per categoria} per quanto riguarda i dati sul profilo degli studenti, le materie di studio, le opportunità post-laurea;
-    \item \emph{Comparazioni interne} per quanto riguarda i dati sulla difficoltà del corso e sull'opinione degli studenti;
-    \item \emph{Associazioni} per quanto riguarda i luoghi.
+    \item \emph{Composizione} per quanto riguarda i dati sulle materie di studio, le opportunità post-laurea e alcune delle opinioni degli studenti;
+    \item \emph{Flussi} per quanto riguarda i profili degli studenti;
+    \item \emph{Grandezze} per quanto riguarda i dati sulla difficoltà del corso;
+    \item \emph{Divergenza} per quanto riguarda la maggior parte dei dati sull'opinione degli studenti;
+    \item \emph{Spazi} per quanto riguarda i luoghi.
 \end{itemize}
 
 \subsection{Analisi dei dati e rappresentazione della storia}
@@ -197,9 +197,8 @@ e, di conseguenza, la rappresentazione della storia.
 \end{itemize}
 
 \paragraph{Il layout.}
-%Si è utilizzato lo strumento \emph{Infographic-helper} per individuare le varie sezioni della storia, come descritto alla sezione \nameref{subsubsec:app_storia}, e l'obiettivo. 
-%TODO: cosa di infographic-helper che ha sbagliato
-L'obiettivo della presentazione corrisponde a ``infografiche basate su un processo ordinato''. Seguendo i principi enunciati nel capitolo precedente, si sceglie una \emph{disposizione 
+Si è utilizzato lo strumento \emph{Infographic-helper} per individuare le varie sezioni della storia, come descritto alla sezione \nameref{subsubsec:app_storia}, e l'obiettivo principale. 
+Tale obiettivo della presentazione corrisponde a ``infografiche basate su un processo ordinato''. Seguendo i principi enunciati nel capitolo precedente, si sceglie una \emph{disposizione 
 a passi}. Nello specifico, si adotta il \emph{pattern} \gls{vif} \emph{spiral}, che consente di implementare uno scorrimento verticale, poiché il \emph{layout} è sviluppato anch'esso verticalmente.  
 Tale tipo di scorrimento risulta essere più agevole e familiare agli utenti di quello orizzontale, essendo la convenzione nella maggior parte dei siti web. 
 È importante notare che l'infografica richiede necessariamente uno scorrimento per essere visualizzata nella sua interezza poiché contiene numerose informazioni.
@@ -211,7 +210,6 @@ Al contrario, le opinioni degli studenti, che si basano più sulla pratica e sul
 \paragraph{Le tecniche di visualizzazione dei dati inserite.}
 Si è utilizzato lo strumento \emph{Chart-chooser} per individuare le tecniche di \gls{datavizg} più adatte. 
 Le visualizzazioni risultanti scelte sono le seguenti:
-%TODO: Si riportano di seguito gli input forniti e gli output prodotti dallo strumento per ogni tipologia di dato:
 \begin{itemize}
     \item Per la visualizzazione dei dati riguardanti il profilo degli studenti si è scelto di utilizzare un diagramma Sankey. 
     \item Per la visualizzazione dei dati geografici si è utilizzata una semplice mappa con evidenziate i luoghi d'interesse.

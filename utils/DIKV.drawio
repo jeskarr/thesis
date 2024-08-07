@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-08T07:18:50.445Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0" etag="b7DPChy4OKBmQ2-RDqc9" version="24.6.4" type="device">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" version="24.7.6">
   <diagram name="Page-1" id="iPqsyDtkeX6RuwLVqoJ3">
-    <mxGraphModel dx="1877" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2062" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -88,14 +88,59 @@
         <mxCell id="c9jSjvfSi_keudU5MXWR-35" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=90;size=0.5;" parent="1" vertex="1">
           <mxGeometry x="683.28" y="-74.61" width="79.07" height="468.88" as="geometry" />
         </mxCell>
-        <mxCell id="wglhYMBvUaV3T4xTL-7X-1" value="&lt;div&gt;Osservazione di un&lt;/div&gt;&lt;div&gt;fenomeno reale&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="wglhYMBvUaV3T4xTL-7X-1" value="&lt;div&gt;Osservazione di un&lt;/div&gt;&lt;div&gt;fenomeno reale&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-50" y="280" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="wglhYMBvUaV3T4xTL-7X-2" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.067;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="c9jSjvfSi_keudU5MXWR-1">
+        <mxCell id="wglhYMBvUaV3T4xTL-7X-2" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.067;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="c9jSjvfSi_keudU5MXWR-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint y="280" as="sourcePoint" />
             <mxPoint x="40" y="240" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="mBmczYQJ1k2OgU8dayuZ-1" target="mBmczYQJ1k2OgU8dayuZ-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="810" />
+              <mxPoint x="640" y="745" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-1" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Dati&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Semplici misurazioni di fenomeni reali e, &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;come tali, non presentano una sruttura&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="780" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="mBmczYQJ1k2OgU8dayuZ-2" target="mBmczYQJ1k2OgU8dayuZ-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="715" />
+              <mxPoint x="640" y="665" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-2" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Informazione&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Si ha una struttura che rende l&#39;informazione facilmente comprensibile al pubblico&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="280" y="700" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="mBmczYQJ1k2OgU8dayuZ-3" target="mBmczYQJ1k2OgU8dayuZ-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="635" />
+              <mxPoint x="640" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-3" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Conoscenza&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="620" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-4" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Saggezza&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="360" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-13" value="&lt;div style=&quot;font-size: 14px;&quot; align=&quot;left&quot;&gt;L&lt;font style=&quot;font-size: 14px;&quot;&gt;a conoscenza che viene compresa&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;in maniera profonda e memorizzata&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;diventa saggezza&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="570" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-14" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;L&#39;informazione viene consumata e assume un &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;determinato significato a seconda dei ricordi ed&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;esperienze &lt;font style=&quot;font-size: 14px;&quot;&gt;del consumatore&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="660" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mBmczYQJ1k2OgU8dayuZ-15" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;I dati vengono contestualizzati, pulendoli e &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;preparandoli per essere comunicati &lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="750" width="330" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

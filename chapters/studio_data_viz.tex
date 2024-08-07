@@ -5,7 +5,6 @@ Viene inoltre proposto un metodo di classificazione dei grafici per ottimizzare 
 
 \section{Definizione e applicazioni}
 \subsection{La necessità di rappresentare i dati}
-%INTRO + CAP 1: “Design della mente – infografica e data viz” di Paolo Bottazini, Michele Gotuzzo
 La \emph{visualizzazione dei dati} ha una tradizione millenaria. Sin dagli albori della civiltà umana, 
 le persone hanno sviluppato metodi per rappresentare visivamente i dati al fine di renderli più facili da comprendere, 
 memorizzare e trasmettere.
@@ -30,7 +29,6 @@ una traslazione di questi in un contesto visivo.
 
 
 \subsection{Obiettivi della data visualization}
-%cap 6: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119209560
 Gli obiettivi alla base della \gls{datavizg} sono:
 \begin{itemize}
     \item \textbf{Identificare}, ovvero trovare un \emph{dataset} significativo, né troppo banale né troppo complesso, da cui sia possibile
@@ -47,7 +45,6 @@ Gli obiettivi alla base della \gls{datavizg} sono:
 \end{itemize}
 
 \bigskip
-%https://infogram.com/blog/what-is-data-visualization/?_gl=1*1rypyyw*_up*MQ..*_ga*MTg5MzY2NzU2MS4xNzE5MzMxMTgw*_ga_LD50PRQER7*MTcxOTMzMTE3OS4xLjAuMTcxOTMzMTE3OS4wLjAuMA..
 \noindent Il fine ultimo di questi obiettivi è quello di:
 \begin{itemize}
     \item \textbf{Rendere i dati comprensibili e memorabili},
@@ -73,11 +70,8 @@ e comunicare informazioni.
 
 
 \section{Principi e linee guida}
-%TODO: capire se immagine è da cambiare
 \subsection{Creare visualizzazioni efficaci}
-%https://infogram.com/blog/what-is-data-visualization/?_gl=1*1rypyyw*_up*MQ..*_ga*MTg5MzY2NzU2MS4xNzE5MzMxMTgw*_ga_LD50PRQER7*MTcxOTMzMTE3OS4xLjAuMTcxOTMzMTE3OS4wLjAuMA..
 Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascienceg} e design.
-% immagine da https://venngage.com/templates/diagrams/data-viz-edf4207a-7fb4-47ce-ae1e-df730cc93d78 ma rifatta
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{data-viz/venn_good_dataviz} 
@@ -87,16 +81,14 @@ Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascience
 
 \noindent Se realizzata correttamente, infatti, essa è capace di ricavare da \emph{dataset} complessi delle informazioni significative e trasmetterle in maniera intuitiva.
 Usando le parole di Edward Tufte, statistico e luminare nel campo della \gls{datavizg}, una \emph{visualizzazione dei dati} eccellente consiste in
-``idee complesse comunicate con chiarezza, precisione ed efficienza''.
-% TODO: aggiungere citazione come footnote (%“The visual Display of Quantitative Information” di Edward R. Tufte, CAP 1: Graphical excellence)
+``idee complesse comunicate con chiarezza, precisione ed efficienza''\footcite{tufte:vis_display}.
 
-%cap1: “L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-Da ciò ne consegue che l'obiettivo della \gls{datavizg} e ruolo di un architetto dell'informazione è quello di rendere il più efficiente possibile il processo che il cervello
+Da ciò ne consegue che l'obiettivo della \gls{datavizg} è quello di rendere il più efficiente possibile il processo che il cervello
 umano compie nell'acquisire conoscenza e \emph{saggezza} a partire dall'osservazione di fenomeni.
 Tale processo può essere descritto, in maniera semplificata, attraverso la cosiddetta gerarchia DIKV (\emph{Data-Information-Knowledge-Wisdom}) di seguito riportata.
 \begin{figure}[H] 
     \centering 
-    \includegraphics[width=\columnwidth]{data-viz/DIKV} 
+    \includegraphics[width=0.8\columnwidth]{data-viz/DIKV} 
     \caption{Gerarchia DIKV}
     \label{fig:DIKV}
 \end{figure}
@@ -105,24 +97,19 @@ Come si nota subito dall'immagine \ref{fig:DIKV}, è essenziale ottenere dati pu
 ottenere una conoscenza valida (responsabilità di comunicazione e design).
 
 \bigskip
-%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-% cap 2
-\noindent Nella \emph{visualizzazione dei dati} in sé, bisogna tener conto innanzitutto che la forma grafica delle informazioni non è di per sé un'applicazione artistica; infatti, 
-essa deve anche coadiuvare il fruitore in attività intellettive. Pertanto, la forma deve aspirare a oggettività, precisione e, soprattutto, funzionalità.
+\noindent Nella \emph{visualizzazione dei dati}, la grafica deve aspirare a oggettività, precisione e, soprattutto, funzionalità. Infatti, sebbene il processo di creazione possa somigliare 
+a quello di un'applicazione artistica, essa non è e non deve essere solo un'espressione estetica. La grafica deve, in realtà, coadiuvare il fruitore in attività intellettive.
 Per descrivere tale principio, possiamo dunque prendere in prestito le parole di Louis Sullivan sull'architettura modernista del XX secolo: ``La forma segue la funzione''. 
 Tale massima può infatti essere applicata anche all'architettura dell'informazione nel contesto della \gls{datavizg}, giacché
-un complesso di dati può assumere più forme, ma non tutte le forme sono sempre adatte e usabili. Infatti, la loro scelta deve dipendere dal
-tipo di dati e obiettivo della rappresentazione. Ne consegue che più preciso è lo scopo, più limitata sarà la gamma di forme tra cui scegliere.
+un complesso di dati può assumere più forme, ma non tutte le forme sono sempre adatte, usabili e funzionali allo scopo della visualizzazione. Infatti, la loro scelta deve dipendere dal
+tipo di dati e obiettivo della rappresentazione.
 
 Il processo di decisione della rappresentazione grafica viene meglio approfondito nella sezione \ref{sec:classificare_grafici}.
 
 \bigskip
 \noindent Una volta decisa la forma migliore, bisogna comunque adattarla alla visualizzazione del caso specifico attraverso delle scelte di design.
-In tal senso, si può adottare un approccio più minimalistico, promosso dal sopracitato Edward Tufte, o un approccio più ``artistico'', 
-sostenuto da Nigel Holmes, famoso grafico specializzato nel design delle informazioni.
+In tal senso, si può adottare un approccio più minimalistico, promosso dal sopracitato Edward Tufte, o un approccio più ``artistico''.
 
-%“The visual Display of Quantitative Information” di Edward R. Tufte
-%CAP 1: Graphical excellence
 Per Tufte è essenziale combinare una semplicità di design a complessità dei dati. Per lui, il fruitore della visualizzazione deve poter ricavare il maggior numero di idee e informazioni dal minor uso possibile di spazio e inchiostro.
 A tal proposito, egli sviluppa le seguenti formule: 
 \begin{center}
@@ -131,33 +118,22 @@ A tal proposito, egli sviluppa le seguenti formule:
 \begin{center}
     $\text{Densità dei dati} = \frac{\text{numero di voci in una matrice di dati}}{\text{area occupata dal grafico}}$            %CAP 8: Data density and small multiples
 \end{center}
-% TODO: aggiungere footnote che questa parte si intende solo quella dei datiDensità = number entries in una matrice di dati / area del grafico.
-%Meglio se è più alta (mappe è altissima), risulta anche essere più affidabile. Bisogna comunque evitare di sovrappopolare lo spazio, in quel caso conviene utilizzare tecniche di data-reduction (averaging, clustering, smoothing).
-%Attenzione! Stiamo parlando della parte di dati, per quanto riguarda la parte non strettamente riguardante questi (chartjunk) meglio meno.
-evidenziando che più il rapporto è alto, migliore è la rappresentazione. Ciò implica che sia necessario evitare di utilizzare tutti gli elementi decorativi o, più in generale, tutte le parti che possono essere omesse 
-senza perdere dati, ovvero tutto ciò che Tufte chiama \gls{chartjunkg} (e.g. la maggior parte delle griglie e sfondi posti sotto i grafici).
+evidenziando che quanto più elevati sono tali rapporti, migliore sarà la rappresentazione, a condizione però di non sovrappopolare lo spazio.
+Ciò implica che sia necessario evitare di utilizzare tutti gli elementi decorativi o, più in generale, tutte le parti che non comunicano
+dati, ovvero tutto ciò che Tufte chiama \gls{chartjunkg} (e.g. la maggior parte delle griglie e sfondi posti sotto i grafici).
 
-%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-%cap 3
-D'altra parte, Holmes sostiene che ci si può divertire con la forma, purché la funzione principale rimanga comunicare i dati. Infatti, ciò che Tufte potrebbe considerare \gls{chartjunkg}, e dunque superfluo,
+D'altra parte, si potrebbe pensare che finché la funzione principale rimane comunicare i dati ci si può divertire con la forma con cui essi vengono comunicati. Infatti, ciò che Tufte potrebbe considerare \gls{chartjunkg}, e dunque superfluo,
 potrebbe invece rivelarsi utile al processo di memorizzazione e dunque portare più facilmente alla \emph{saggezza}. 
 
-%“L'arte funzionale – Infografica e visualizzazione delle informazioni” di Alberto Cairo
-%Cap 4
-Qualsiasi approccio si decida di intraprendere, rimane comunque essenziale sfruttare lo spazio a disposizione per ricercare la profondità, seppur rimanendo nei limiti dettati dal tipo di fruitori.
-Tale profondità si concretizza quasi sempre tramite la rappresentazione di dati multivariati, che consentono l'analisi di un fenomeno in maniera più accurata. %multivariato da %“The visual Display of Quantitative Information” di Edward R. Tufte, CAP 1: Graphical excellence
-Le informazioni non devono infatti essere semplificate o snellite dalla visualizzazione, bensì devono essere solamente chiarite. La rappresentazione dovrebbe permettere dunque di suscitare riflessioni non superficiali ed evidenziare tendenze, \emph{pattern} 
-o fenomeni altrimenti invisibili. 
+Qualsiasi approccio si decida di intraprendere, la rappresentazione dovrebbe sempre permettere di suscitare riflessioni non superficiali ed evidenziare tendenze, \emph{pattern} 
+o fenomeni altrimenti invisibili. Tale profondità si concretizza quasi sempre tramite la rappresentazione di dati multivariati, che consentono l'analisi di un fenomeno in maniera più accurata.
 Solo in un secondo momento ci si può dedicare all'estetica della presentazione, utilizzando gli spazi rimanenti. Tale precauzione è da prendere affinché i dati ricevano subito tutto lo spazio necessario ed eventuali
 effetti speciali o decorazioni siano inseriti solo se se ne presenta l'opportunità.
 
 
 \subsection{Linee guida}
-%TODO: aggiungere che quanto scritto è preso da tufte
-%“The visual Display of Quantitative Information” di Edward R. Tufte
-%CAP 1: Graphical Integrity
 Nel visualizzare dati è necessario garantire che le informazioni siano rappresentate accuratamente e senza distorsioni.
-A tal scopo, è dunque necessario perseguire un'\textbf{integrità grafica}. Ciò implica l'uso di:
+A tal scopo, è dunque necessario perseguire un'\textbf{integrità grafica}. Ciò, secondo il sopracitato Tufte, implica l'uso di:
 \begin{itemize}
     \item proporzioni corrette tra la rappresentazione dei numeri sul grafico e le quantità numeriche fornite, come pure tra il 
     numero di dimensioni rappresentate graficamente e il numero delle variabili nei dati;
@@ -166,21 +142,18 @@ A tal scopo, è dunque necessario perseguire un'\textbf{integrità grafica}. Ci�
     \item elementi che contestualizzino il grafico.
 \end{itemize}
 
-%“The visual Display of Quantitative Information” di Edward R. Tufte
-%CAP 9: AESTHETICS AND TECHNIQUE IN DATA GRAPHICAL DESIGN
 \noindent Come accennato precedentemente, altrettanto importante è la \textbf{scelta del design}. Ciò include:
 \begin{itemize}
-    \item La scelta di un formato e \emph{layout} appropriato, scegliendo la combinazione di frasi, tabelle
-    e grafici che meglio mostri la riflessione che si vuole comunicare (e.g. per più di due numeri, conviene usare una tabella piuttosto che una frase). Ciò comporta:
+    \item La scelta di un formato e \emph{layout} appropriato, scegliendo una combinazione di elementi che meglio mostri la riflessione che si vuole comunicare. Ciò comporta:
     \begin{itemize}
         \item per l'occidente, un orientamento (specie per quanto riguarda il testo) che va dall'alto a sinistra verso il basso a destra;
         \item l'uso di grafici corredati da piccoli messaggi di chiarimento, piuttosto che spiegazioni sparse.
     \end{itemize}
-    \item L'uso simbiotico, coerente e diretto di parole, numeri e figure.
+    \item L'uso coerente e complementare di parole, numeri e figure.
     \item Visualizzare i dati in maniera accessibile, anche e soprattutto per quanto riguarda dettagli di dati complessi. Ciò comporta:
     \begin{itemize}
-        \item l'uso di codifiche non troppo elaborate, che non necessitino il continuo controllo della legenda;
-        \item tenere in considerazione anche le persone daltoniche e \emph{color-deficient} nella scelta dei colori del grafico (se presenti);
+        \item l'uso di codifiche non troppo elaborate;
+        \item tenere in considerazione anche le persone daltoniche e \emph{color-deficient} nella scelta dei colori del grafico;
         \item l'uso di caratteri leggibili.
     \end{itemize}
 \end{itemize}
@@ -288,15 +261,13 @@ Il \emph{dataset} fornito per la visualizzazione potrà dunque essere composto d
 
 
 \subsection{Chart-chooser}
-%file criteri_scelta_grafico_v0.1.0 + codice + prompt LLM
-%fonte: https://www.data-to-viz.com/ e https://ft-interactive.github.io/visual-vocabulary/
 \emph{Chart-chooser} è uno strumento prototipale sviluppato nel corso dello stage che si serve del metodo di classificazione descritto 
 nelle pagine precedenti per consigliare a un utente non esperto uno o più grafici che potrebbero rappresentare al meglio i dati disponibili.
 Tale compito di classificazione viene gestito e realizzato principalmente tramite un \gls{sistemadiregoleg}, il cui funzionamento viene approfondito al paragrafo
-\hyperref[subsubsec:rules]{Implementazione del sistema di regole}.
+\hyperref[subsubsec:rules]{Implementazione del sistema di regole}. Per quanto riguarda il linguaggio di programmazione utilizzato, l'intero strumento è implementato usando
+\gls{js}.
 
-Lo strumento è disponibile a \href{http://www.overleaf.com}{questo link}.
-% TODO: inserire link github 
+Lo strumento è disponibile a \href{https://github.com/jeskarr/progetto_stage/tree/main/chart-chooser}{questo link}.
 
 \subsubsection{Analisi dei dati}
 In primis, è necessario individuare il numero di variabili numeriche e categoriche presenti nel \emph{dataset}.
@@ -339,7 +310,6 @@ Classifica la seguente frase, dimmi solamente il numero dell'obiettivo senza alt
 ${descrizione_utente}
 Llama:
 \end{lstlisting}
-% TODO: rivedere prompt su chart-chooser e inserire modello usato corretto (7b?)
 
 \subsubsection{Implementazione del sistema di regole}\label{subsubsec:rules}
 Le informazioni raccolte sono utilizzate da un \gls{sistemadiregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
@@ -354,22 +324,22 @@ il che le rende più leggibili dall'uomo e facili da mantenere.
     \item I \emph{fatti}, ovvero dei valori costanti o funzioni pure.
     \item Le \emph{regole}, ovvero delle strutture composte da:
     \begin{itemize}
-        \item \emph{Condizioni}, nella forma \texttt{[fact: nome\_fatto, operator: tipo\_operatore, value: valore\_da\_controllare]}
-        che rappresentano i ``requisiti'' della regola, soddisfatti se la relazione definita dall'operatore tra il valore del \emph{fatto} e il valore prestabilito 
+        \item \emph{Condizioni}, rappresentano i ``requisiti'' della regola, presentati nella forma:\\
+        \texttt{[fact: nome\_fatto, operator: tipo\_operatore, value: valore]}. \\
+        Tali ``requisiti'' sono soddisfatti se la relazione definita dall'operatore tra il valore del \emph{fatto} e il valore prestabilito 
         indicato risulta vera. Si precisa, inoltre, che possono essere creati insiemi di queste \emph{condizioni} attraverso l'uso di operatori booleani.
         \item \emph{Eventi}, ovvero delle operazioni che il \emph{motore} esegue in base al soddisfacimento o meno delle \emph{condizioni}. 
     \end{itemize}
     \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del \gls{sistemadiregoleg} in quanto si occupa di valutare
     le \emph{regole} basandosi sui \emph{fatti} forniti, innescando \emph{eventi} a seguito del soddisfacimento o meno delle \emph{condizioni}.
 \end{itemize}
-%TODO: inserire codice esempio cose
 
 \bigskip
 \noindent Per quanto riguarda il funzionamento specifico di Chart-chooser, si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
 Per quanto riguarda gli altri \emph{fatti}, che richiedono un input da parte dell'utente (e.g. l'obiettivo o il fatto di essere dati numerici ordinati o meno), questi sono 
 forniti al \emph{motore} durante la sua esecuzione, all'innescarsi di determinati \emph{eventi}. 
-Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti, fermando eventualmente l'esecuzione del \emph{motore} solo
-prima di regole che necessitano dei \emph{fatti} ancora sconosciuti. % TODO: ottenere come promise?
+Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti tramite \texttt{Promise}, fermando eventualmente l'esecuzione del \emph{motore} solo
+prima di regole che necessitano dei \emph{fatti} ancora sconosciuti.
 In tale maniera, inoltre, vengono richiesti all'utente e forniti al \emph{motore} solamente i \emph{fatti} che concernono la situazione specifica. Ad esempio, nel caso in cui si abbiano solamente dati numerici, 
 non verrà chiesta all'utente e non sarà fornita inutilmente al \emph{motore} l'informazione riguardante l'organizzazione delle variabili categoriche.
 
@@ -400,15 +370,11 @@ Dalla figura \ref{fig:rules_pt2} si osserva un'eccezione rispetto al funzionamen
 bensì si occupa solamente di recuperare il numero di obiettivo, necessario per poter proseguire con la classificazione. Tale configurazione permette di valutare le \emph{regole} relative al tipo di dato mentre  
 il numero di obiettivo viene ricavato dall'elaborazione del \gls{llm} dell'input utente, anziché attendere passivamente il completamento di quest'ultima.
 
-
 \subsubsection{Proposta di grafici}
 Le \emph{regole} di \emph{priorità} minore o uguale a 5, se soddisfatte, innescano degli \emph{eventi} che hanno come parametri il nome dei grafici adatti al caso d'uso specifico indicato dalla classificazione fornita dalla \emph{regola} stessa. 
 Il \emph{motore}, dunque, al termine della valutazione delle \emph {regole}, controlla gli \emph{eventi} emessi e mostra all'utente i parametri di questi, ovvero il nome dei grafici trovati (se presenti).
 
-%Dopo un attento studio dei grafici e metodi di classificazioni trovati.
-%TODO: inserire grafici utilizzati
-%TODO inserire fonti? tecnologie usate js?
-
+I grafici individuabili sono riportati nell'\nameref{cap:appendix} del documento.
 
 \subsubsection{Limitazioni dello strumento}
 Come già accennato precedentemente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
@@ -420,4 +386,3 @@ L'utente deve, altresì, essere a conoscenza del \emph{dataset} per poter rispon
 Ciononostante, \emph{Chart-chooser} ha il potenziale per essere migliorato e offrire un'esperienza utente più semplice e intuitiva. 
 Una possibile direzione per uno sviluppo futuro potrebbe essere l'implementazione di un \emph{parsing} automatico dei dati e la capacità di 
 rilevare e interpretare informazioni chiave direttamente dai \emph{dataset}, riducendo così la dipendenza dall'intervento dell'utente. 
-%TODO: aggiungere parti test e che fa schifo?
