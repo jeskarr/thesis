@@ -19,7 +19,7 @@ apparentemente infinita di informazioni, tra sapere sociale, motori di ricerca e
 In questo contesto, la \gls{datavizg} è diventata fondamentale per interpretare e trarre intelligenza da questa grande mole di dati.
 Nello specifico, essa consente di fissare l'attenzione in segni maneggevoli - le rappresentazioni grafiche - che consentono una lettura dell'informazione
 semplice e intuitiva. Tramite tali segni, è possibile cogliere funzioni strutturali e relazioni impreviste tra fenomeni, oltre che scoprire regolarità tra di essi che 
-altrimenti sarebbero rimaste nascoste, facilitando eventuali risoluzioni e valutazioni.
+altrimenti sarebbero rimaste nascoste, facilitando così eventuali risoluzioni e valutazioni.
 
 \bigskip
 \noindent Possiamo dunque definire la \gls{datavizg} come l'insieme dei meccanismi di traduzione da dati a rappresentazione grafica
@@ -63,8 +63,8 @@ prendere decisioni più informate basate sui dati, ad esempio per quanto riguard
 Questo approccio, inoltre, è cruciale anche per la percezione esterna dell'organizzazione e, dunque, per contraddistinguerla da enti a essa analoghi.
 
 Alla stessa maniera, anche per gli organi informativi (e.g. i giornali) la \gls{datavizg} è diventata indispensabile. 
-Infatti, solo grazie a essa è possibile ricavare delle intuizioni altrimenti impossibili e rendere fruibili 
-tali risultati in maniera chiara e intuitiva. Ciò risulta particolarmente importante per tali organi in quanto la loro \emph{mission} è proprio diffondere 
+Infatti, solo grazie a essa è possibile ricavare e comprendere a fondo determinate informazioni, oltre che renderle fruibili 
+in maniera chiara e intuitiva. Ciò risulta particolarmente importante per tali organi in quanto la loro \emph{mission} è proprio diffondere 
 e comunicare informazioni.
 
 
@@ -80,7 +80,7 @@ Una buona visualizzazione nasce dall'incontro di comunicazione, \gls{datascience
 \end{figure}
 
 \noindent Se realizzata correttamente, infatti, essa è capace di ricavare da \emph{dataset} complessi delle informazioni significative e trasmetterle in maniera intuitiva.
-Usando le parole di Edward Tufte, statistico e luminare nel campo della \gls{datavizg}, una \emph{visualizzazione dei dati} eccellente consiste in
+Usando le parole di Edward R. Tufte, statistico e luminare nel campo della \gls{datavizg}, una \emph{visualizzazione dei dati} eccellente consiste in
 ``idee complesse comunicate con chiarezza, precisione ed efficienza''\footcite{tufte:vis_display}.
 
 Da ciò ne consegue che l'obiettivo della \gls{datavizg} è quello di rendere il più efficiente possibile il processo che il cervello
@@ -89,7 +89,7 @@ Tale processo può essere descritto, in maniera semplificata, attraverso la cosi
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{data-viz/DIKV} 
-    \caption{Gerarchia DIKV}
+    \caption{Gerarchia DIKV (Data-Information-Knowledge-Wisdom)}
     \label{fig:DIKV}
 \end{figure}
 
@@ -97,7 +97,7 @@ Come si nota subito dall'immagine \ref{fig:DIKV}, è essenziale ottenere dati pu
 ottenere una conoscenza valida (responsabilità di comunicazione e design).
 
 \bigskip
-\noindent Nella \emph{visualizzazione dei dati}, la grafica deve aspirare a oggettività, precisione e, soprattutto, funzionalità. Infatti, sebbene il processo di creazione possa somigliare 
+\noindent È importante notare che nella \emph{visualizzazione dei dati}, la grafica deve aspirare a oggettività, precisione e, soprattutto, funzionalità. Infatti, sebbene il processo di creazione possa somigliare 
 a quello di un'applicazione artistica, essa non è e non deve essere solo un'espressione estetica. La grafica deve, in realtà, coadiuvare il fruitore in attività intellettive.
 Per descrivere tale principio, possiamo dunque prendere in prestito le parole di Louis Sullivan sull'architettura modernista del XX secolo: ``La forma segue la funzione''. 
 Tale massima può infatti essere applicata anche all'architettura dell'informazione nel contesto della \gls{datavizg}, giacché
@@ -116,13 +116,13 @@ A tal proposito, egli sviluppa le seguenti formule:
     $\text{Rapporto dati-inchiostro} = \frac{\text{inchiostro usato per la codifica dei dati}}{\text{inchiostro totale usato per la stampa del grafico}}$
 \end{center}
 \begin{center}
-    $\text{Densità dei dati} = \frac{\text{numero di voci in una matrice di dati}}{\text{area occupata dal grafico}}$            %CAP 8: Data density and small multiples
+    $\text{Densità dei dati} = \frac{\text{numero di voci in una matrice di dati}}{\text{area occupata dal grafico}}$
 \end{center}
 evidenziando che quanto più elevati sono tali rapporti, migliore sarà la rappresentazione, a condizione però di non sovrappopolare lo spazio.
 Ciò implica che sia necessario evitare di utilizzare tutti gli elementi decorativi o, più in generale, tutte le parti che non comunicano
 dati, ovvero tutto ciò che Tufte chiama \gls{chartjunkg} (e.g. la maggior parte delle griglie e sfondi posti sotto i grafici).
 
-D'altra parte, si potrebbe pensare che finché la funzione principale rimane comunicare i dati ci si può divertire con la forma con cui essi vengono comunicati. Infatti, ciò che Tufte potrebbe considerare \gls{chartjunkg}, e dunque superfluo,
+D'altra parte, si potrebbe pensare che finché la funzione principale rimane comunicare dati ci si può divertire con la forma con cui essi vengono presentati. Infatti, ciò che Tufte potrebbe considerare \gls{chartjunkg}, e dunque superfluo,
 potrebbe invece rivelarsi utile al processo di memorizzazione e dunque portare più facilmente alla \emph{saggezza}. 
 
 Qualsiasi approccio si decida di intraprendere, la rappresentazione dovrebbe sempre permettere di suscitare riflessioni non superficiali ed evidenziare tendenze, \emph{pattern} 
@@ -183,12 +183,12 @@ I criteri principali da tenere in considerazione nella scelta del grafico sono:
 Quando parliamo di ``obiettivo della visualizzazione'' intendiamo il tipo di relazione tra i dati che vogliamo mettere in evidenza attraverso
 la rappresentazione grafica. I principali obiettivi individuati sono:
 \begin{enumerate}
-    \item \textbf{Divergenza}, quando si vogliono mettere in luce le differenze di valori a partire da un punto fisso (solitamente lo 0, ma può essere
+    \item \textbf{Divergenza} (\emph{deviation}), quando si vogliono mettere in luce le differenze di valori a partire da un punto fisso (solitamente lo 0, ma può essere
     ad esempio anche una media).
     \begin{itemize}
         \item Esempio: confrontare la produttività del turno di giorno con quello del turno di notte.
     \end{itemize}
-    \item \textbf{Correlazione}, quando si vuole enfatizzare la relazione tra due o più variabili. In questi casi, il fruitore della visualizzazione assumerà che le 
+    \item \textbf{Correlazione} (\emph{correlation}), quando si vuole enfatizzare la relazione tra due o più variabili. In questi casi, il fruitore della visualizzazione assumerà che le 
     variabili coinvolte siano in relazione causale, pertanto se così non fosse è necessario specificarlo.
     \begin{itemize}
         \item Esempio: esplorare come la qualità del sonno influenzi le prestazioni accademiche.
@@ -197,27 +197,27 @@ la rappresentazione grafica. I principali obiettivi individuati sono:
     \begin{itemize}
         \item Esempio: mostrare i dieci paesi con il tasso di inquinamento più alto.
     \end{itemize}
-    \item \textbf{Distribuzione}, quando si vogliono mostrare eventuali \emph{pattern} nei dati, evidenziando valori ed eventi di un \emph{dataset} e per quali casi essi si verificano. 
+    \item \textbf{Distribuzione} (\emph{distribution}), quando si vogliono mostrare eventuali \emph{pattern} nei dati, evidenziando valori ed eventi di un \emph{dataset}, e per quali casi essi si verificano. 
     \begin{itemize}
         \item Esempio: mostrare la frequenza di incidenti stradali per tipo di veicolo.
     \end{itemize}
-    \item \textbf{Cambiamento nel tempo}, quando si vogliono enfatizzare dei \emph{trend} che variano nel tempo.
+    \item \textbf{Cambiamento nel tempo} (\emph{time}), quando si vogliono enfatizzare dei \emph{trend} che variano nel tempo.
     \begin{itemize}
         \item Esempio: analizzare come l'uso dei social media è cambiato negli ultimi cinque anni.
     \end{itemize}
-    \item \textbf{Composizione}, quando si vuole mostrare come una singola entità viene suddivisa nelle sue componenti.
+    \item \textbf{Composizione} (\emph{composition}), quando si vuole mostrare come una singola entità viene suddivisa nelle sue componenti.
     \begin{itemize}
         \item Esempio: mostrare la composizione delle emissioni di gas serra per settore industriale.
     \end{itemize}
-    \item \textbf{Grandezze}, quando si vogliono comparare grandezze, che siano esse assolute (per un maggior livello di dettaglio) o relative. 
+    \item \textbf{Grandezze} (\emph{magnitude}), quando si vogliono comparare grandezze, che siano esse assolute (per un maggior livello di dettaglio) o relative. 
     \begin{itemize}
         \item Esempio: mostrare la dimensione del mercato degli smartphone in termini di volumi di vendita.
     \end{itemize}
-    \item \textbf{Spazi}, quando si vogliono mostrare \emph{pattern} geografici o posizioni precise.
+    \item \textbf{Spazi} (\emph{spatial}), quando si vogliono mostrare \emph{pattern} geografici o posizioni precise.
     \begin{itemize}
         \item Esempio: mostrare i paesi con la maggiore concentrazione di risorse naturali.
     \end{itemize}
-    \item \textbf{Flussi}, quando si vogliono mostrare volumi o intensità del movimento/cambiamento tra due o più stati o condizioni.
+    \item \textbf{Flussi} (\emph{flow}), quando si vogliono mostrare volumi o intensità del movimento/cambiamento tra due o più stati o condizioni.
     \begin{itemize}
         \item Esempio: esplorare la rete di interconnessioni finanziarie tra le banche.
     \end{itemize}
@@ -250,7 +250,7 @@ Il \emph{dataset} fornito per la visualizzazione potrà dunque essere composto d
     \begin{itemize}
         \item \textbf{organizzazione in sottogruppi}, una o più variabili categoriche specificano e rappresentano una sottopopolazione di un'altra variabile categorica;
         \item \textbf{organizzazione indipendente}, le variabili categoriche sono indipendenti tra di loro;
-        \item \textbf{organizzazione gerarchica}, una o più variabili categoriche specificano un rapporto gerarchico rispetto ad un'altra variabile categorica padre.
+        \item \textbf{organizzazione gerarchica}, una o più variabili categoriche presentano un rapporto gerarchico rispetto ad un'altra variabile categorica padre.
     \end{itemize}
     \item In caso di almeno una variabile numerica e una categorica, con multiple variabili categoriche solo se organizzate in sottogruppi o in relazione gerarchica:
     \begin{itemize}
@@ -282,7 +282,7 @@ se i dati sono ordinati o meno, mentre se si hanno dati univariati numerici non 
 Una volta definito il tipo di dato è necessario individuare l'obiettivo della visualizzazione.
 A tal fine, \emph{Chart-chooser} richiede all'utente di fornire una breve descrizione di ciò che vuole rappresentare e comunicare.
 Il testo immesso viene poi elaborato da un \gls{llm}, il quale interpreta la descrizione e ne estrae l'obiettivo più pertinente tra i nove possibili (definiti e descritti nella sottosezione \nameref{subsubsec:obj}). 
-Come \gls{llm} viene utilizzato un modello a 7 miliardi di parametri, utilizzato attraverso \textbf{\gls{llamacppg}} e reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
+Come \gls{llm} viene usato un modello a 7 miliardi di parametri, utilizzato attraverso \gls{llamacppg} e reso disponibile dall'azienda ospitante. I parametri sono perlopiù quelli di default, tranne la temperatura che viene 
 impostata a 0 per garantire che l'output del modello sia il più predicibile possibile e restituisca solamente il numero dell'obiettivo.
 
 \bigskip
@@ -315,7 +315,7 @@ Llama:
 Le informazioni raccolte sono utilizzate da un \gls{sistemadiregoleg} per combinare le analisi e le classificazioni effettuate e restituire il nome dei possibili grafici applicabili al caso d'uso, se presenti.
 Si precisa, infatti, che non per tutti gli obiettivi sono presenti tutti i tipi di dato. Pertanto, la combinazione potrebbe portare a un risultato nullo.
 
-La tecnologia del \gls{sistemadiregoleg} scelta è \textbf{\gls{jsonrulesg}}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture \gls{jsong}, 
+La tecnologia per il \gls{sistemadiregoleg} scelta è \gls{jsonrulesg}. Tale decisione è motivata dalla sua leggerezza e velocità, nonché dal fatto che le regole siano semplici strutture \gls{jsong}, 
 il che le rende più leggibili dall'uomo e facili da mantenere.
 
 \bigskip
@@ -324,18 +324,17 @@ il che le rende più leggibili dall'uomo e facili da mantenere.
     \item I \emph{fatti}, ovvero dei valori costanti o funzioni pure.
     \item Le \emph{regole}, ovvero delle strutture composte da:
     \begin{itemize}
-        \item \emph{Condizioni}, rappresentano i ``requisiti'' della regola, presentati nella forma:\\
+        \item \emph{Condizioni}, ovvero i ``requisiti'' della regola, presentati nella forma:\\
         \texttt{[fact: nome\_fatto, operator: tipo\_operatore, value: valore]}. \\
         Tali ``requisiti'' sono soddisfatti se la relazione definita dall'operatore tra il valore del \emph{fatto} e il valore prestabilito 
         indicato risulta vera. Si precisa, inoltre, che possono essere creati insiemi di queste \emph{condizioni} attraverso l'uso di operatori booleani.
         \item \emph{Eventi}, ovvero delle operazioni che il \emph{motore} esegue in base al soddisfacimento o meno delle \emph{condizioni}. 
     \end{itemize}
-    \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del \gls{sistemadiregoleg} in quanto si occupa di valutare
+    \item Il \emph{motore di inferenza} in sé, a cui vengono dati in input i \emph{fatti} e aggiunte le \emph{regole}. Esso è il cuore del sistema in quanto si occupa di valutare
     le \emph{regole} basandosi sui \emph{fatti} forniti, innescando \emph{eventi} a seguito del soddisfacimento o meno delle \emph{condizioni}.
 \end{itemize}
 
-\bigskip
-\noindent Per quanto riguarda il funzionamento specifico di Chart-chooser, si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
+\noindent Per quanto riguarda il funzionamento specifico di \emph{Chart-chooser}, si hanno come \emph{fatti} iniziali solamente il numero di variabili numeriche e categoriche. 
 Per quanto riguarda gli altri \emph{fatti}, che richiedono un input da parte dell'utente (e.g. l'obiettivo o il fatto di essere dati numerici ordinati o meno), questi sono 
 forniti al \emph{motore} durante la sua esecuzione, all'innescarsi di determinati \emph{eventi}. 
 Ciò permette di poter valutare subito le regole sui \emph{fatti} già noti e nel frattempo poter ottenere dall'utente il valore dei rimanenti tramite \texttt{Promise}, fermando eventualmente l'esecuzione del \emph{motore} solo
@@ -356,13 +355,13 @@ Tale valore rappresenta il soddisfacimento delle \emph{condizioni} della \emph{r
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{data-viz/rules_pt1} 
-    \caption{Sistema gerarchico di priorità per le regole di \emph{Chart-chooser} - priorità 20 e 15}
+    \caption{Sistema gerarchico di priorità per le regole di Chart-chooser - priorità 20 e 15}
     \label{fig:rules_pt1}
 \end{figure}
 \begin{figure}[H] 
     \centering 
     \includegraphics[width=\columnwidth]{data-viz/rules_pt2} 
-    \caption{Sistema gerarchico di priorità per le regole di \emph{Chart-chooser} - priorità dalla 10 all'1}
+    \caption{Sistema gerarchico di priorità per le regole di Chart-chooser - priorità dalla 10 all'1}
     \label{fig:rules_pt2}
 \end{figure}
 
@@ -371,13 +370,14 @@ bensì si occupa solamente di recuperare il numero di obiettivo, necessario per 
 il numero di obiettivo viene ricavato dall'elaborazione del \gls{llm} dell'input utente, anziché attendere passivamente il completamento di quest'ultima.
 
 \subsubsection{Proposta di grafici}
-Le \emph{regole} di \emph{priorità} minore o uguale a 5, se soddisfatte, innescano degli \emph{eventi} che hanno come parametri il nome dei grafici adatti al caso d'uso specifico indicato dalla classificazione fornita dalla \emph{regola} stessa. 
+Le \emph{regole} di \emph{priorità} minore o uguale a 5, se soddisfatte, innescano degli \emph{eventi} che hanno come parametri il nome dei grafici adatti al caso d'uso specificato dalla \emph{regola} stessa. 
 Il \emph{motore}, dunque, al termine della valutazione delle \emph {regole}, controlla gli \emph{eventi} emessi e mostra all'utente i parametri di questi, ovvero il nome dei grafici trovati (se presenti).
 
 I grafici individuabili sono riportati nell'\nameref{cap:appendix} del documento.
 
 \subsubsection{Limitazioni dello strumento}
 Come già accennato precedentemente \emph{Chart-chooser} è uno strumento prototipale, presenta infatti diverse limitazioni.
+
 Innanzitutto, l'applicativo è disponibile soltanto da riga di comando e non dispone di un'interfaccia grafica.
 Inoltre, esso richiede che i dati siano disponibili in locale e che siano formattati secondo uno schema specifico
 (una specifica struttura \gls{jsong}). 
