@@ -10,7 +10,7 @@ Analogamente alla \gls{datavizg}, le infografiche si occupano di rappresentare v
 Esse trasformano i dati in idee chiare, permettendo di inquadrare facilmente un fenomeno, una situazione o un processo, coadiuvando così la presa di decisioni ponderate sul tema presentato.
 Queste idee sono generate a partire dall'interpretazione, formalizzazione e contestualizzazione dei dati, che spesso sono disomogenei per formato, tipo di contenuto e origine. Tale interpretazione ha il compito di 
 svelare il significato nascosto nel \emph{dataset} e selezionare le connessioni o fenomeni più interessanti per il destinatario della comunicazione.
-In altre parole, l'infografica non si limita a mostrare i dati, ma li organizza e li presenta in un modo da renderne più evidente significato e importanza.
+In altre parole, l'infografica non si limita a mostrare i dati, ma li organizza e li presenta in modo da renderne più evidente significato e importanza.
 
 Per raggiungere questo obiettivo, le infografiche combinano elementi testuali e grafici per presentare le informazioni; usando le parole di Edward R. Tufte ``un'infografica mostra visivamente grandezze misurate mediante 
 l'uso combinato di punti, linee, un sistema di coordinate, numeri, simboli, parole, ombreggiature e colore''\footcite{tufte:vis_display}. Pertanto, le infografiche rigettano la tradizione di ``purezza grafica'' (i.e. rappresentazione dei dati 
@@ -20,7 +20,7 @@ prendono in considerazione anche il destinatario della comunicazione, scegliendo
 Possiamo infatti pensare all'infografica come a una forma di racconto, di lettura che non è di per sé né imparziale né completa, ma si limita a fare luce ed esporre i punti salienti individuati nel \emph{dataset}.
 In realtà, tale caratteristica delle infografiche è proprio ciò che maggiormente le distingue dalla \gls{datavizg}. Infatti, mentre le prime sono progettate per presentare i dati raccontandoli attraverso storie specifiche, guidando il lettore con una narrazione, la seconda
 è più orientata verso l'esplorazione autonoma delle informazioni da parte del fruitore, che deve analizzare e scoprire i dati per conto proprio. 
-Questa differenza nel livello di analisi richiesto si ripercuote anche sul tipo di pubblico di ciascun tipo di rappresentazione. Nello specifico, le infografiche, grazie alla loro capacità di semplificare e contestualizzare i dati, hanno un pubblico più ampio, in quanto sono accessibili anche a coloro
+Questa differenza nel livello di analisi richiesto si ripercuote anche sul tipo di pubblico di ciascuna tipologia di rappresentazione. Nello specifico, le infografiche, grazie alla loro capacità di semplificare e contestualizzare i dati, hanno un pubblico più ampio, in quanto sono accessibili anche a coloro
 che non possiedono capacità analitiche avanzate. 
 
 Nonostante queste differenze, infografiche e \gls{datavizg} sono strettamente connesse e complementari. Le infografiche, pur essendo maggiormente orientate alla narrazione, 
@@ -87,7 +87,7 @@ Una prima classificazione delle infografiche può essere fatta \textbf{in base a
 \subsection{Infographic-helper}
 Come accennato in precedenza, l'infografica è una forma di racconto e, pertanto, la scelta e scrittura della storia da comunicare sono centrali nella sua costruzione.
 Nel corso dello stage si è dunque voluto sviluppare uno strumento prototipale, \emph{Infographic-helper}, che potesse aiutare il ``narratore'' in tale compito.
-Nello specifico, questo strumento consente di validare tale narrativa, oltre a individuarne le parti e l'obiettivo principale.
+Nello specifico, questo strumento consente di validare la narrativa sviluppata, oltre a individuarne le parti e l'obiettivo principale.
 Per quanto riguarda il linguaggio di programmazione utilizzato, l'intero strumento è implementato usando \gls{js}.
 
 Lo strumento è disponibile a \href{https://github.com/jeskarr/progetto_stage/tree/main/infographic-helper}{questo link}.
@@ -114,7 +114,7 @@ Inoltre, lo strumento controlla anche se siano presenti eventuali elementi estra
 \noindent Queste funzionalità sono implementate attraverso interrogazione a un \gls{llm}, nello specifico un modello a 7 miliardi di parametri, utilizzato attraverso \gls{llamacppg} e reso disponibile dall'azienda ospitante.
 
 Il \emph{prompt} utilizzato è il seguente:
-\begin{lstlisting}[style=htmlcssjs]
+\begin{lstlisting}[style=std]
 Questa è una conversazione tra User e Llama, un chatbot amichevole. Llama è disponibile, onesto, bravo a scrivere e non manca mai di rispondere immediatamente e con precisione a qualsiasi richiesta.
 
 User: 
@@ -125,14 +125,14 @@ Testo:
 ${storia}
 
 Domande:
-1.	Supponi che un elemento è di 'pathos' se può indurre il pubblico a sentire (o non sentire) una connessione emotiva con il contenuto.
-    Riporta tutti gli elementi (frasi, espressioni e parole) di 'pathos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'pathos' da poter inserire nel Testo.
-2.  Supponi che un elemento è di 'ethos' se può indurre il pubblico a ritenere che l'autore sia (o meno) affidabile e credibile.
-    Riporta tutti gli elementi (frasi, espressioni e parole) di 'ethos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'ethos' da poter inserire nel Testo basandoti sul mio ruolo SE rilevante al tema del Testo.
-3.  Supponi che un elemento è di 'logos' se può indurre il pubblico a credere che l'argomentazione sia (o meno) logica e supportata da prove adeguate.
-    Riporta tutti gli elementi (frasi, espressioni e parole) di 'logos' del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di 'logos' da poter inserire nel Testo.
-4.	Supponi che un elemento è 'estraneo' se può ritenersi estraneo rispetto al tema principale del Testo oppure può ritenersi un'assurdità.
-    Riporta tutti gli elementi (frasi, espressioni e parole) 'estraneo' presenti nel Testo.
+1.	Supponi che un elemento sia di "pathos" se può indurre il pubblico a sentire (o non sentire) una connessione emotiva con il contenuto.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di "pathos" del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di "pathos" da poter inserire nel Testo.
+2.  Supponi che un elemento sia di "ethos" se può indurre il pubblico a ritenere che l'autore sia (o meno) affidabile e credibile.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di "ethos" del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di "ethos" da poter inserire nel Testo basandoti sul mio ruolo SE rilevante al tema del Testo.
+3.  Supponi che un elemento sia di "logos" se può indurre il pubblico a credere che l'argomentazione sia (o meno) logica e supportata da prove adeguate.
+    Riporta tutti gli elementi (frasi, espressioni e parole) di "logos" del Testo, SOLO se hanno senso nel contesto del Testo. Suggerisci altre frasi incisive di "logos" da poter inserire nel Testo.
+4.	Supponi che un elemento sia "estraneo" se può ritenersi estraneo rispetto al tema principale del Testo oppure può ritenersi un'assurdità.
+    Riporta tutti gli elementi (frasi, espressioni e parole) "estraneo" presenti nel Testo.
 
 [...continua...]
 \end{lstlisting}
@@ -148,7 +148,7 @@ Le possibili disposizioni sono descritte alla sezione \ref{subsec:info_layout}.
 \noindent Queste funzionalità sono anch'esse implementate interrogando il \gls{llm} descritto precedentemente. 
 
 In questo caso, il \emph{prompt} utilizzato è il seguente:
-\begin{lstlisting}[style=htmlcssjs]
+\begin{lstlisting}[style=std]
 [...segue...]
 5.	Quali sono le parti in cui si divide il testo? Per ogni parte, dimmi solo un titoletto breve.
 6.	Tolta l'introduzione, identifica la relazione generale tra le parti come una delle seguenti:
@@ -160,7 +160,7 @@ In questo caso, il \emph{prompt} utilizzato è il seguente:
     -	parti di un processo ordinato. 
 
 Fornisci solamente le risposte nel seguente formato JSON: 
-{ 'pathos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'ethos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'logos': { 'presente': boolean, 'elementi': [string], 'suggerimenti': [string] }, 'elementi_estraneo': {'presente': boolean, 'elementi': [string]}, 'parti': [string], 'relazione': 'string' }
+{ "pathos": { "presente": boolean, "elementi": [string], "suggerimenti": [string] }, "ethos": { "presente": boolean, "elementi": [string], "suggerimenti": [string] }, "logos": { "presente": boolean, "elementi": [string], "suggerimenti": [string] }, "elementi_estraneo": {"presente": boolean, "elementi": [string]}, "parti": [string], "relazione": "string" }
 
 
 Llama:
@@ -433,8 +433,8 @@ per raccontare una storia, senza però eccedere. Un testo troppo lungo può infa
 Generalmente i blocchi di testo presenti in un'infografica sono:
 \begin{itemize}
     \item Il \textbf{titolo};
-    \item Il \textbf{sottotitolo}, che specifica i contenuti annunciati con il titolo, pertanto non può esistere senza quest'ultimo;
-    \item L'\textbf{introduzione}, inserita solitamente vicino a titolo e posta in corsivo, specifica ulteriormente il tema dell'infografica e funge da ``guida'' per la sua lettura;
+    \item Il \textbf{sottotitolo}, che specifica i contenuti annunciati con il titolo e pertanto non può esistere senza quest'ultimo;
+    \item L'\textbf{introduzione}, inserita solitamente vicino al titolo e posta in corsivo, specifica ulteriormente il tema dell'infografica e funge da ``guida'' per la sua lettura;
     \item Il \textbf{testo principale}, che serve a spiegare meglio le informazioni visualizzate con altri mezzi (e.g. grafici);
     \item Le \textbf{note a piè di pagina}, che servono a dare informazioni a carattere formale (e.g. fonti) all'utente e dunque utilizzano il più piccolo carattere leggibile possibile per evitare 
     di distrarlo.
@@ -445,7 +445,7 @@ A tal fine, i titoli sono generalmente formulati in uno dei seguenti modi:
 \begin{itemize}
     \item \textbf{Sotto forma di domanda}, si pone un interrogativo curioso o interessante che stimoli il lettore a cercarne la risposta nei dati presentati.
     \item \textbf{Includendo la statistica principale}, evidenziando il dato presentato più significativo.
-    \item \textbf{Come confronto}, si mette in relazione fin da subito due o più elementi di cui se ne mostreranno differenze e similitudini.
+    \item \textbf{Come confronto}, si mettono in relazione fin da subito due o più elementi di cui si mostreranno differenze e similitudini.
     \item \textbf{Come introduzione a un elenco numerato}, il titolo funziona come introduzione a una lista (e.g. ``Top X'').
 \end{itemize}
 
@@ -487,14 +487,14 @@ Sempre con riferimento ai caratteri, è importante seguire anche le seguenti reg
 \subsection{Interattività}
 Per quanto riguarda la navigazione ed esplorazione delle infografiche si applica generalmente il cosiddetto \textbf{principio delle informazioni visive} (postulato dall'informatico statunitense 
 Ben Shneiderman), che afferma: ``prima panoramica, zoom e filtri, poi dettagli su richiesta''. Si devono dunque presentare i punti salienti e più rilevanti, mentre ulteriori informazioni sono fornite agli utenti 
-solo attraverso la loro minuziosa esplorazione dell'infografica. 
+solo attraverso l'esplorazione dell'infografica. 
 
 Le tecniche di esplorazione e navigazione possibili sono le seguenti:
 \begin{itemize}
     \item \textbf{Scorrimento e \emph{panning}}, il primo utilizzato generalmente su siti web con orientamento verticale, mentre il secondo viene usato in genere su mappe per spostarsi;
     \item \textbf{Zoom};
     \item \textbf{Apertura e chiusura}, ad esempio per aprire o chiudere finestre \emph{pop-up} di dettaglio;
-    \item \textbf{Classificazione e riordino}, ad esempio riordinando i dati contenuti su una tabella;
+    \item \textbf{Classificazione e riordino}, ad esempio riordinando i dati contenuti in una tabella;
     \item \textbf{Ricerca e filtro}.
 \end{itemize}
 L'utente può impiegare tali tecniche interagendo con l'interfaccia nei seguenti modi:
@@ -509,7 +509,7 @@ L'utente può impiegare tali tecniche interagendo con l'interfaccia nei seguenti
 \noindent Applicare queste tecniche aiuta a rendere la presentazione dei dati più coinvolgente e chiara, contribuendo così a raggiungere meglio gli obiettivi delle infografiche.
 Tuttavia, per un loro giusto impiego, è necessario seguire questi principi:
  \begin{itemize}
-    \item \textbf{Visibilità}, ossia rendere il più visibile la funzionalità di un oggetto in modo che sia più facile per gli utenti riconoscerlo e capirne la funzionalità. Tale norma può
+    \item \textbf{Visibilità}, ossia rendere il più visibile possibile la funzionalità di un oggetto in modo che sia più facile per gli utenti riconoscerlo e capirne la funzionalità. Tale norma può
     essere implementata tramite la forma dell'oggetto, che spesso suggerisce visivamente la funzionalità che esso permette (e.g. pulsante sul web che somigli a uno reale), oppure semplicemente tramite
     la mera organizzazione degli elementi visivi. Infatti, se un'informazione è fondamentale per la comprensione dell'intera infografica, essa dovrebbe essere sempre visibile e non nascosta da uno strato di interattività.
     \item \textbf{Feedback}, ciò significa che a ogni azione dell'utente si dovrebbe avere una reazione che indichi l'esito dell'operazione.
@@ -711,6 +711,6 @@ un equilibrio di complessità:
     Il livello più esterno deve fungere da punto di ingresso dell'infografica, fornendo una sintesi chiara e concisa delle informazioni presentate, comprese introduzione e punti salienti.
     \item Una volta determinate tali caratteristiche, si pensa a \emph{funzionalità - decorazione} e \emph{astrazione - raffigurazione}, definendo dapprima struttura e organizzazione dei dati e successivamente la loro rappresentazione. 
     Solo in un secondo momento si scelgono eventuali elementi decorativi aggiuntivi.
-    \item Infine, si pensa a \emph{Originalità - familiarità} e \emph{novità - ridondanza}, cercando di garantire la comprensione dei concetti esposti ma anche di evitare la noia che la ripetizione di questi potrebbe portare.
+    \item Infine, si pensa a \emph{originalità - familiarità} e \emph{novità - ridondanza}, cercando di garantire la comprensione dei concetti esposti ma anche di evitare la noia a cui la ripetizione di questi potrebbe portare.
     In linea generale, meno comune è la forma grafica scelta più ridondanze dovranno essere inserite.
 \end{enumerate}

@@ -110,7 +110,7 @@ Il processo di decisione della rappresentazione grafica viene meglio approfondit
 \noindent Una volta decisa la forma migliore, bisogna comunque adattarla alla visualizzazione del caso specifico attraverso delle scelte di design.
 In tal senso, si può adottare un approccio più minimalistico, promosso dal sopracitato Edward Tufte, o un approccio più ``artistico''.
 
-Per Tufte è essenziale combinare una semplicità di design a complessità dei dati. Per lui, il fruitore della visualizzazione deve poter ricavare il maggior numero di idee e informazioni dal minor uso possibile di spazio e inchiostro.
+Per Tufte è essenziale combinare semplicità di design a complessità dei dati. Per lui, il fruitore della visualizzazione deve poter ricavare il maggior numero di idee e informazioni dal minor uso possibile di spazio e inchiostro.
 A tal proposito, egli sviluppa le seguenti formule: 
 \begin{center}
     $\text{Rapporto dati-inchiostro} = \frac{\text{inchiostro usato per la codifica dei dati}}{\text{inchiostro totale usato per la stampa del grafico}}$
@@ -168,7 +168,7 @@ Ne consegue che spesso le forme visive scelte per la rappresentazione non sono l
 In alcuni casi, addirittura, la rappresentazione scelta risulta essere anche poco comprensibile o fuorviante per il caso d'uso specifico.
 
 Senza una classificazione chiara, diventa dunque difficile per questo tipo di utenti selezionare la tecnica di visualizzazione più adeguata.
-Nelle seguenti sezioni, si esaminano dunque dei criteri di classificazione identificati, assieme a uno strumento prototipale che mira ad 
+Nelle seguenti sezioni, si esaminano dunque i criteri di classificazione identificati, assieme a uno strumento prototipale che mira ad 
 automatizzare questo processo di classificazione.
 
 
@@ -254,8 +254,8 @@ Il \emph{dataset} fornito per la visualizzazione potrà dunque essere composto d
     \end{itemize}
     \item In caso di almeno una variabile numerica e una categorica, con multiple variabili categoriche solo se organizzate in sottogruppi o in relazione gerarchica:
     \begin{itemize}
-        \item \textbf{Una singola occorrenza}, quando a ogni individuo della popolazione, individuato dalle variabili categoriche, corrisponde un solo dato numerico;
-        \item \textbf{Multiple occorrenze}, quando a ogni individuo della popolazione, individuato dalle variabili categoriche, corrispondono multipli valori numerici.
+        \item \textbf{dati con singole occorrenze}, quando a ogni individuo della popolazione, individuato dalle variabili categoriche, corrisponde un solo dato numerico;
+        \item \textbf{dati con multiple occorrenze}, quando a ogni individuo della popolazione, individuato dalle variabili categoriche, corrispondono multipli valori numerici.
     \end{itemize}
 \end{itemize}
 
@@ -291,7 +291,7 @@ Nello specifico, per ogni obiettivo vengono fornite al \gls{llm} alcune descrizi
 prestazioni. Questo approccio permette al \gls{llm} di comprendere meglio il contesto e rispondere con una maggiore precisione.
 
 Il \emph{prompt} utilizzato è il seguente:
-\begin{lstlisting}[style=htmlcssjs]
+\begin{lstlisting}[style=std]
 Questa è una conversazione tra User e Llama, un chatbot amichevole. Llama è disponibile, onesto, bravo a scrivere e non manca mai di rispondere immediatamente e con precisione a qualsiasi richiesta.
 
 User: 
